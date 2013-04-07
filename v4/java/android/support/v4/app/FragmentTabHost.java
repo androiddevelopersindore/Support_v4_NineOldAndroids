@@ -57,6 +57,7 @@ public class FragmentTabHost extends TabHost
     private TabHost.OnTabChangeListener mOnTabChangeListener;
     private TabInfo mLastTab;
     private boolean mAttached;
+    private int mAnimIn=-1, mAnimOut=-1;
 
     static final class TabInfo {
         private final String tag;
@@ -329,6 +330,8 @@ public class FragmentTabHost extends TabHost
             if (ft == null) {
                 ft = mFragmentManager.beginTransaction();
             }
+            if(mAnimIn!=-1 && mAnimOut!=-1)
+                ft.setCustomAnimations(mAnimIn, mAnimOut);
             if (mLastTab != null) {
                 if (mLastTab.fragment != null) {
                     ft.detach(mLastTab.fragment);
@@ -347,5 +350,10 @@ public class FragmentTabHost extends TabHost
             mLastTab = newTab;
         }
         return ft;
+    }
+    
+    public void setCustomAnimations(int in, int out) {
+        mAnimIn=in;
+        mAnimOut=out;
     }
 }
