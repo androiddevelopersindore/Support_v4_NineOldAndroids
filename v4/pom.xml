@@ -29,6 +29,9 @@
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<!-- Skip test compilation. -->
 		<maven.test.skip>true</maven.test.skip>
+		<github.global.server>github</github.global.server>
+		<github.downloads.repositoryOwner>kedzie</github.downloads.repositoryOwner>
+		<github.downloads.repositoryName>android_frameworks_support</github.downloads.repositoryName>
 	</properties>
 	
 	<dependencies>
@@ -78,6 +81,17 @@
 							</sources>
 						</configuration>
 					</execution>
+				</executions>
+			</plugin>
+			<plugin>
+				<groupId>com.github.github</groupId>
+				<artifactId>downloads-maven-plugin</artifactId>
+				<version>0.7-SNAPSHOT</version>
+				<configuration>
+					<description>${project.name} Jar</description>
+					<override>true</override>
+				</configuration>
+				<executions>
 				</executions>
 			</plugin>
 		</plugins>

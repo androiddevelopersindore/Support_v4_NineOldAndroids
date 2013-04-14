@@ -575,7 +575,7 @@ public class ViewPager extends ViewGroup {
      * @param transformer PageTransformer that will modify each page's animation properties
      */
     public void setPageTransformer(boolean reverseDrawingOrder, PageTransformer transformer) {
-        if (Build.VERSION.SDK_INT >= 11) {
+//        if (Build.VERSION.SDK_INT >= 11) {
             final boolean hasTransformer = transformer != null;
             final boolean needsPopulate = hasTransformer != (mPageTransformer != null);
             mPageTransformer = transformer;
@@ -586,7 +586,7 @@ public class ViewPager extends ViewGroup {
                 mDrawingOrder = DRAW_ORDER_DEFAULT;
             }
             if (needsPopulate) populate();
-        }
+//        }
     }
 
     void setChildrenDrawingOrderEnabledCompat(boolean enable) {
