@@ -920,12 +920,9 @@ final class FragmentManagerImpl extends FragmentManager {
                                 f.mView = NoSaveStateFrameLayout.wrap(f.mView);
                                 if (container != null) {
                                 	Animator anim = loadAnimation(f, transit, true, transitionStyle);
-//                                    Animation anim = loadAnimation(f, transit, true,
-//                                            transitionStyle);
                                     if (anim != null) {
                                     	anim.setTarget(f.mView);
                                     	anim.start();
-//                                        f.mView.startAnimation(anim);
                                     }
                                     container.addView(f.mView);
                                 }
@@ -1215,12 +1212,9 @@ final class FragmentManagerImpl extends FragmentManager {
             if (fragment.mView != null) {
             	Animator anim = loadAnimation(fragment, transition, true,
                         transitionStyle);
-//                Animation anim = loadAnimation(fragment, transition, true,
-//                        transitionStyle);
                 if (anim != null) {
                 	anim.setTarget(fragment.mView);
                 	anim.start();
-//                    fragment.mView.startAnimation(anim);
                 }
                 fragment.mView.setVisibility(View.GONE);
             }
@@ -1238,12 +1232,9 @@ final class FragmentManagerImpl extends FragmentManager {
             if (fragment.mView != null) {
             	Animator anim = loadAnimation(fragment, transition, true,
                         transitionStyle);
-//                Animation anim = loadAnimation(fragment, transition, true,
-//                        transitionStyle);
                 if (anim != null) {
                 	anim.setTarget(fragment.mView);
                 	anim.start();
-//                    fragment.mView.startAnimation(anim);
                 }
                 fragment.mView.setVisibility(View.VISIBLE);
             }
