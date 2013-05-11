@@ -1,14 +1,49 @@
 #Android Support Library v4 with NineOldAndroids
 
+* Object Animator API's with Fragment Transitions
+* ViewPager PagerTransformers
+
+###General Usage
+
+Your project must have [NineOldAndroids](http://nineoldandroids.com) as well as this project in the classpath.  This can be done with Maven or simple putting the jars into the /libs folder.
+
 ###Animator Fragment Transitions
 
-This fork allows using [NineOldAndroids](http://nineoldandroids.com) Object Animators for custom fragment transitions.  Note that animators will NOT be loaded from theme settings or by transitions settings; only custom transitions work.  Also View animations will no longer work.
+This fork allows using [NineOldAndroids](http://nineoldandroids.com) Object Animators for fragment transitions.  View animations will no longer work.
+
+####Standard Transitions
+
+Specify standard transitions in the transaction (OPEN/CLOSE don't work prefectly. Something is wrong with my ObjectAnimators (please help))
+
+	tx.setTransition(FragmentTransaction.TRANSIT_FRAGMENT_FADE);
+
+####Custom Transitions
+
+Specify custom transitions in the transaction
 
     tx.setCustomTransitions(android.R.animator.fade_in, android.R.animator.fade_out)
 
+####Fragment Specified Transitions
+
+Specify transition in Fragment implementation
+
+    @Override
+    public Animator onCreateAnimator(int transit, boolean enter, int nextAnim) {
+       if(nextAnim>0)
+          return AnimatorInflater.loadAnimator(getActivity(), nextAnim);
+       if(enter)
+          return AnimatorInflater.loadAnimator(getActivity(), android.R.animator.fade_in);
+       else
+          return AnimatorInflater.loadAnimator(getActivity(), android.R.animator.fade_out);
+    }
+
+####Transition style resources
+
+Will be supported in next soon.  Though this will require packaging the project as an APK Library instead of a jar file.
+
 ###PageTransformer
 
-ViewPager is modified to support custom PageTransformers implemented with NineOldAndroids AnimatorProxy.  For example
+ViewPager is modified to support custom PageTransformers implemented with NineOldAndroids.  For example:
 
 ```java
 public class ZoomOutPageTransformer implements PageTransformer {
@@ -19,11 +54,9 @@ public class ZoomOutPageTransformer implements PageTransformer {
         int pageWidth = view.getWidth();
         int pageHeight = view.getHeight();
         
-        AnimatorProxy proxy = AnimatorProxy.wrap(view);
-
         if (position < -1) { // [-Infinity,-1)
             // This page is way off-screen to the left.
-            proxy.setAlpha(0);
+            ViewHelper.setAlpha(view, 0);
 
         } else if (position <= 1) { // [-1,1]
             // Modify the default slide transition to shrink the page as well
@@ -31,23 +64,23 @@ public class ZoomOutPageTransformer implements PageTransformer {
             float vertMargin = pageHeight * (1 - scaleFactor) / 2;
             float horzMargin = pageWidth * (1 - scaleFactor) / 2;
             if (position < 0) {
-                proxy.setTranslationX(horzMargin - vertMargin / 2);
+                ViewHelper.setTranslationX(view, horzMargin - vertMargin / 2);
             } else {
-                proxy.setTranslationX(-horzMargin + vertMargin / 2);
+                ViewHelper.setTranslationX(view, -horzMargin + vertMargin / 2);
             }
 
             // Scale the page down (between MIN_SCALE and 1)
-            proxy.setScaleX(scaleFactor);
-            proxy.setScaleY(scaleFactor);
+            ViewHelper.setScaleX(view, scaleFactor);
+            ViewHelper.setScaleY(view, scaleFactor);
 
             // Fade the page relative to its size.
-            proxy.setAlpha(MIN_ALPHA +
+            ViewHelper.setAlpha(view, MIN_ALPHA +
                     (scaleFactor - MIN_SCALE) /
                     (1 - MIN_SCALE) * (1 - MIN_ALPHA));
 
         } else { // (1,+Infinity]
             // This page is way off-screen to the right.
-            proxy.setAlpha(0);
+            ViewHelper.setAlpha(view, 0);
         }
     }
 }
@@ -55,4 +88,4 @@ public class ZoomOutPageTransformer implements PageTransformer {
 
 Set the PageTransformer as usual:
 
-    viewPagers.setPageTransformer(new ZoomOutPageTransformer());
+    viewPager.setPageTransformer(new ZoomOutPageTransformer());
