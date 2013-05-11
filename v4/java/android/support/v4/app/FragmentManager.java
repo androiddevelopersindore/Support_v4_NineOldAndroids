@@ -37,17 +37,14 @@ import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
-import android.view.animation.AccelerateInterpolator;
-import android.view.animation.AlphaAnimation;
-import android.view.animation.Animation;
-import android.view.animation.AnimationSet;
 import android.view.animation.DecelerateInterpolator;
 import android.view.animation.Interpolator;
-import android.view.animation.ScaleAnimation;
 
 import com.nineoldandroids.animation.Animator;
 import com.nineoldandroids.animation.AnimatorInflater;
 import com.nineoldandroids.animation.AnimatorListenerAdapter;
+import com.nineoldandroids.animation.ObjectAnimator;
+import com.nineoldandroids.animation.PropertyValuesHolder;
 
 /**
  * Static library support version of the framework's {@link android.app.FragmentManager}.
@@ -710,51 +707,38 @@ final class FragmentManagerImpl extends FragmentManager {
         }
     }
 
-    static final Interpolator DECELERATE_QUINT = new DecelerateInterpolator(2.5f);
+    static final Interpolator DECELERATE_QUAD = new DecelerateInterpolator();
     static final Interpolator DECELERATE_CUBIC = new DecelerateInterpolator(1.5f);
-    static final Interpolator ACCELERATE_QUINT = new AccelerateInterpolator(2.5f);
-    static final Interpolator ACCELERATE_CUBIC = new AccelerateInterpolator(1.5f);
+    static final int ANIM_DUR = 300;
     
-    static final int ANIM_DUR = 220;
-    
-    static Animation makeOpenCloseAnimation(Context context, float startScale,
-            float endScale, float startAlpha, float endAlpha) {
-        AnimationSet set = new AnimationSet(false);
-        ScaleAnimation scale = new ScaleAnimation(startScale, endScale, startScale, endScale,
-                Animation.RELATIVE_TO_SELF, .5f, Animation.RELATIVE_TO_SELF, .5f);
-        scale.setInterpolator(DECELERATE_QUINT);
-        scale.setDuration(ANIM_DUR);
-        set.addAnimation(scale);
-        AlphaAnimation alpha = new AlphaAnimation(startAlpha, endAlpha);
-        alpha.setInterpolator(DECELERATE_CUBIC);
-        alpha.setDuration(ANIM_DUR);
-        set.addAnimation(alpha);
-        return set;
-    }
-    
-    static Animation makeFadeAnimation(Context context, float start, float end) {
-        AlphaAnimation anim = new AlphaAnimation(start, end);
-        anim.setInterpolator(DECELERATE_CUBIC);
+    static Animator makeOpenCloseAnimation(Context context, Interpolator interpolator, float startScale, float endScale, float startAlpha, float endAlpha) {
+        Animator anim = ObjectAnimator.ofPropertyValuesHolder(
+                PropertyValuesHolder.ofFloat("alpha", startAlpha, endAlpha),
+                PropertyValuesHolder.ofFloat("scaleX", startScale, endScale),
+                PropertyValuesHolder.ofFloat("scaleY", startScale, endScale));
+        anim.setInterpolator(interpolator);
         anim.setDuration(ANIM_DUR);
         return anim;
     }
     
-    Animator loadAnimation(Fragment fragment, int transit, boolean enter,
+    static Animator makeFadeAnimation(Context context, Interpolator interpolator,  float start, float end) {
+        Log.v(TAG, "makeFadeAnimation " + start + "-->" + end);
+        Animator anim = ObjectAnimator.ofFloat(null, "alpha", start, end);
+        anim.setInterpolator(interpolator);
+        anim.setDuration(ANIM_DUR);
+        return anim;
+    }
+    
+    Animator loadAnimator(Fragment fragment, int transit, boolean enter,
             int transitionStyle) {
-//        Animation animObj = fragment.onCreateAnimation(transit, enter,
-//                fragment.mNextAnim);
-//        if (animObj != null) {
-//            return animObj;
-//        }
+        Animator animObj = fragment.onCreateAnimator(transit, enter, fragment.mNextAnim);
+        if (animObj != null) 
+            return animObj;
         
         if (fragment.mNextAnim != 0) {
         	Animator anim = AnimatorInflater.loadAnimator(mActivity, fragment.mNextAnim);
         	if(anim!=null)
         		return anim;
-//            Animation anim = AnimationUtils.loadAnimation(mActivity, fragment.mNextAnim);
-//            if (anim != null) {
-//                return anim;
-//            }
         }
         
         if (transit == 0) {
@@ -766,38 +750,20 @@ final class FragmentManagerImpl extends FragmentManager {
             return null;
         }
         
-//        switch (styleIndex) {
-//            case ANIM_STYLE_OPEN_ENTER:
-//                return makeOpenCloseAnimation(mActivity, 1.125f, 1.0f, 0, 1);
-//            case ANIM_STYLE_OPEN_EXIT:
-//                return makeOpenCloseAnimation(mActivity, 1.0f, .975f, 1, 0);
-//            case ANIM_STYLE_CLOSE_ENTER:
-//                return makeOpenCloseAnimation(mActivity, .975f, 1.0f, 0, 1);
-//            case ANIM_STYLE_CLOSE_EXIT:
-//                return makeOpenCloseAnimation(mActivity, 1.0f, 1.075f, 1, 0);
-//            case ANIM_STYLE_FADE_ENTER:
-//                return makeFadeAnimation(mActivity, 0, 1);
-//            case ANIM_STYLE_FADE_EXIT:
-//                return makeFadeAnimation(mActivity, 1, 0);
-//        }
-        
-        if (transitionStyle == 0 && mActivity.getWindow() != null) {
-            transitionStyle = mActivity.getWindow().getAttributes().windowAnimations;
+        switch (styleIndex) {
+            case ANIM_STYLE_OPEN_ENTER:
+                return makeOpenCloseAnimation(mActivity, DECELERATE_CUBIC, 0.8f, 1.0f, 0, 1);
+            case ANIM_STYLE_OPEN_EXIT:
+                return makeFadeAnimation(mActivity, DECELERATE_CUBIC, 1, 0);
+            case ANIM_STYLE_CLOSE_ENTER:
+                return makeFadeAnimation(mActivity, DECELERATE_QUAD, 0, 1);
+            case ANIM_STYLE_CLOSE_EXIT:
+                return makeOpenCloseAnimation(mActivity, DECELERATE_QUAD, 1.0f, 0.8f, 1, 0);
+            case ANIM_STYLE_FADE_ENTER:
+                return makeFadeAnimation(mActivity, DECELERATE_CUBIC, 0, 1);
+            case ANIM_STYLE_FADE_EXIT:
+                return makeFadeAnimation(mActivity, DECELERATE_CUBIC, 1, 0);
         }
-        if (transitionStyle == 0) {
-            return null;
-        }
-        
-//        TypedArray attrs = mActivity.obtainStyledAttributes(transitionStyle,
-//                com.android.internal.R.styleable.FragmentAnimation);
-//        int anim = attrs.getResourceId(styleIndex, 0);
-//        attrs.recycle();
-//        
-//        if (anim == 0) {
-//            return null;
-//        }
-        
-//        return AnimatorInflater.loadAnimator(mActivity, anim);
         return null;
     }
     
@@ -919,7 +885,7 @@ final class FragmentManagerImpl extends FragmentManager {
                                 f.mInnerView = f.mView;
                                 f.mView = NoSaveStateFrameLayout.wrap(f.mView);
                                 if (container != null) {
-                                	Animator anim = loadAnimation(f, transit, true, transitionStyle);
+                                	Animator anim = loadAnimator(f, transit, true, transitionStyle);
                                     if (anim != null) {
                                     	anim.setTarget(f.mView);
                                     	anim.start();
@@ -985,46 +951,32 @@ final class FragmentManagerImpl extends FragmentManager {
                         f.performDestroyView();
                         if (f.mView != null && f.mContainer != null) {
                         	Animator anim = null;
-//                            Animation anim = null;
                             if (mCurState > Fragment.INITIALIZING && !mDestroyed) {
-                                anim = loadAnimation(f, transit, false,
+                                anim = loadAnimator(f, transit, false,
                                         transitionStyle);
                             }
                             if (anim != null) {
-                                final Fragment fragment = f;
-                                f.mAnimatingAway = f.mView;
+                                final Fragment finalFragment = f;
+                                final ViewGroup finalContainer = f.mContainer;
+                                final View finalView = f.mView;
+                                f.mAnimatingAway = anim;
                                 f.mStateAfterAnimating = newState;
                                 anim.addListener(new AnimatorListenerAdapter() {
                                 	@Override
                                 	public void onAnimationEnd(Animator animation) {
-                                		if (fragment.mAnimatingAway != null) {
-                                            fragment.mAnimatingAway = null;
-                                            moveToState(fragment, fragment.mStateAfterAnimating,
+                                	    finalContainer.removeView(finalView);
+                                		if (finalFragment.mAnimatingAway != null) {
+                                		    finalFragment.mAnimatingAway = null;
+                                            moveToState(finalFragment, finalFragment.mStateAfterAnimating,
                                                     0, 0, false);
                                         }
                                 	}
 								});
                                 anim.setTarget(f.mView);
                                 anim.start();
-//                                anim.setAnimationListener(new AnimationListener() {
-//                                    @Override
-//                                    public void onAnimationEnd(Animation animation) {
-//                                        if (fragment.mAnimatingAway != null) {
-//                                            fragment.mAnimatingAway = null;
-//                                            moveToState(fragment, fragment.mStateAfterAnimating,
-//                                                    0, 0, false);
-//                                        }
-//                                    }
-//                                    @Override
-//                                    public void onAnimationRepeat(Animation animation) {
-//                                    }
-//                                    @Override
-//                                    public void onAnimationStart(Animation animation) {
-//                                    }
-//                                });
-//                                f.mView.startAnimation(anim);
+                            } else {
+                                f.mContainer.removeView(f.mView);
                             }
-                            f.mContainer.removeView(f.mView);
                         }
                         f.mContainer = null;
                         f.mView = null;
@@ -1040,9 +992,9 @@ final class FragmentManagerImpl extends FragmentManager {
                                 // animation right now -- it is not needed,
                                 // and we can't wait any more on destroying
                                 // the fragment.
-                                View v = f.mAnimatingAway;
+                                Animator v = f.mAnimatingAway;
                                 f.mAnimatingAway = null;
-                                v.clearAnimation();
+                                v.cancel();
                             }
                         }
                         if (f.mAnimatingAway != null) {
@@ -1210,13 +1162,23 @@ final class FragmentManagerImpl extends FragmentManager {
         if (!fragment.mHidden) {
             fragment.mHidden = true;
             if (fragment.mView != null) {
-            	Animator anim = loadAnimation(fragment, transition, true,
+            	Animator anim = loadAnimator(fragment, transition, false,
                         transitionStyle);
                 if (anim != null) {
                 	anim.setTarget(fragment.mView);
                 	anim.start();
+                	final Fragment finalFragment = fragment; 
+                	anim.addListener(new AnimatorListenerAdapter() {
+                	    @Override
+                	    public void onAnimationEnd(Animator animation) {
+                	        if (finalFragment.mView != null) {
+                                finalFragment.mView.setVisibility(View.GONE);
+                            }
+                	    }
+                    });
+                } else {
+                    fragment.mView.setVisibility(View.GONE);
                 }
-                fragment.mView.setVisibility(View.GONE);
             }
             if (fragment.mAdded && fragment.mHasMenu && fragment.mMenuVisible) {
                 mNeedMenuInvalidate = true;
@@ -1230,7 +1192,7 @@ final class FragmentManagerImpl extends FragmentManager {
         if (fragment.mHidden) {
             fragment.mHidden = false;
             if (fragment.mView != null) {
-            	Animator anim = loadAnimation(fragment, transition, true,
+            	Animator anim = loadAnimator(fragment, transition, true,
                         transitionStyle);
                 if (anim != null) {
                 	anim.setTarget(fragment.mView);
@@ -2068,4 +2030,26 @@ final class FragmentManagerImpl extends FragmentManager {
         }
         return animAttr;
     }
+    
+//    public static int transitToStyleIndex(int transit, boolean enter) {
+//        int animAttr = -1;
+//        switch (transit) {
+//            case FragmentTransaction.TRANSIT_FRAGMENT_OPEN:
+//                animAttr = enter
+//                    ? com.google.android.R.styleable.FragmentAnimation_fragmentOpenEnterAnimation
+//                    : com.google.android.R.styleable.FragmentAnimation_fragmentOpenExitAnimation;
+//                break;
+//            case FragmentTransaction.TRANSIT_FRAGMENT_CLOSE:
+//                animAttr = enter
+//                    ? com.google.android.R.styleable.FragmentAnimation_fragmentCloseEnterAnimation
+//                    : com.google.android.R.styleable.FragmentAnimation_fragmentCloseExitAnimation;
+//                break;
+//            case FragmentTransaction.TRANSIT_FRAGMENT_FADE:
+//                animAttr = enter
+//                    ? com.google.android.R.styleable.FragmentAnimation_fragmentFadeEnterAnimation
+//                    : com.google.android.R.styleable.FragmentAnimation_fragmentFadeExitAnimation;
+//                break;
+//        }
+//        return animAttr;
+//    }
 }
