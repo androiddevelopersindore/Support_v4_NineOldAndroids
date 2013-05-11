@@ -43,8 +43,8 @@ import android.view.animation.Interpolator;
 import com.nineoldandroids.animation.Animator;
 import com.nineoldandroids.animation.AnimatorInflater;
 import com.nineoldandroids.animation.AnimatorListenerAdapter;
+import com.nineoldandroids.animation.AnimatorSet;
 import com.nineoldandroids.animation.ObjectAnimator;
-import com.nineoldandroids.animation.PropertyValuesHolder;
 
 /**
  * Static library support version of the framework's {@link android.app.FragmentManager}.
@@ -712,10 +712,10 @@ final class FragmentManagerImpl extends FragmentManager {
     static final int ANIM_DUR = 300;
     
     static Animator makeOpenCloseAnimation(Context context, Interpolator interpolator, float startScale, float endScale, float startAlpha, float endAlpha) {
-        Animator anim = ObjectAnimator.ofPropertyValuesHolder(
-                PropertyValuesHolder.ofFloat("alpha", startAlpha, endAlpha),
-                PropertyValuesHolder.ofFloat("scaleX", startScale, endScale),
-                PropertyValuesHolder.ofFloat("scaleY", startScale, endScale));
+        AnimatorSet anim = new AnimatorSet();
+        anim.play(ObjectAnimator.ofFloat(null, "alpha", startAlpha, endAlpha))
+                .with(ObjectAnimator.ofFloat(null, "scaleX", startScale, endScale))
+                .with(ObjectAnimator.ofFloat(null, "scaleY", startScale, endScale));
         anim.setInterpolator(interpolator);
         anim.setDuration(ANIM_DUR);
         return anim;

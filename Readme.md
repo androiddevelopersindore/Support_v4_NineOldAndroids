@@ -13,9 +13,9 @@ This fork allows using [NineOldAndroids](http://nineoldandroids.com) Object Anim
 
 ####Standard Transitions
 
-Specify standard transitions in the transaction (OPEN/CLOSE don't work prefectly. Something is wrong with my ObjectAnimators (please help))
+Specify standard transitions in the transaction.
 
-	tx.setTransition(FragmentTransaction.TRANSIT_FRAGMENT_FADE);
+	tx.setTransition(FragmentTransaction.TRANSIT_FRAGMENT_OPEN);
 
 ####Custom Transitions
 
