@@ -722,7 +722,6 @@ final class FragmentManagerImpl extends FragmentManager {
     }
     
     static Animator makeFadeAnimation(Context context, Interpolator interpolator,  float start, float end) {
-        Log.v(TAG, "makeFadeAnimation " + start + "-->" + end);
         Animator anim = ObjectAnimator.ofFloat(null, "alpha", start, end);
         anim.setInterpolator(interpolator);
         anim.setDuration(ANIM_DUR);
@@ -764,6 +763,15 @@ final class FragmentManagerImpl extends FragmentManager {
             case ANIM_STYLE_FADE_EXIT:
                 return makeFadeAnimation(mActivity, DECELERATE_CUBIC, 1, 0);
         }
+        
+//        if(transitionStyle==0)
+//            transitionStyle = defaultStyle;
+        
+//        TypedArray a = obtainStyledAttributes(transitionStyle, com.supportanimator.R.styleable.FragmentAnimation);
+//        int res = a.getResourceId(styleIndex, 0);
+//        Log.d(TAG, "Fade Enter res: " + res);
+//        a.recycle();
+        
         return null;
     }
     
@@ -2036,18 +2044,18 @@ final class FragmentManagerImpl extends FragmentManager {
 //        switch (transit) {
 //            case FragmentTransaction.TRANSIT_FRAGMENT_OPEN:
 //                animAttr = enter
-//                    ? com.google.android.R.styleable.FragmentAnimation_fragmentOpenEnterAnimation
-//                    : com.google.android.R.styleable.FragmentAnimation_fragmentOpenExitAnimation;
+//                    ? com.supportanimator.R.styleable.FragmentAnimation_fragmentOpenEnterAnimation
+//                    : com.supportanimator.R.styleable.FragmentAnimation_fragmentOpenExitAnimation;
 //                break;
 //            case FragmentTransaction.TRANSIT_FRAGMENT_CLOSE:
 //                animAttr = enter
-//                    ? com.google.android.R.styleable.FragmentAnimation_fragmentCloseEnterAnimation
-//                    : com.google.android.R.styleable.FragmentAnimation_fragmentCloseExitAnimation;
+//                    ? com.supportanimator.R.styleable.FragmentAnimation_fragmentCloseEnterAnimation
+//                    : com.supportanimator.R.styleable.FragmentAnimation_fragmentCloseExitAnimation;
 //                break;
 //            case FragmentTransaction.TRANSIT_FRAGMENT_FADE:
 //                animAttr = enter
-//                    ? com.google.android.R.styleable.FragmentAnimation_fragmentFadeEnterAnimation
-//                    : com.google.android.R.styleable.FragmentAnimation_fragmentFadeExitAnimation;
+//                    ? com.supportanimator.R.styleable.FragmentAnimation_fragmentFadeEnterAnimation
+//                    : com.supportanimator.R.styleable.FragmentAnimation_fragmentFadeExitAnimation;
 //                break;
 //        }
 //        return animAttr;
