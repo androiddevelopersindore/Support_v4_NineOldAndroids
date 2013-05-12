@@ -1,7 +1,7 @@
 #Android Support Library v4 with NineOldAndroids
 
 * Object Animator API's for [Fragment Transitions](#transition)
-  * [Standard transitions](#Standard Transitions)
+  * [Standard transitions](#standard)
   * [Custom Transitions](#custom)
   * [Fragment implementation](#fragment)
   * [Style resources](#style)
@@ -13,11 +13,11 @@ Your project must have [NineOldAndroids](http://nineoldandroids.com) in the clas
 
 ***
 
-###<a id="transition"></a>Animator Fragment Transitions
+###<a name="transition"></a>Animator Fragment Transitions
 
 This fork allows using [NineOldAndroids](http://nineoldandroids.com) Object Animators for fragment transitions.  View animations will no longer work.
 
-####<a id="standard"></a>Standard Transitions
+####<a name="standard"></a>Standard Transitions
 
 Specify standard transitions in the transaction.
 
@@ -25,14 +25,14 @@ Specify standard transitions in the transaction.
 tx.setTransition(FragmentTransaction.TRANSIT_FRAGMENT_OPEN);
 ```
 
-####<a id="custom"></a>Custom Transitions
+####<a name="custom"></a>Custom Transitions
 
 Specify custom transitions in the transaction
 
 ```java
 tx.setCustomTransitions(R.animator.flip_left_in, R.animator.flip_left_out, R.animator.flip_right_in, R.animator.flip_right_out)
 ```
-####<a id="fragment"></a>Fragment Specified Transitions
+####<a name="fragment"></a>Fragment Specified Transitions
 
 Specify transition in Fragment implementation
 
@@ -48,7 +48,7 @@ public Animator onCreateAnimator(int transit, boolean enter, int nextAnim) {
       return AnimatorInflater.loadAnimator(getActivity(), R.animator.fade_out);
 }
 ```
-####<a id="style"></a>Transition style resources
+####<a name="style"></a>Transition style resources
 
 Specify transitions in a style resource.
 
@@ -76,7 +76,7 @@ tx.setTransitionStyle(R.style.MyTransitionStyle);
 ```
 ***
 
-###<a id="pager"></a>PageTransformer
+###<a name="pager"></a>PageTransformer
 
 ViewPager is modified to support custom PageTransformers implemented with NineOldAndroids.  For example:
 
