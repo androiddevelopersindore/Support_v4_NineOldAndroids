@@ -1,7 +1,7 @@
 #Android Support Library v4 with NineOldAndroids
 
 * Object Animator API's for [Fragment Transitions](#transition)
-  * [Standard transitions](#standard)
+  * [Standard transitions](#Standard Transitions)
   * [Custom Transitions](#custom)
   * [Fragment implementation](#fragment)
   * [Style resources](#style)
@@ -54,18 +54,20 @@ Specify transitions in a style resource.
 
 Create a style resource `res/values/styles.xml'
 
-    <?xml version="1.0" encoding="utf-8"?>
-    <resources>
-    	<!-- Specify Transitions with a Style resource -->
-    	<style name="MyTransitionStyle">
-		    <item name="fragmentFadeEnterAnimation">@animator/fade_enter</item>
-		    <item name="fragmentFadeExitAnimation">@animator/fade_exit</item>
-		    <item name="fragmentOpenEnterAnimation">@animator/flip_left_in</item>
-		    <item name="fragmentOpenExitAnimation">@animator/flip_left_out</item>
-		    <item name="fragmentCloseEnterAnimation">@animator/flip_left_in</item>
-		    <item name="fragmentCloseExitAnimation">@animator/flip_left_out</item>
-    	</style>
-    </resources>
+```xml
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+ 	<!-- Specify Transitions with a Style resource -->
+   	<style name="MyTransitionStyle">
+	    <item name="fragmentFadeEnterAnimation">@animator/fade_enter</item>
+	    <item name="fragmentFadeExitAnimation">@animator/fade_exit</item>
+	    <item name="fragmentOpenEnterAnimation">@animator/flip_left_in</item>
+	    <item name="fragmentOpenExitAnimation">@animator/flip_left_out</item>
+	    <item name="fragmentCloseEnterAnimation">@animator/flip_left_in</item>
+	    <item name="fragmentCloseExitAnimation">@animator/flip_left_out</item>
+   	</style>
+</resources>
+```
 
 Specify the resource in the transaction
 
