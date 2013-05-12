@@ -11,10 +11,10 @@
     <application
         android:allowBackup="true"
         android:icon="@drawable/ic_launcher"
-        android:label="Fragment Transition Sample">
+        android:label="@string/appName">
         <activity
             android:name="com.supportanimator.sample.MainActivity"
-            android:label="Fragment Transition Sample" >
+            android:label="@string/appName" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

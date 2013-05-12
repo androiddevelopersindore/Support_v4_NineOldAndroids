@@ -23,6 +23,7 @@ import java.util.Arrays;
 
 import android.content.Context;
 import android.content.res.Configuration;
+import android.content.res.TypedArray;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Looper;
@@ -721,10 +722,10 @@ final class FragmentManagerImpl extends FragmentManager {
         return anim;
     }
     
-    static Animator makeFadeAnimation(Context context, Interpolator interpolator,  float start, float end) {
+    static Animator makeFadeAnimation(Context context, int duration, Interpolator interpolator,  float start, float end) {
         Animator anim = ObjectAnimator.ofFloat(null, "alpha", start, end);
         anim.setInterpolator(interpolator);
-        anim.setDuration(ANIM_DUR);
+        anim.setDuration(duration);
         return anim;
     }
     
@@ -744,34 +745,35 @@ final class FragmentManagerImpl extends FragmentManager {
             return null;
         }
         
-        int styleIndex = transitToStyleIndex(transit, enter);
-        if (styleIndex < 0) {
-            return null;
+        //If transition style is overidden then use it, otherwise create standard animations programmatically.
+        if(transitionStyle > 0) {
+            int styleIndex = transitToStyleIndex(transit, enter);
+            TypedArray a = mActivity.obtainStyledAttributes(transitionStyle, com.supportanimator.supportv4.R.styleable.FragmentAnimation);
+            int res = a.getResourceId(styleIndex, 0);
+            Log.d(TAG, "Style animator resource: " + res);
+            a.recycle();
+            return AnimatorInflater.loadAnimator(mActivity, res);
         }
         
-        switch (styleIndex) {
+        int animator = transitToAnimator(transit, enter);
+        if (animator < 0) {
+            return null;
+        }
+        //Can't use XML for standard transitions because interpolators aren't available in earlier API levels
+        switch (animator) {
             case ANIM_STYLE_OPEN_ENTER:
                 return makeOpenCloseAnimation(mActivity, DECELERATE_CUBIC, 0.8f, 1.0f, 0, 1);
             case ANIM_STYLE_OPEN_EXIT:
-                return makeFadeAnimation(mActivity, DECELERATE_CUBIC, 1, 0);
+                return makeFadeAnimation(mActivity, ANIM_DUR, DECELERATE_CUBIC, 1, 0);
             case ANIM_STYLE_CLOSE_ENTER:
-                return makeFadeAnimation(mActivity, DECELERATE_QUAD, 0, 1);
+                return makeFadeAnimation(mActivity, ANIM_DUR, DECELERATE_QUAD, 0, 1);
             case ANIM_STYLE_CLOSE_EXIT:
                 return makeOpenCloseAnimation(mActivity, DECELERATE_QUAD, 1.0f, 0.8f, 1, 0);
             case ANIM_STYLE_FADE_ENTER:
-                return makeFadeAnimation(mActivity, DECELERATE_CUBIC, 0, 1);
+                return makeFadeAnimation(mActivity, 220, DECELERATE_CUBIC, 0, 1);
             case ANIM_STYLE_FADE_EXIT:
-                return makeFadeAnimation(mActivity, DECELERATE_CUBIC, 1, 0);
+                return makeFadeAnimation(mActivity, 220, DECELERATE_CUBIC, 1, 0);
         }
-        
-//        if(transitionStyle==0)
-//            transitionStyle = defaultStyle;
-        
-//        TypedArray a = obtainStyledAttributes(transitionStyle, com.supportanimator.R.styleable.FragmentAnimation);
-//        int res = a.getResourceId(styleIndex, 0);
-//        Log.d(TAG, "Fade Enter res: " + res);
-//        a.recycle();
-        
         return null;
     }
     
@@ -2023,7 +2025,7 @@ final class FragmentManagerImpl extends FragmentManager {
     public static final int ANIM_STYLE_FADE_ENTER = 5;
     public static final int ANIM_STYLE_FADE_EXIT = 6;
     
-    public static int transitToStyleIndex(int transit, boolean enter) {
+    public static int transitToAnimator(int transit, boolean enter) {
         int animAttr = -1;
         switch (transit) {
             case FragmentTransaction.TRANSIT_FRAGMENT_OPEN:
@@ -2039,25 +2041,25 @@ final class FragmentManagerImpl extends FragmentManager {
         return animAttr;
     }
     
-//    public static int transitToStyleIndex(int transit, boolean enter) {
-//        int animAttr = -1;
-//        switch (transit) {
-//            case FragmentTransaction.TRANSIT_FRAGMENT_OPEN:
-//                animAttr = enter
-//                    ? com.supportanimator.R.styleable.FragmentAnimation_fragmentOpenEnterAnimation
-//                    : com.supportanimator.R.styleable.FragmentAnimation_fragmentOpenExitAnimation;
-//                break;
-//            case FragmentTransaction.TRANSIT_FRAGMENT_CLOSE:
-//                animAttr = enter
-//                    ? com.supportanimator.R.styleable.FragmentAnimation_fragmentCloseEnterAnimation
-//                    : com.supportanimator.R.styleable.FragmentAnimation_fragmentCloseExitAnimation;
-//                break;
-//            case FragmentTransaction.TRANSIT_FRAGMENT_FADE:
-//                animAttr = enter
-//                    ? com.supportanimator.R.styleable.FragmentAnimation_fragmentFadeEnterAnimation
-//                    : com.supportanimator.R.styleable.FragmentAnimation_fragmentFadeExitAnimation;
-//                break;
-//        }
-//        return animAttr;
-//    }
+    public static int transitToStyleIndex(int transit, boolean enter) {
+        int animAttr = -1;
+        switch (transit) {
+            case FragmentTransaction.TRANSIT_FRAGMENT_OPEN:
+                animAttr = enter
+                    ? com.supportanimator.supportv4.R.styleable.FragmentAnimation_fragmentOpenEnterAnimation
+                    : com.supportanimator.supportv4.R.styleable.FragmentAnimation_fragmentOpenExitAnimation;
+                break;
+            case FragmentTransaction.TRANSIT_FRAGMENT_CLOSE:
+                animAttr = enter
+                    ? com.supportanimator.supportv4.R.styleable.FragmentAnimation_fragmentCloseEnterAnimation
+                    : com.supportanimator.supportv4.R.styleable.FragmentAnimation_fragmentCloseExitAnimation;
+                break;
+            case FragmentTransaction.TRANSIT_FRAGMENT_FADE:
+                animAttr = enter
+                    ? com.supportanimator.supportv4.R.styleable.FragmentAnimation_fragmentFadeEnterAnimation
+                    : com.supportanimator.supportv4.R.styleable.FragmentAnimation_fragmentFadeExitAnimation;
+                break;
+        }
+        return animAttr;
+    }
 }

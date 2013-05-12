@@ -25,6 +25,7 @@
 		    <groupId>com.supportanimator</groupId>
 		    <artifactId>support-v4-animator</artifactId>
 		    <version>r12</version>
+			<packaging>apklib</packaging>
 		</dependency>
 	</dependencies>
 

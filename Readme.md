@@ -1,47 +1,75 @@
 #Android Support Library v4 with NineOldAndroids
 
-* Object Animator API's with Fragment Transitions
-* ViewPager PagerTransformers
+* Object Animator API's for [Fragment Transitions](#transition)
+  * [Standard transitions](#standard)
+  * [Custom Transitions](#custom)
+  * [Fragment implementation](#fragment)
+  * [Style resources](#style)
+* [ViewPager PagerTransformers](#pager)
 
 ###General Usage
 
-Your project must have [NineOldAndroids](http://nineoldandroids.com) as well as this project in the classpath.  This can be done with Maven or simple putting the jars into the /libs folder.
+Your project must have [NineOldAndroids](http://nineoldandroids.com) in the classpath.  This can be done with Maven or putting the jar into the /libs folder. This project is packages as an APK Library to support style resources.  Import it into eclipse and reference it as an Android Library. Right-click on project and `Properties->Android`
 
-###Animator Fragment Transitions
+***
+
+###<a id="transition"></a>Animator Fragment Transitions
 
 This fork allows using [NineOldAndroids](http://nineoldandroids.com) Object Animators for fragment transitions.  View animations will no longer work.
 
-####Standard Transitions
+####<a id="standard"></a>Standard Transitions
 
 Specify standard transitions in the transaction.
 
 	tx.setTransition(FragmentTransaction.TRANSIT_FRAGMENT_OPEN);
 
-####Custom Transitions
+####<a id="custom"></a>Custom Transitions
 
 Specify custom transitions in the transaction
 
-    tx.setCustomTransitions(android.R.animator.fade_in, android.R.animator.fade_out)
+    tx.setCustomTransitions(R.animator.flip_left_in, R.animator.flip_left_out, R.animator.flip_right_in, R.animator.flip_right_out)
 
-####Fragment Specified Transitions
+####<a id="fragment"></a>Fragment Specified Transitions
 
 Specify transition in Fragment implementation
 
     @Override
     public Animator onCreateAnimator(int transit, boolean enter, int nextAnim) {
+       //If transaction specifies a custom animation, use it
        if(nextAnim>0)
           return AnimatorInflater.loadAnimator(getActivity(), nextAnim);
        if(enter)
-          return AnimatorInflater.loadAnimator(getActivity(), android.R.animator.fade_in);
+          return AnimatorInflater.loadAnimator(getActivity(), R.animator.fade_in);
        else
-          return AnimatorInflater.loadAnimator(getActivity(), android.R.animator.fade_out);
+          return AnimatorInflater.loadAnimator(getActivity(), R.animator.fade_out);
     }
 
-####Transition style resources
+####<a id="style"></a>Transition style resources
 
-Will be supported in next soon.  Though this will require packaging the project as an APK Library instead of a jar file.
+Specify transitions in a style resource.
 
-###PageTransformer
+Create a style resource `res/values/styles.xml'
+
+    <?xml version="1.0" encoding="utf-8"?>
+    <resources>
+    	<!-- Specify Transitions with a Style resource -->
+    	<style name="MyTransitionStyle">
+		    <item name="fragmentFadeEnterAnimation">@animator/fade_enter</item>
+		    <item name="fragmentFadeExitAnimation">@animator/fade_exit</item>
+		    <item name="fragmentOpenEnterAnimation">@animator/flip_left_in</item>
+		    <item name="fragmentOpenExitAnimation">@animator/flip_left_out</item>
+		    <item name="fragmentCloseEnterAnimation">@animator/flip_left_in</item>
+		    <item name="fragmentCloseExitAnimation">@animator/flip_left_out</item>
+    	</style>
+    </resources>
+
+Specify the resource in the transaction
+
+    tx.setTransitionStyle(R.style.MyTransitionStyle);
+
+***
+
+###<a id="pager"></a>PageTransformer
 
 ViewPager is modified to support custom PageTransformers implemented with NineOldAndroids.  For example:
 
@@ -57,7 +85,6 @@ public class ZoomOutPageTransformer implements PageTransformer {
         if (position < -1) { // [-Infinity,-1)
             // This page is way off-screen to the left.
             ViewHelper.setAlpha(view, 0);
-
         } else if (position <= 1) { // [-1,1]
             // Modify the default slide transition to shrink the page as well
             float scaleFactor = Math.max(MIN_SCALE, 1 - Math.abs(position));

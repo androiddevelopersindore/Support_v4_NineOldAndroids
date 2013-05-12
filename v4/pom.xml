@@ -5,7 +5,7 @@
 	
 	<groupId>com.supportanimator</groupId>
 	<artifactId>support-v4-animator</artifactId>
-	<packaging>jar</packaging>
+	<packaging>apklib</packaging>
 	<version>r12</version>
 	
 	<name>Android Support Library (v4) with NineOldAndroids</name>
@@ -70,7 +70,6 @@
 			<plugin>
 				<groupId>org.codehaus.mojo</groupId>
 				<artifactId>build-helper-maven-plugin</artifactId>
-				<version>1.7</version>
 				<executions>
 					<execution>
 						<phase>generate-sources</phase>
@@ -88,6 +87,33 @@
 								<source>jellybean-mr1</source>
 							</sources>
 						</configuration>
+					</execution>
+				</executions>
+			</plugin>
+			<plugin>
+				<groupId>com.jayway.maven.plugins.android.generation2</groupId>
+				<artifactId>android-maven-plugin</artifactId>
+				<version>3.5.3</version>
+				<extensions>true</extensions>
+				<configuration>
+					<sdk><platform>17</platform></sdk>
+					<attachSources>true</attachSources>
+				</configuration>
+			</plugin>
+			<plugin>
+				<groupId>com.github.github</groupId>
+				<artifactId>site-maven-plugin</artifactId>
+				<configuration>
+					<message>Creating site for ${project.version}.</message>
+					<force>true</force>
+					<path>maven</path>
+					<merge>true</merge>
+				</configuration>
+ 				<executions>
+					<execution>
+						<id>ghsite</id>
+						<phase>site</phase>
+						<goals><goal>site</goal></goals>
 					</execution>
 				</executions>
 			</plugin>

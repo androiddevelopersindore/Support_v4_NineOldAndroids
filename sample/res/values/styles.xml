@@ -1,9 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     
-<!--     <style name="FragStyle"> -->
-<!--         <item name="fragmentFadeEnterAnimation">@anim/flip_left_in</item> -->
-<!--         <item name="fragmentFadeExitAnimation">@anim/flip_left_out</item> -->
-<!--     </style> -->
+    <!-- Specify Transitions with a Style resource -->
+    <style name="FragStyle">
+        <item name="fragmentFadeEnterAnimation">@anim/fade_enter</item>
+        <item name="fragmentFadeExitAnimation">@anim/fade_exit</item>
+        <item name="fragmentOpenEnterAnimation">@anim/flip_left_in</item>
+        <item name="fragmentOpenExitAnimation">@anim/flip_left_out</item>
+        <item name="fragmentCloseEnterAnimation">@anim/flip_left_in</item>
+        <item name="fragmentCloseExitAnimation">@anim/flip_left_out</item>
+    </style>
     
 </resources>

@@ -36,8 +36,8 @@ public class MainActivity extends FragmentActivity {
             tx.setCustomAnimations(R.anim.flip_left_in, R.anim.flip_left_out, R.anim.flip_right_in, R.anim.flip_right_out);
         else if(mode.equals("Standard"))
             tx.setTransition(Integer.parseInt(mPrefs.getString(PREF_STANDARD_TRANSITION, "")));
-        //       else if(mode.equals("Style"))
-        //                tx.setTransitionStyle(R.style.FragStyle);
+        else if(mode.equals("Style"))
+            tx.setTransitionStyle(R.style.FragStyle);
         return tx;
     }
 
@@ -120,7 +120,6 @@ public class MainActivity extends FragmentActivity {
         public Animator onCreateAnimator(int transit, boolean enter, int nextAnim) {
             String mode = PreferenceManager.getDefaultSharedPreferences(getActivity()).getString(PREF_TRANSITION_MODE, "");
             if(mode.equals("Fragment"))
-                //            if(MODE.equals(TransitionMode.FRAGMENT))
                 return AnimatorInflater.loadAnimator(getActivity(), enter ? R.anim.fade_enter : R.anim.fade_exit);
             else
                 return null;
