@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="standard_transition_entries" >
+	<item>TRANSIT_FRAGMENT_OPEN</item>
+    	<item>TRANSIT_FRAGMENT_CLOSE</item>
+    	<item>TRANSIT_FRAGMENT_FADE</item>
+    </string-array>
+    <string-array name="standard_transition_entryValues">
+    	<item>4097</item>
+    	<item>8194</item>
+    	<item>4099</item>
+    </string-array>
+    <string-array name="transition_entries">
+    	<item>Standard</item>
+    	<item>Custom</item>
+    	<item>Fragment</item>
+<!--     	<item>Style</item> -->
+    </string-array>
+    <string-array name="transition_entryValues">
+    	<item>Standard</item>
+    	<item>Custom</item>
+    	<item>Fragment</item>
+<!--     	<item>Style</item> -->
+    </string-array>    
+</resources>
