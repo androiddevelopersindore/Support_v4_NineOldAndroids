@@ -56,6 +56,7 @@
 	
 	<build>
 		<sourceDirectory>${project.basedir}/java</sourceDirectory>
+		<outputDirectory>bin</outputDirectory>
 		<plugins>
 	            <plugin>
 	                <groupId>org.apache.maven.plugins</groupId>
@@ -69,6 +70,7 @@
 			<plugin>
 				<groupId>org.codehaus.mojo</groupId>
 				<artifactId>build-helper-maven-plugin</artifactId>
+				<version>1.7</version>
 				<executions>
 					<execution>
 						<phase>generate-sources</phase>
@@ -86,23 +88,6 @@
 								<source>jellybean-mr1</source>
 							</sources>
 						</configuration>
-					</execution>
-				</executions>
-			</plugin>
-			<plugin>
-				<groupId>com.github.github</groupId>
-				<artifactId>site-maven-plugin</artifactId>
-				<configuration>
-					<message>Creating site for ${project.version}.</message>
-					<force>true</force>
-					<path>maven</path>
-					<merge>true</merge>
-				</configuration>
- 				<executions>
-					<execution>
-						<id>ghsite</id>
-						<phase>site</phase>
-						<goals><goal>site</goal></goals>
 					</execution>
 				</executions>
 			</plugin>
