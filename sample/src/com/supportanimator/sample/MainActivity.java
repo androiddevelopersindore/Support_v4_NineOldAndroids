@@ -36,8 +36,10 @@ public class MainActivity extends FragmentActivity {
             tx.setCustomAnimations(R.anim.flip_left_in, R.anim.flip_left_out, R.anim.flip_right_in, R.anim.flip_right_out);
         else if(mode.equals("Standard"))
             tx.setTransition(Integer.parseInt(mPrefs.getString(PREF_STANDARD_TRANSITION, "")));
-        else if(mode.equals("Style"))
+        else if(mode.equals("Style")) {
             tx.setTransitionStyle(R.style.FragStyle);
+            tx.setTransition(Integer.parseInt(mPrefs.getString(PREF_STANDARD_TRANSITION, "")));
+        }
         return tx;
     }
 
