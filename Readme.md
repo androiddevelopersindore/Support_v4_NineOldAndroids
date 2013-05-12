@@ -21,29 +21,33 @@ This fork allows using [NineOldAndroids](http://nineoldandroids.com) Object Anim
 
 Specify standard transitions in the transaction.
 
-	tx.setTransition(FragmentTransaction.TRANSIT_FRAGMENT_OPEN);
+```java
+tx.setTransition(FragmentTransaction.TRANSIT_FRAGMENT_OPEN);
+```
 
 ####<a id="custom"></a>Custom Transitions
 
 Specify custom transitions in the transaction
 
-    tx.setCustomTransitions(R.animator.flip_left_in, R.animator.flip_left_out, R.animator.flip_right_in, R.animator.flip_right_out)
-
+```java
+tx.setCustomTransitions(R.animator.flip_left_in, R.animator.flip_left_out, R.animator.flip_right_in, R.animator.flip_right_out)
+```
 ####<a id="fragment"></a>Fragment Specified Transitions
 
 Specify transition in Fragment implementation
 
-    @Override
-    public Animator onCreateAnimator(int transit, boolean enter, int nextAnim) {
-       //If transaction specifies a custom animation, use it
-       if(nextAnim>0)
-          return AnimatorInflater.loadAnimator(getActivity(), nextAnim);
-       if(enter)
-          return AnimatorInflater.loadAnimator(getActivity(), R.animator.fade_in);
-       else
-          return AnimatorInflater.loadAnimator(getActivity(), R.animator.fade_out);
-    }
-
+```java
+@Override
+public Animator onCreateAnimator(int transit, boolean enter, int nextAnim) {
+   //If transaction specifies a custom animation, use it
+   if(nextAnim>0)
+      return AnimatorInflater.loadAnimator(getActivity(), nextAnim);
+   if(enter)
+      return AnimatorInflater.loadAnimator(getActivity(), R.animator.fade_in);
+   else
+      return AnimatorInflater.loadAnimator(getActivity(), R.animator.fade_out);
+}
+```
 ####<a id="style"></a>Transition style resources
 
 Specify transitions in a style resource.
@@ -65,8 +69,9 @@ Create a style resource `res/values/styles.xml'
 
 Specify the resource in the transaction
 
-    tx.setTransitionStyle(R.style.MyTransitionStyle);
-
+```java
+tx.setTransitionStyle(R.style.MyTransitionStyle);
+```
 ***
 
 ###<a id="pager"></a>PageTransformer
@@ -115,4 +120,6 @@ public class ZoomOutPageTransformer implements PageTransformer {
 
 Set the PageTransformer as usual:
 
-    viewPager.setPageTransformer(new ZoomOutPageTransformer());
+```java
+viewPager.setPageTransformer(new ZoomOutPageTransformer());
+```
