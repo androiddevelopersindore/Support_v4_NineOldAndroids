@@ -27,7 +27,7 @@ public class PagerActivity extends FragmentActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         ViewPager pager = new ViewPager(this);
-        pager.setPageTransformer(false, new FlipPageTransformer());
+        pager.setPageTransformer(false, new AccordianPageTransformer());
         pager.setId(99);
         setContentView(pager);
         MyAdapter adapter = new MyAdapter(getSupportFragmentManager());
@@ -50,6 +50,25 @@ public class PagerActivity extends FragmentActivity {
             else
                 ViewHelper.setAlpha(view, 0);
             ViewHelper.setRotationY(view, position*180);
+        }
+    }
+    
+    /**
+     * Performs an accordian animation.
+     */
+    public static class AccordianPageTransformer implements PageTransformer {
+
+        @Override
+        public void transformPage(View view, float position) {
+            ViewHelper.setTranslationX(view, -1*view.getWidth()*position);
+            
+            if(position < 0) {
+                ViewHelper.setPivotX(view, 0f);
+            } else if(position > 0) {
+                ViewHelper.setPivotX(view, view.getWidth());
+            }
+            
+            ViewHelper.setScaleX(view, 1-Math.abs(position));
         }
     }
 
