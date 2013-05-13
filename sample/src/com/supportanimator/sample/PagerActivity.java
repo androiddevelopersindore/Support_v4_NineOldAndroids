@@ -3,6 +3,8 @@ package com.supportanimator.sample;
 
 import java.util.ArrayList;
 
+import com.nineoldandroids.view.ViewHelper;
+
 import android.graphics.Color;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
@@ -10,11 +12,15 @@ import android.support.v4.app.FragmentActivity;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
 import android.support.v4.view.ViewPager;
+import android.support.v4.view.ViewPager.PageTransformer;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
+/**
+ * Example {@link ViewPager} with custom {@link PageTransformer} pre-HoneyComb.
+ */
 public class PagerActivity extends FragmentActivity {
 
     @Override
@@ -29,6 +35,22 @@ public class PagerActivity extends FragmentActivity {
         adapter.addPage("Fragment #2", Color.BLUE);
         adapter.addPage("Fragment #3", Color.GREEN);
         pager.setAdapter(adapter);
+    }
+    
+    /**
+     * Performs Y-Axis card-flip animation.
+     */
+    public static class FlipPageTransformer implements PageTransformer {
+
+        @Override
+        public void transformPage(View view, float position) {
+            ViewHelper.setTranslationX(view, -1*view.getWidth()*position);
+            if(position >= -.5 && position <= .5)
+                ViewHelper.setAlpha(view, 1);
+            else
+                ViewHelper.setAlpha(view, 0);
+            ViewHelper.setRotationY(view, position*180);
+        }
     }
 
     public static class MyAdapter extends FragmentPagerAdapter {
