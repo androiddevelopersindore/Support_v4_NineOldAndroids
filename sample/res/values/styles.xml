@@ -5,10 +5,10 @@
     <style name="FragStyle">
         <item name="fragmentFadeEnterAnimation">@anim/fade_enter</item>
         <item name="fragmentFadeExitAnimation">@anim/fade_exit</item>
-        <item name="fragmentOpenEnterAnimation">@anim/flip_left_in</item>
-        <item name="fragmentOpenExitAnimation">@anim/flip_left_out</item>
-        <item name="fragmentCloseEnterAnimation">@anim/flip_left_in</item>
-        <item name="fragmentCloseExitAnimation">@anim/flip_left_out</item>
+        <item name="fragmentOpenEnterAnimation">@animator/fragment_open_enter</item>
+        <item name="fragmentOpenExitAnimation">@animator/fragment_open_exit</item>
+        <item name="fragmentCloseEnterAnimation">@animator/fragment_close_enter</item>
+        <item name="fragmentCloseExitAnimation">@animator/fragment_close_exit</item>
     </style>
     
 </resources>
