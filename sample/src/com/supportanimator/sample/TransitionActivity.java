@@ -22,7 +22,7 @@ import android.widget.TextView;
 import com.nineoldandroids.animation.Animator;
 import com.nineoldandroids.animation.AnimatorInflater;
 
-public class MainActivity extends FragmentActivity {
+public class TransitionActivity extends FragmentActivity {
 
     private SharedPreferences mPrefs;
     private Fragment mFrag1, mFrag2;

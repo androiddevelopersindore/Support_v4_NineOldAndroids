@@ -13,7 +13,7 @@
         android:icon="@drawable/ic_launcher"
         android:label="@string/appName">
         <activity
-            android:name="com.supportanimator.sample.MainActivity"
+            android:name="com.supportanimator.sample.TransitionActivity"
             android:label="@string/appName" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
