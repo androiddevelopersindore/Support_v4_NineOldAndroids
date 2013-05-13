@@ -1,7 +1,8 @@
 
 package com.supportanimator.sample;
 
-import static com.supportanimator.sample.PreferencesActivity.*;
+import static com.supportanimator.sample.PreferencesActivity.PREF_STANDARD_TRANSITION;
+import static com.supportanimator.sample.PreferencesActivity.PREF_TRANSITION_MODE;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.graphics.Color;
@@ -14,8 +15,8 @@ import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
-import android.view.View.OnClickListener;
 import android.view.ViewGroup;
+import android.view.View.OnClickListener;
 import android.widget.Button;
 import android.widget.TextView;
 
@@ -27,7 +28,6 @@ public class TransitionActivity extends FragmentActivity {
     private SharedPreferences mPrefs;
     private Fragment mFrag1, mFrag2;
     private Fragment mCurrent;
-    private boolean mVisible = true;
 
     private FragmentTransaction makeTransaction() {
         FragmentTransaction tx = getSupportFragmentManager().beginTransaction().addToBackStack(null);
@@ -50,19 +50,19 @@ public class TransitionActivity extends FragmentActivity {
         PreferenceManager.setDefaultValues(this, R.xml.preferences, false);
         mPrefs = PreferenceManager.getDefaultSharedPreferences(this);
 
-        setContentView(R.layout.main);
+        setContentView(R.layout.transition);
 
         Button toggleButton = (Button)findViewById(R.id.toggle_button);
         toggleButton.setOnClickListener(new OnClickListener() {
             @Override
             public void onClick(View v) {
                 FragmentTransaction tx = makeTransaction();
-                if(mVisible)
-                    tx.hide(mCurrent);
-                else
+                if(mCurrent.isHidden()) {
                     tx.show(mCurrent);
+                } else {
+                    tx.hide(mCurrent);
+                }
                 tx.commit();
-                mVisible = !mVisible;
             }
         });
 
@@ -76,8 +76,8 @@ public class TransitionActivity extends FragmentActivity {
         });
 
         if(savedInstanceState==null) {
-            mCurrent = mFrag1 = TextFragment.getInstance("Fragment #1", Color.RED);
-            mFrag2 = TextFragment.getInstance("Fragment #2", Color.BLUE);
+            mCurrent = mFrag1 = AnimatedFragment.getInstance("Fragment #1", Color.RED);
+            mFrag2 = AnimatedFragment.getInstance("Fragment #2", Color.BLUE);
             getSupportFragmentManager().beginTransaction().add(R.id.fragment, mCurrent).commit();
         }
     }
@@ -98,17 +98,17 @@ public class TransitionActivity extends FragmentActivity {
         return false;
     }
 
-    public static class TextFragment extends Fragment {
-
-        public static TextFragment getInstance(String text, int color) {
+    public static class AnimatedFragment extends Fragment {
+        
+        public static AnimatedFragment getInstance(String text, int color) {
             Bundle args = new Bundle();
             args.putString("text", text);
             args.putInt("color", color);
-            TextFragment frag = new TextFragment();
+            AnimatedFragment frag = new AnimatedFragment();
             frag.setArguments(args);
             return frag;
         }
-
+        
         @Override
         public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
             View view = inflater.inflate(R.layout.text_fragment, container, false);

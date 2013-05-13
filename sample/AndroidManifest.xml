@@ -13,7 +13,7 @@
         android:icon="@drawable/ic_launcher"
         android:label="@string/appName">
         <activity
-            android:name="com.supportanimator.sample.TransitionActivity"
+            android:name="com.supportanimator.sample.MainActivity"
             android:label="@string/appName" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -21,6 +21,8 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name="TransitionActivity" android:label="Fragment Transitions"/>
+        <activity android:name="PagerActivity" android:label="Page Transformer"/>
         <activity android:name="PreferencesActivity" android:label="Preferences"/>
     </application>
 

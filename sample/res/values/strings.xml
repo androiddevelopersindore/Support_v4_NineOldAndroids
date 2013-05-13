@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <resources>
-    <string name="appName">Fragment Transition Sample</string>
-    
+    <string name="appName">Support Animator Sample</string>
     <string-array name="transition_entries">
         <item>Standard</item>
         <item>Custom</item>
@@ -14,15 +13,14 @@
         <item>Fragment</item>
         <item>Style</item>
     </string-array>
-    
-    <string-array name="standard_transition_entries" >
-	<item>TRANSIT_FRAGMENT_OPEN</item>
-    	<item>TRANSIT_FRAGMENT_CLOSE</item>
-    	<item>TRANSIT_FRAGMENT_FADE</item>
+    <string-array name="standard_transition_entries">
+        <item>TRANSIT_FRAGMENT_OPEN</item>
+        <item>TRANSIT_FRAGMENT_CLOSE</item>
+        <item>TRANSIT_FRAGMENT_FADE</item>
     </string-array>
     <string-array name="standard_transition_entryValues">
-    	<item>4097</item>
-    	<item>8194</item>
-    	<item>4099</item>
+        <item>4097</item>
+        <item>8194</item>
+        <item>4099</item>
     </string-array>
 </resources>
