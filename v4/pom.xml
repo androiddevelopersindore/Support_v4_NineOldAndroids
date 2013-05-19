@@ -3,42 +3,21 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
 	<modelVersion>4.0.0</modelVersion>
+	
+	<parent>
+		<groupId>com.supportanimator</groupId>
+		<artifactId>support-parent</groupId>
+		<version>1.0.0</version>
+	</parent>
 
 	<groupId>com.supportanimator</groupId>
 	<artifactId>support-v4-animator</artifactId>
 	<packaging>apklib</packaging>
 	<version>r13</version>
 
-	<name>Android Support Library (v4) with NineOldAndroids</name>
-	<description>The Android Support Library with NineOldAndroids Fragment Transitions and Page Transformers</description>
-	<url>http://www.github.com/kedzie/android_frameworks_support</url>
-	<inceptionYear>2013</inceptionYear>
-
-	<licenses>
-		<license>
-			<name>Apache License Version 2.0</name>
-			<url>http://www.apache.org/licenses/LICENSE-2.0.txt</url>
-		</license>
-	</licenses>
-
-	<scm>
-		<url>https://github.com/kedzie/android_frameworks_support</url>
-		<connection>scm:git:git://github.com/kedzie/android_frameworks_support.git</connection>
-		<developerConnection>scm:git:git://github.com/kedzie/android_frameworks_support.git</developerConnection>
-	</scm>
-
-	<issueManagement>
-		<system>GitHub Issues</system>
-		<url>https://github.com/kedzie/android_frameworks_support/issues</url>
-	</issueManagement>
-
 	<properties>
-		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<!-- Skip test compilation. -->
 		<maven.test.skip>true</maven.test.skip>
-		<github.global.server>github</github.global.server>
-		<github.downloads.repositoryOwner>kedzie</github.downloads.repositoryOwner>
-		<github.downloads.repositoryName>android_frameworks_support</github.downloads.repositoryName>
 	</properties>
 
 	<dependencies>
@@ -73,15 +52,6 @@
 		<outputDirectory>bin/classes</outputDirectory>
 		<plugins>
 			<plugin>
-				<groupId>org.apache.maven.plugins</groupId>
-				<artifactId>maven-compiler-plugin</artifactId>
-				<version>2.3.2</version>
-				<configuration>
-					<source>1.6</source>
-					<target>1.6</target>
-				</configuration>
-			</plugin>
-			<plugin>
 				<groupId>org.codehaus.mojo</groupId>
 				<artifactId>build-helper-maven-plugin</artifactId>
 				<executions>
@@ -109,7 +79,6 @@
 			<plugin>
 				<groupId>com.jayway.maven.plugins.android.generation2</groupId>
 				<artifactId>android-maven-plugin</artifactId>
-				<version>3.5.4</version>
 				<extensions>true</extensions>
 				<configuration>
 					<sdk>
@@ -123,6 +92,7 @@
 			<plugin>
 				<groupId>com.github.github</groupId>
 				<artifactId>site-maven-plugin</artifactId>
+				<version>0.8-SNAPSHOT</version>
 				<configuration>
 					<message>Creating site for ${project.version}.</message>
 					<force>true</force>
@@ -140,36 +110,6 @@
 				</executions>
 			</plugin>
 		</plugins>
-		<pluginManagement>
-		    <plugins>
-		        <!--This plugin's configuration is used to store Eclipse m2e settings 
-					only. It has no influence on the Maven build itself. -->
-				<plugin>
-					<groupId>org.eclipse.m2e</groupId>
-					<artifactId>lifecycle-mapping</artifactId>
-					<version>1.0.0</version>
-					<configuration>
-						<lifecycleMappingMetadata>
-							<pluginExecutions>
-								<pluginExecution>
-									<pluginExecutionFilter>
-										<groupId>com.jayway.maven.plugins.android.generation2</groupId>
-										<artifactId>android-maven-plugin</artifactId>
-										<versionRange>[3.5.3,)</versionRange>
-										<goals>
-											<goal>manifest-update</goal>
-										</goals>
-									</pluginExecutionFilter>
-									<action>
-										<ignore></ignore>
-									</action>
-								</pluginExecution>
-							</pluginExecutions>
-						</lifecycleMappingMetadata>
-					</configuration>
-				</plugin>
-			</plugins>
-		</pluginManagement>
 	</build>
 
 </project>

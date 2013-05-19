@@ -14,12 +14,10 @@
  * limitations under the License.
  */
 
-package com.example.android.navigationdrawerexample;
+package com.supportanimator.drawer;
 
 import java.util.Locale;
 
-import android.app.SearchManager;
-import android.content.Intent;
 import android.content.res.Configuration;
 import android.os.Bundle;
 import android.support.v4.app.ActionBarDrawerToggle;
@@ -35,12 +33,10 @@ import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ImageView;
 import android.widget.ListView;
-import android.widget.Toast;
 
 import com.actionbarsherlock.app.SherlockFragmentActivity;
-import com.actionbarsherlock.view.Menu;
-import com.actionbarsherlock.view.MenuInflater;
 import com.actionbarsherlock.view.MenuItem;
+import com.supportanimator.sample.R;
 
 /**
  * This example illustrates a common usage of the DrawerLayout widget
@@ -83,7 +79,7 @@ public class DrawerNavigationActivity extends SherlockFragmentActivity {
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-		setContentView(R.layout.activity_main);
+		setContentView(R.layout.drawer_layout);
 		
 		ImageView homeUpIndicator = (ImageView)findViewById(com.actionbarsherlock.R.id.abs__up);
 		Log.i(TAG, "Home Up Indicator: " + homeUpIndicator);
@@ -137,6 +133,7 @@ public class DrawerNavigationActivity extends SherlockFragmentActivity {
 		if (mDrawerToggle.onOptionsItemSelected(item)) {
 			return true;
 		}
+		return false;
 	}
 
 	/* The click listner for ListView in the navigation drawer */

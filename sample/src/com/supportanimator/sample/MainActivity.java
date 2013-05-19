@@ -7,6 +7,7 @@ import android.view.View.OnClickListener;
 import android.widget.Button;
 
 import com.actionbarsherlock.app.SherlockActivity;
+import com.supportanimator.drawer.DrawerNavigationActivity;
 
 public class MainActivity extends SherlockActivity {
 
@@ -26,6 +27,13 @@ public class MainActivity extends SherlockActivity {
             @Override
             public void onClick(View v) {
                 startActivity(new Intent(MainActivity.this, PagerActivity.class));
+            }
+        });
+        Button drawerButton = (Button)findViewById(R.id.drawer_button);
+        drawerButton.setOnClickListener(new OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(MainActivity.this, DrawerNavigationActivity.class));
             }
         });
     }
