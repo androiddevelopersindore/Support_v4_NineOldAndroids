@@ -14,6 +14,11 @@
 	<url>http://www.github.com/kedzie/android_frameworks_support</url>
 	<inceptionYear>2013</inceptionYear>
 
+	<modules>
+		<module>support-v4-animator</module>
+		<module>sample</module>
+	</modules>
+
 	<licenses>
 		<license>
 			<name>Apache License Version 2.0</name>
@@ -36,9 +41,11 @@
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<maven.test.skip>true</maven.test.skip>
 		<github.global.server>github</github.global.server>
-		<github.downloads.repositoryName>android_frameworks_support</github.downloads.repositoryName>
+	</properties>
 
-	<dependencyManagment>
+	<dependencyManagement>
+		<dependencies>
+
 		<dependency>
 			<groupId>com.google.android</groupId>
 			<artifactId>android</artifactId>
@@ -55,7 +62,8 @@
 			<version>4.3.1</version>
 			<type>apklib</type>
 		</dependency>
-	</dependencyManagment>
+	</dependencies>
+	</dependencyManagement>
 
 	<build>
 		<sourceDirectory>${project.basedir}/java</sourceDirectory>
@@ -91,10 +99,8 @@
 			<plugin>
 				<groupId>org.codehaus.mojo</groupId>
 				<artifactId>build-helper-maven-plugin</artifactId>
-				<version>1.7.0</version>
+				<version>1.7</version>
 			</plugin>
-		        <!--This plugin's configuration is used to store Eclipse m2e settings 
-					only. It has no influence on the Maven build itself. -->
 				<plugin>
 					<groupId>org.eclipse.m2e</groupId>
 					<artifactId>lifecycle-mapping</artifactId>

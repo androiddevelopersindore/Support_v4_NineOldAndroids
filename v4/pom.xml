@@ -6,11 +6,10 @@
 	
 	<parent>
 		<groupId>com.supportanimator</groupId>
-		<artifactId>support-parent</groupId>
+		<artifactId>parent</artifactId>
 		<version>1.0.0</version>
 	</parent>
 
-	<groupId>com.supportanimator</groupId>
 	<artifactId>support-v4-animator</artifactId>
 	<packaging>apklib</packaging>
 	<version>r13</version>
@@ -24,18 +23,15 @@
 		<dependency>
 			<groupId>com.google.android</groupId>
 			<artifactId>android</artifactId>
-			<version>4.2.2</version>
 			<scope>provided</scope>
 		</dependency>
 		<dependency>
 			<groupId>com.nineoldandroids</groupId>
 			<artifactId>library</artifactId>
-			<version>2.4.0</version>
 		</dependency>
 		<dependency>
 			<groupId>com.actionbarsherlock</groupId>
 			<artifactId>actionbarsherlock</artifactId>
-			<version>4.3.1</version>
 			<type>apklib</type>
 			<exclusions>
 				<exclusion>
