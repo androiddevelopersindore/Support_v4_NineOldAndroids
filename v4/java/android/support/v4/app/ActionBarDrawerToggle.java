@@ -63,22 +63,21 @@ public class ActionBarDrawerToggle implements DrawerLayout.DrawerListener {
     }
 
     private static class ActionBarDrawerToggleImplBase implements ActionBarDrawerToggleImpl {
+    	
         @Override
         public Drawable getThemeUpIndicator(Activity activity) {
-            return null;
+            return ActionBarSherlockDrawerToggleImpl.getThemeUpIndicator(activity);
         }
 
         @Override
         public Object setActionBarUpIndicator(Object info, Activity activity,
                 Drawable themeImage, int contentDescRes) {
-            // No action bar to set.
-            return info;
+        	return ActionBarSherlockDrawerToggleImpl.setActionBarUpIndicator(info, activity, themeImage, contentDescRes);
         }
 
         @Override
         public Object setActionBarDescription(Object info, Activity activity, int contentDescRes) {
-            // No action bar to set
-            return info;
+            return ActionBarSherlockDrawerToggleImpl.setActionBarDescription(info, activity, contentDescRes);
         }
     }
 
@@ -241,6 +240,26 @@ public class ActionBarDrawerToggle implements DrawerLayout.DrawerListener {
      * @return true if the event was handled and further processing should not occur
      */
     public boolean onOptionsItemSelected(MenuItem item) {
+        if (item != null && item.getItemId() == ID_HOME && mDrawerIndicatorEnabled) {
+            if (mDrawerLayout.isDrawerVisible(GravityCompat.START)) {
+                mDrawerLayout.closeDrawer(GravityCompat.START);
+            } else {
+                mDrawerLayout.openDrawer(GravityCompat.START);
+            }
+        }
+        return false;
+    }
+    
+    /**
+     * This method should be called by your <code>SherlockActivity</code>'s
+     * {@link Activity#onOptionsItemSelected(android.view.MenuItem) onOptionsItemSelected} method.
+     * If it returns true, your <code>onOptionsItemSelected</code> method should return true and
+     * skip further processing.
+     *
+     * @param item the MenuItem instance representing the selected menu item
+     * @return true if the event was handled and further processing should not occur
+     */
+    public boolean onOptionsItemSelected(com.actionbarsherlock.view.MenuItem item) {
         if (item != null && item.getItemId() == ID_HOME && mDrawerIndicatorEnabled) {
             if (mDrawerLayout.isDrawerVisible(GravityCompat.START)) {
                 mDrawerLayout.closeDrawer(GravityCompat.START);

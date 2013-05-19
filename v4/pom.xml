@@ -1,25 +1,26 @@
 <?xml version="1.0" encoding="UTF-8"?>
-	
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
 	<modelVersion>4.0.0</modelVersion>
-	
+
 	<groupId>com.supportanimator</groupId>
 	<artifactId>support-v4-animator</artifactId>
 	<packaging>apklib</packaging>
 	<version>r13</version>
-	
+
 	<name>Android Support Library (v4) with NineOldAndroids</name>
 	<description>The Android Support Library with NineOldAndroids Fragment Transitions and Page Transformers</description>
 	<url>http://www.github.com/kedzie/android_frameworks_support</url>
 	<inceptionYear>2013</inceptionYear>
-	
+
 	<licenses>
-	        <license>
-	            <name>Apache License Version 2.0</name>
-	            <url>http://www.apache.org/licenses/LICENSE-2.0.txt</url>
-	        </license>
+		<license>
+			<name>Apache License Version 2.0</name>
+			<url>http://www.apache.org/licenses/LICENSE-2.0.txt</url>
+		</license>
 	</licenses>
-	
+
 	<scm>
 		<url>https://github.com/kedzie/android_frameworks_support</url>
 		<connection>scm:git:git://github.com/kedzie/android_frameworks_support.git</connection>
@@ -30,7 +31,7 @@
 		<system>GitHub Issues</system>
 		<url>https://github.com/kedzie/android_frameworks_support/issues</url>
 	</issueManagement>
-	
+
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<!-- Skip test compilation. -->
@@ -39,7 +40,7 @@
 		<github.downloads.repositoryOwner>kedzie</github.downloads.repositoryOwner>
 		<github.downloads.repositoryName>android_frameworks_support</github.downloads.repositoryName>
 	</properties>
-	
+
 	<dependencies>
 		<dependency>
 			<groupId>com.google.android</groupId>
@@ -52,29 +53,43 @@
 			<artifactId>library</artifactId>
 			<version>2.4.0</version>
 		</dependency>
+		<dependency>
+			<groupId>com.actionbarsherlock</groupId>
+			<artifactId>actionbarsherlock</artifactId>
+			<version>4.3.1</version>
+			<type>apklib</type>
+			<exclusions>
+				<exclusion>
+					<groupId>com.google.android</groupId>
+					<artifactId>support-v4</artifactId>
+				</exclusion>
+			</exclusions>
+		</dependency>
 	</dependencies>
-	
+
 	<build>
 		<sourceDirectory>${project.basedir}/java</sourceDirectory>
 		<directory>bin</directory>
 		<outputDirectory>bin/classes</outputDirectory>
 		<plugins>
-	            <plugin>
-	                <groupId>org.apache.maven.plugins</groupId>
-	                <artifactId>maven-compiler-plugin</artifactId>
-	                <version>2.3.2</version>
-	                <configuration>
-	                    <source>1.6</source>
-	                    <target>1.6</target>
-	                </configuration>
-	            </plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<version>2.3.2</version>
+				<configuration>
+					<source>1.6</source>
+					<target>1.6</target>
+				</configuration>
+			</plugin>
 			<plugin>
 				<groupId>org.codehaus.mojo</groupId>
 				<artifactId>build-helper-maven-plugin</artifactId>
 				<executions>
 					<execution>
 						<phase>generate-sources</phase>
-						<goals><goal>add-source</goal></goals>
+						<goals>
+							<goal>add-source</goal>
+						</goals>
 						<configuration>
 							<sources>
 								<source>froyo</source>
@@ -97,7 +112,11 @@
 				<version>3.5.4</version>
 				<extensions>true</extensions>
 				<configuration>
-					<sdk><platform>17</platform></sdk>
+					<sdk>
+						<platform>17</platform>
+					</sdk>
+					<manifestVersionName/>
+					<manifestVersionCodeUpdateFromVersion>true</manifestVersionCodeUpdateFromVersion>
 					<attachSources>true</attachSources>
 				</configuration>
 			</plugin>
@@ -110,15 +129,47 @@
 					<path>maven</path>
 					<merge>true</merge>
 				</configuration>
- 				<executions>
+				<executions>
 					<execution>
 						<id>ghsite</id>
 						<phase>site</phase>
-						<goals><goal>site</goal></goals>
+						<goals>
+							<goal>site</goal>
+						</goals>
 					</execution>
 				</executions>
 			</plugin>
 		</plugins>
+		<pluginManagement>
+		    <plugins>
+		        <!--This plugin's configuration is used to store Eclipse m2e settings 
+					only. It has no influence on the Maven build itself. -->
+				<plugin>
+					<groupId>org.eclipse.m2e</groupId>
+					<artifactId>lifecycle-mapping</artifactId>
+					<version>1.0.0</version>
+					<configuration>
+						<lifecycleMappingMetadata>
+							<pluginExecutions>
+								<pluginExecution>
+									<pluginExecutionFilter>
+										<groupId>com.jayway.maven.plugins.android.generation2</groupId>
+										<artifactId>android-maven-plugin</artifactId>
+										<versionRange>[3.5.3,)</versionRange>
+										<goals>
+											<goal>manifest-update</goal>
+										</goals>
+									</pluginExecutionFilter>
+									<action>
+										<ignore></ignore>
+									</action>
+								</pluginExecution>
+							</pluginExecutions>
+						</lifecycleMappingMetadata>
+					</configuration>
+				</plugin>
+			</plugins>
+		</pluginManagement>
 	</build>
-	
+
 </project>

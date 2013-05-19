@@ -3,12 +3,9 @@ package com.supportanimator.sample;
 
 import java.util.ArrayList;
 
-import com.nineoldandroids.view.ViewHelper;
-
 import android.graphics.Color;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
-import android.support.v4.app.FragmentActivity;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
 import android.support.v4.view.ViewPager;
@@ -18,10 +15,13 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
+import com.actionbarsherlock.app.SherlockFragmentActivity;
+import com.nineoldandroids.view.ViewHelper;
+
 /**
  * Example {@link ViewPager} with custom {@link PageTransformer} pre-HoneyComb.
  */
-public class PagerActivity extends FragmentActivity {
+public class PagerActivity extends SherlockFragmentActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

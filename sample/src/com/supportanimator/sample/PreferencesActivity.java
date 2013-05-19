@@ -3,10 +3,11 @@ package com.supportanimator.sample;
 import android.content.SharedPreferences;
 import android.content.SharedPreferences.OnSharedPreferenceChangeListener;
 import android.os.Bundle;
-import android.preference.PreferenceActivity;
 import android.support.v4.app.FragmentTransaction;
 
-public class PreferencesActivity extends PreferenceActivity implements OnSharedPreferenceChangeListener {
+import com.actionbarsherlock.app.SherlockPreferenceActivity;
+
+public class PreferencesActivity extends SherlockPreferenceActivity implements OnSharedPreferenceChangeListener {
 
     public static final String PREF_TRANSITION_MODE="transition";
     public static final String PREF_STANDARD_TRANSITION="standard_transition";
