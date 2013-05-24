@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.supportanimator.drawer;
+package com.supportanimator.sample.drawer;
 
 import java.util.Locale;
 

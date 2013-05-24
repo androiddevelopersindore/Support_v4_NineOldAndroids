@@ -7,7 +7,7 @@ import android.view.View.OnClickListener;
 import android.widget.Button;
 
 import com.actionbarsherlock.app.SherlockActivity;
-import com.supportanimator.drawer.DrawerNavigationActivity;
+import com.supportanimator.sample.drawer.DrawerNavigationActivity;
 
 public class MainActivity extends SherlockActivity {
 

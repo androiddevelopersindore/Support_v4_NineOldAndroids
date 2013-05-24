@@ -15,7 +15,7 @@
 	<inceptionYear>2013</inceptionYear>
 
 	<modules>
-		<module>support-v4-animator</module>
+		<module>v4</module>
 		<module>sample</module>
 	</modules>
 
@@ -85,7 +85,7 @@
 				<plugin>
 				<groupId>com.jayway.maven.plugins.android.generation2</groupId>
 				<artifactId>android-maven-plugin</artifactId>
-				<version>3.5.4</version>
+				<version>3.5.3</version>
 				<extensions>true</extensions>
 				<configuration>
 					<sdk>
