@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset='utf-8'>
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <link href='https://fonts.googleapis.com/css?family=Architects+Daughter' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css" media="screen" />
+    <link rel="stylesheet" type="text/css" href="stylesheets/pygment_trac.css" media="screen" />
+    <link rel="stylesheet" type="text/css" href="stylesheets/print.css" media="print" />
+
+    <!--[if lt IE 9]>
+    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+
+    <title>Support v4 nineoldandroids by kedzie</title>
+  </head>
+
+  <body>
+    <header>
+      <div class="inner">
+        <h1>Support v4 nineoldandroids</h1>
+        <h2></h2>
+        <a href="https://github.com/kedzie/Support_v4_NineOldAndroids" class="button"><small>View project on</small>GitHub</a>
+      </div>
+    </header>
+
+    <div id="content-wrapper">
+      <div class="inner clearfix">
+        <section id="main-content">
+          <h1>Android Support Library v4 with NineOldAndroids</h1>
+
+<p>Allows using android <a href="http://developer.android.com/guide/topics/graphics/prop-animation.html" title="Android Property Animations">Property Animations</a> with Google's Support Library v4 Fragment transitions.  Rely's on Jake Wharton's <a href="http://nineoldandroids.com" title="NineOldAndroids">NineOldAndroids</a>.</p>
+
+<ul>
+<li>Object Animator API's for <a href="#transition">Fragment Transitions</a>
+
+<ul>
+<li><a href="#standard">Standard Transitions</a></li>
+<li><a href="#custom">Custom Transitions</a></li>
+<li><a href="#fragment">Fragment Implementation</a></li>
+<li><a href="#style">Style Resources</a></li>
+</ul>
+</li>
+<li><a href="#pager">ViewPager PagerTransformers</a></li>
+</ul><h3>Project Configuration</h3>
+
+<p>Your project must have <a href="http://nineoldandroids.com" title="NineOldAndroids">NineOldAndroids</a> in the classpath.  This can be done with Maven or putting the jar into the /libs folder. <em>This project is packaged as an APK Library</em> to support style resources.  Import it into eclipse and reference it as an Android Library. Right-click on project and <code>Properties-&gt;Android</code>.  Finally remove Google's support v4 library from your classpath.</p>
+
+<hr><h3>Usage</h3>
+
+<p>Read Google's documentation about <a href="http://developer.android.com/guide/topics/graphics/prop-animation.html" title="Android Property Animations">Property Animations</a>.  They are different from View animations. For example:</p>
+
+<p>Create a file `res/animator/fade_in.xml'</p>
+
+<div class="highlight"><pre><span class="cp">&lt;?xml version="1.0" encoding="utf-8"?&gt;</span>
+<span class="nt">&lt;set</span> <span class="na">xmlns:android=</span><span class="s">"http://schemas.android.com/apk/res/android"</span>
+    <span class="na">android:zAdjustment=</span><span class="s">"top"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;objectAnimator</span>
+        <span class="na">android:valueFrom=</span><span class="s">"0"</span>
+        <span class="na">android:valueTo=</span><span class="s">"1"</span>
+        <span class="na">android:valueType=</span><span class="s">"floatType"</span>
+        <span class="na">android:propertyName=</span><span class="s">"alpha"</span>
+        <span class="na">android:duration=</span><span class="s">"220"</span><span class="nt">/&gt;</span>
+<span class="nt">&lt;/set&gt;</span>
+</pre></div>
+
+<p>Look at the sample application for a complete example and read below for instructions.</p>
+
+<h3>
+<a name="transition"></a>Animator Fragment Transitions</h3>
+
+<p>This fork allows using <a href="http://nineoldandroids.com" title="NineOldAndroids">NineOldAndroids</a> Object Animators for fragment transitions.  View animations will no longer work.</p>
+
+<h4>
+<a name="standard"></a>Standard Transitions</h4>
+
+<p>Specify standard transitions in the transaction.</p>
+
+<div class="highlight"><pre><span class="n">tx</span><span class="o">.</span><span class="na">setTransition</span><span class="o">(</span><span class="n">FragmentTransaction</span><span class="o">.</span><span class="na">TRANSIT_FRAGMENT_OPEN</span><span class="o">);</span>
+</pre></div>
+
+<h4>
+<a name="custom"></a>Custom Transitions</h4>
+
+<p>Specify custom transition animations in the transaction</p>
+
+<div class="highlight"><pre><span class="n">tx</span><span class="o">.</span><span class="na">setCustomTransitions</span><span class="o">(</span><span class="n">R</span><span class="o">.</span><span class="na">animator</span><span class="o">.</span><span class="na">flip_left_in</span><span class="o">,</span> <span class="n">R</span><span class="o">.</span><span class="na">animator</span><span class="o">.</span><span class="na">flip_left_out</span><span class="o">,</span> <span class="n">R</span><span class="o">.</span><span class="na">animator</span><span class="o">.</span><span class="na">flip_right_in</span><span class="o">,</span> <span class="n">R</span><span class="o">.</span><span class="na">animator</span><span class="o">.</span><span class="na">flip_right_out</span><span class="o">)</span>
+</pre></div>
+
+<h4>
+<a name="fragment"></a>Fragment Implementation Specified Transitions</h4>
+
+<p>Specify animations in Fragment implementation</p>
+
+<div class="highlight"><pre><span class="kd">public</span> <span class="kd">class</span> <span class="nc">AnimatedFragment</span> <span class="kd">extends</span> <span class="n">Fragment</span> <span class="o">{</span>
+
+    <span class="c1">//class contents removed</span>
+
+    <span class="nd">@Override</span>
+    <span class="kd">public</span> <span class="n">Animator</span> <span class="nf">onCreateAnimator</span><span class="o">(</span><span class="kt">int</span> <span class="n">transit</span><span class="o">,</span> <span class="kt">boolean</span> <span class="n">enter</span><span class="o">,</span> <span class="kt">int</span> <span class="n">nextAnim</span><span class="o">)</span> <span class="o">{</span>
+       <span class="c1">//If transaction specifies a custom animation, use it</span>
+       <span class="k">if</span><span class="o">(</span><span class="n">nextAnim</span><span class="o">&gt;</span><span class="mi">0</span><span class="o">)</span>
+          <span class="k">return</span> <span class="n">AnimatorInflater</span><span class="o">.</span><span class="na">loadAnimator</span><span class="o">(</span><span class="n">getActivity</span><span class="o">(),</span> <span class="n">nextAnim</span><span class="o">);</span>
+       <span class="k">if</span><span class="o">(</span><span class="n">enter</span><span class="o">)</span>
+          <span class="k">return</span> <span class="n">AnimatorInflater</span><span class="o">.</span><span class="na">loadAnimator</span><span class="o">(</span><span class="n">getActivity</span><span class="o">(),</span> <span class="n">R</span><span class="o">.</span><span class="na">animator</span><span class="o">.</span><span class="na">fade_in</span><span class="o">);</span>
+       <span class="k">else</span>
+          <span class="k">return</span> <span class="n">AnimatorInflater</span><span class="o">.</span><span class="na">loadAnimator</span><span class="o">(</span><span class="n">getActivity</span><span class="o">(),</span> <span class="n">R</span><span class="o">.</span><span class="na">animator</span><span class="o">.</span><span class="na">fade_out</span><span class="o">);</span>
+    <span class="o">}</span>
+
+<span class="o">}</span>
+</pre></div>
+
+<h4>
+<a name="style"></a>Transition style resources</h4>
+
+<p>Specify transition animations in a style resource.</p>
+
+<p>Create a style resource `res/values/styles.xml'</p>
+
+<div class="highlight"><pre><span class="cp">&lt;?xml version="1.0" encoding="utf-8"?&gt;</span>
+<span class="nt">&lt;resources&gt;</span>
+    <span class="c">&lt;!-- Override standard Transitions with a Style --&gt;</span>
+    <span class="nt">&lt;style</span> <span class="na">name=</span><span class="s">"MyTransitionStyle"</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">"fragmentFadeEnterAnimation"</span><span class="nt">&gt;</span>@animator/fade_enter<span class="nt">&lt;/item&gt;</span>
+        <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">"fragmentFadeExitAnimation"</span><span class="nt">&gt;</span>@animator/fade_exit<span class="nt">&lt;/item&gt;</span>
+        <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">"fragmentOpenEnterAnimation"</span><span class="nt">&gt;</span>@animator/flip_left_in<span class="nt">&lt;/item&gt;</span>
+        <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">"fragmentOpenExitAnimation"</span><span class="nt">&gt;</span>@animator/flip_left_out<span class="nt">&lt;/item&gt;</span>
+        <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">"fragmentCloseEnterAnimation"</span><span class="nt">&gt;</span>@animator/flip_right_in<span class="nt">&lt;/item&gt;</span>
+        <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">"fragmentCloseExitAnimation"</span><span class="nt">&gt;</span>@animator/flip_right_out<span class="nt">&lt;/item&gt;</span>
+    <span class="nt">&lt;/style&gt;</span>
+<span class="nt">&lt;/resources&gt;</span>
+</pre></div>
+
+<p>Specify the resource and transition in the transaction</p>
+
+<div class="highlight"><pre><span class="n">tx</span><span class="o">.</span><span class="na">setTransitionStyle</span><span class="o">(</span><span class="n">R</span><span class="o">.</span><span class="na">style</span><span class="o">.</span><span class="na">MyTransitionStyle</span><span class="o">);</span>
+<span class="n">tx</span><span class="o">.</span><span class="na">setTransition</span><span class="o">(</span><span class="n">FragmentTransaction</span><span class="o">.</span><span class="na">TRANSIT_FRAGMENT_OPEN</span><span class="o">);</span>
+</pre></div>
+
+<hr><h3>
+<a name="pager"></a>PageTransformer</h3>
+
+<p>The standard ViewPager ignores <a href="http://developer.android.com/training/animation/screen-slide.html#pagetransformer" title="Using ViewPager for Screen Slides">PageTransformers</a> in pre-HoneyComb API levels.  This library supports implementing PageTransformers with NineOldAndroids.  Just <em>use ViewHelper instead of the View properties</em>.  For example:</p>
+
+<div class="highlight"><pre><span class="cm">/**</span>
+<span class="cm"> * Implemented using NineOldAndroids ViewHelper instead of newer API View properties</span>
+<span class="cm"> */</span>
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">ZoomOutPageTransformer</span> <span class="kd">implements</span> <span class="n">PageTransformer</span> <span class="o">{</span>
+    <span class="kd">private</span> <span class="kd">static</span> <span class="kt">float</span> <span class="n">MIN_SCALE</span> <span class="o">=</span> <span class="mf">0.85f</span><span class="o">;</span>
+    <span class="kd">private</span> <span class="kd">static</span> <span class="kt">float</span> <span class="n">MIN_ALPHA</span> <span class="o">=</span> <span class="mf">0.5f</span><span class="o">;</span>
+
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">transformPage</span><span class="o">(</span><span class="n">View</span> <span class="n">view</span><span class="o">,</span> <span class="kt">float</span> <span class="n">position</span><span class="o">)</span> <span class="o">{</span>
+        <span class="kt">int</span> <span class="n">pageWidth</span> <span class="o">=</span> <span class="n">view</span><span class="o">.</span><span class="na">getWidth</span><span class="o">();</span>
+        <span class="kt">int</span> <span class="n">pageHeight</span> <span class="o">=</span> <span class="n">view</span><span class="o">.</span><span class="na">getHeight</span><span class="o">();</span>
+
+        <span class="k">if</span> <span class="o">(</span><span class="n">position</span> <span class="o">&lt;</span> <span class="o">-</span><span class="mi">1</span><span class="o">)</span> <span class="o">{</span> <span class="c1">// [-Infinity,-1)</span>
+            <span class="c1">// This page is way off-screen to the left.</span>
+            <span class="n">ViewHelper</span><span class="o">.</span><span class="na">setAlpha</span><span class="o">(</span><span class="n">view</span><span class="o">,</span> <span class="mi">0</span><span class="o">);</span>
+        <span class="o">}</span> <span class="k">else</span> <span class="k">if</span> <span class="o">(</span><span class="n">position</span> <span class="o">&lt;=</span> <span class="mi">1</span><span class="o">)</span> <span class="o">{</span> <span class="c1">// [-1,1]</span>
+            <span class="c1">// Modify the default slide transition to shrink the page as well</span>
+            <span class="kt">float</span> <span class="n">scaleFactor</span> <span class="o">=</span> <span class="n">Math</span><span class="o">.</span><span class="na">max</span><span class="o">(</span><span class="n">MIN_SCALE</span><span class="o">,</span> <span class="mi">1</span> <span class="o">-</span> <span class="n">Math</span><span class="o">.</span><span class="na">abs</span><span class="o">(</span><span class="n">position</span><span class="o">));</span>
+            <span class="kt">float</span> <span class="n">vertMargin</span> <span class="o">=</span> <span class="n">pageHeight</span> <span class="o">*</span> <span class="o">(</span><span class="mi">1</span> <span class="o">-</span> <span class="n">scaleFactor</span><span class="o">)</span> <span class="o">/</span> <span class="mi">2</span><span class="o">;</span>
+            <span class="kt">float</span> <span class="n">horzMargin</span> <span class="o">=</span> <span class="n">pageWidth</span> <span class="o">*</span> <span class="o">(</span><span class="mi">1</span> <span class="o">-</span> <span class="n">scaleFactor</span><span class="o">)</span> <span class="o">/</span> <span class="mi">2</span><span class="o">;</span>
+            <span class="k">if</span> <span class="o">(</span><span class="n">position</span> <span class="o">&lt;</span> <span class="mi">0</span><span class="o">)</span> <span class="o">{</span>
+                <span class="n">ViewHelper</span><span class="o">.</span><span class="na">setTranslationX</span><span class="o">(</span><span class="n">view</span><span class="o">,</span> <span class="n">horzMargin</span> <span class="o">-</span> <span class="n">vertMargin</span> <span class="o">/</span> <span class="mi">2</span><span class="o">);</span>
+            <span class="o">}</span> <span class="k">else</span> <span class="o">{</span>
+                <span class="n">ViewHelper</span><span class="o">.</span><span class="na">setTranslationX</span><span class="o">(</span><span class="n">view</span><span class="o">,</span> <span class="o">-</span><span class="n">horzMargin</span> <span class="o">+</span> <span class="n">vertMargin</span> <span class="o">/</span> <span class="mi">2</span><span class="o">);</span>
+            <span class="o">}</span>
+
+            <span class="c1">// Scale the page down (between MIN_SCALE and 1)</span>
+            <span class="n">ViewHelper</span><span class="o">.</span><span class="na">setScaleX</span><span class="o">(</span><span class="n">view</span><span class="o">,</span> <span class="n">scaleFactor</span><span class="o">);</span>
+            <span class="n">ViewHelper</span><span class="o">.</span><span class="na">setScaleY</span><span class="o">(</span><span class="n">view</span><span class="o">,</span> <span class="n">scaleFactor</span><span class="o">);</span>
+
+            <span class="c1">// Fade the page relative to its size.</span>
+            <span class="n">ViewHelper</span><span class="o">.</span><span class="na">setAlpha</span><span class="o">(</span><span class="n">view</span><span class="o">,</span> <span class="n">MIN_ALPHA</span> <span class="o">+</span>
+                    <span class="o">(</span><span class="n">scaleFactor</span> <span class="o">-</span> <span class="n">MIN_SCALE</span><span class="o">)</span> <span class="o">/</span>
+                    <span class="o">(</span><span class="mi">1</span> <span class="o">-</span> <span class="n">MIN_SCALE</span><span class="o">)</span> <span class="o">*</span> <span class="o">(</span><span class="mi">1</span> <span class="o">-</span> <span class="n">MIN_ALPHA</span><span class="o">));</span>
+
+        <span class="o">}</span> <span class="k">else</span> <span class="o">{</span> <span class="c1">// (1,+Infinity]</span>
+            <span class="c1">// This page is way off-screen to the right.</span>
+            <span class="n">ViewHelper</span><span class="o">.</span><span class="na">setAlpha</span><span class="o">(</span><span class="n">view</span><span class="o">,</span> <span class="mi">0</span><span class="o">);</span>
+        <span class="o">}</span>
+    <span class="o">}</span>
+<span class="o">}</span>
+</pre></div>
+
+<p>Set the PageTransformer as usual:</p>
+
+<div class="highlight"><pre><span class="n">viewPager</span><span class="o">.</span><span class="na">setPageTransformer</span><span class="o">(</span><span class="k">new</span> <span class="n">ZoomOutPageTransformer</span><span class="o">());</span>
+</pre></div>
+        </section>
+
+        <aside id="sidebar">
+          <a href="https://github.com/kedzie/Support_v4_NineOldAndroids/zipball/master" class="button">
+            <small>Download</small>
+            .zip file
+          </a>
+          <a href="https://github.com/kedzie/Support_v4_NineOldAndroids/tarball/master" class="button">
+            <small>Download</small>
+            .tar.gz file
+          </a>
+
+          <p class="repo-owner"><a href="https://github.com/kedzie/Support_v4_NineOldAndroids"></a> is maintained by <a href="https://github.com/kedzie">kedzie</a>.</p>
+
+          <p>This page was generated by <a href="pages.github.com">GitHub Pages</a> using the Architect theme by <a href="http://twitter.com/jasonlong">Jason Long</a>.</p>
+        </aside>
+      </div>
+    </div>
+
+  
+  </body>
+</html>
