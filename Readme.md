@@ -1,6 +1,6 @@
 #Android Support Library v4 with NineOldAndroids
 
-	Allows using android [Property Animations][2] with Google's Support Library v4 Fragment transitions.  Rely's on Jake Wharton's [NineOldAndroids][1].
+Allows using android [Property Animations][2] with Google's Support Library v4 Fragment transitions.  Rely's on Jake Wharton's [NineOldAndroids][1].
 
 * Object Animator API's for [Fragment Transitions](#transition)
   * [Standard Transitions](#standard)
@@ -11,13 +11,13 @@
 
 ###Project Configuration
 
-	Your project must have [NineOldAndroids][1] in the classpath.  This can be done with Maven or putting the jar into the /libs folder. *This project is packaged as an APK Library* to support style resources.  Import it into eclipse and reference it as an Android Library. Right-click on project and `Properties->Android`.  Finally remove Google's support v4 library from your classpath.
+Your project must have [NineOldAndroids][1] in the classpath.  This can be done with Maven or putting the jar into the /libs folder. *This project is packaged as an APK Library* to support style resources.  Import it into eclipse and reference it as an Android Library. Right-click on project and `Properties->Android`.  Finally remove Google's support v4 library from your classpath.
 
 ***
 
 ###Usage
 
-   Read Google's documentation about [Property Animations][2].  They are different from View animations. For example:
+Read Google's documentation about [Property Animations][2].  They are different from View animations. For example:
 
 Create a file `res/animator/fade_in.xml'
 
