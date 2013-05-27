@@ -36,9 +36,9 @@ Create a file `res/animator/fade_in.xml'
 </set>
 ```
 
-  Look at the sample application for a complete example and read below for instructions.
+Look at the sample application for a complete example and read below for instructions.
 
-###<a name="transition"></a>Animator Fragment Transitions
+####<a name="transition"></a>Animator Fragment Transitions
 
 This fork allows using [NineOldAndroids][1] Object Animators for fragment transitions.  View animations will no longer work.
 
@@ -109,11 +109,9 @@ tx.setTransitionStyle(R.style.MyTransitionStyle);
 tx.setTransition(FragmentTransaction.TRANSIT_FRAGMENT_OPEN);
 ```
 
-***
-
 ###<a name="pager"></a>PageTransformer
 
-The standard ViewPager ignores [PageTransformers][3] in pre-HoneyComb API levels.  This library supports implementing PageTransformers with NineOldAndroids.  Just *use ViewHelper instead of the View properties*.  For example:
+The standard ViewPager ignores [PageTransformers][3] in pre-HoneyComb API levels.  This library supports implementing PageTransformers with [NineOldAndroids][1].  Just *use ViewHelper instead of the View properties*.  For example:
 
 ```java
 /**
@@ -164,11 +162,12 @@ Set the PageTransformer as usual:
 viewPager.setPageTransformer(new ZoomOutPageTransformer());
 ```
 
-###<a name="drawer"></a>ActionBarDrawerToggle
+###<a name="drawer"></a>ActionBarDrawerToggle for Drawer Navigation
 
-Google Support Library r13 added the Navigation Drawer.  See the android docs for [http://developer.android.com/training/implementing-navigation/nav-drawer.html](Drawer Navigation) for details.  The ActionBarDrawerToggle may be used with ActionBarSherlock to change the *up* icon on the ActionBar on Gingerbread.
+Google Support Library r13 added the Navigation Drawer.  See the android docs for [Drawer Navigation][4] for details.  The ActionBarDrawerToggle may be used with ActionBarSherlock to change the *up* icon on the ActionBar on Gingerbread.
 
 [1]: http://nineoldandroids.com "NineOldAndroids"
 [2]: http://developer.android.com/guide/topics/graphics/prop-animation.html "Android Property Animations"
 [3]: http://developer.android.com/training/animation/screen-slide.html#pagetransformer  "Using ViewPager for Screen Slides"
+[4]: http://developer.android.com/training/implementing-navigation/nav-drawer.html "Navigation Drawer"
 
