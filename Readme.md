@@ -8,6 +8,8 @@ Allows using android [Property Animations][2] with Google's Support Library v4 F
   * [Fragment Implementation](#fragment)
   * [Style Resources](#style)
 * [ViewPager PagerTransformers](#pager)
+* [ActionBarToggle for Drawer Navigation](#drawer)
+
 
 ###Project Configuration
 
@@ -161,6 +163,10 @@ Set the PageTransformer as usual:
 ```java
 viewPager.setPageTransformer(new ZoomOutPageTransformer());
 ```
+
+###<a name="drawer"></a>ActionBarDrawerToggle
+
+Google Support Library r13 added the Navigation Drawer.  See the android docs for [http://developer.android.com/training/implementing-navigation/nav-drawer.html](Drawer Navigation) for details.  The ActionBarDrawerToggle may be used with ActionBarSherlock to change the *up* icon on the ActionBar on Gingerbread.
 
 [1]: http://nineoldandroids.com "NineOldAndroids"
 [2]: http://developer.android.com/guide/topics/graphics/prop-animation.html "Android Property Animations"
