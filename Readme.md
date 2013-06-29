@@ -11,13 +11,11 @@ Allows using android [Property Animations][2] with Google's Support Library v4 F
 * [ActionBarToggle for Drawer Navigation](#drawer)
 
 
-###Project Configuration
+##Project Configuration
 
 Your project must have [NineOldAndroids][1] in the classpath.  This can be done with Maven or putting the jar into the /libs folder. *This project is packaged as an APK Library* to support style resources.  Import it into eclipse and reference it as an Android Library. Right-click on project and `Properties->Android`.  Finally remove Google's support v4 library from your classpath.
 
-***
-
-###Usage
+##Usage
 
 Read Google's documentation about [Property Animations][2].  They are different from View animations. For example:
 
@@ -38,7 +36,7 @@ Create a file `res/animator/fade_in.xml'
 
 Look at the sample application for a complete example and read below for instructions.
 
-####<a name="transition"></a>Animator Fragment Transitions
+###<a name="transition"></a>Animator Fragment Transitions
 
 This fork allows using [NineOldAndroids][1] Object Animators for fragment transitions.  View animations will no longer work.
 
