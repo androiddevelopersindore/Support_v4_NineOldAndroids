@@ -82,7 +82,6 @@ public class DrawerNavigationActivity extends SherlockFragmentActivity {
 		setContentView(R.layout.drawer_layout);
 		
 		// enable ActionBar app icon to behave as action to toggle nav drawer
-		getSupportActionBar().setDisplayShowTitleEnabled(true);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         getSupportActionBar().setDisplayShowHomeEnabled(true);
         getSupportActionBar().setHomeButtonEnabled(true);
