@@ -11,7 +11,6 @@
 
 	<artifactId>sample</artifactId>
 	<name>SupportAnimatorSample</name>
-	<version>1.0.0-SNAPSHOT</version>
 	<packaging>apk</packaging>
 
 	<dependencies>
@@ -44,17 +43,10 @@
 	</dependencies>
 
 	<build>
-		<directory>bin</directory>
-		<outputDirectory>bin/classes</outputDirectory>
-		<sourceDirectory>src</sourceDirectory>
 		<plugins>
 			<plugin>
 				<groupId>com.jayway.maven.plugins.android.generation2</groupId>
 				<artifactId>android-maven-plugin</artifactId>
-				<extensions>true</extensions>
-				<configuration>
-					<sdk><platform>17</platform></sdk>
-				</configuration>
 			</plugin>
 		</plugins>
 	</build>
