@@ -5,14 +5,16 @@
 	<modelVersion>4.0.0</modelVersion>
 	
 	<parent>
-		<groupId>com.supportanimator</groupId>
+		<groupId>com.github.kedzie.supportanimator</groupId>
 		<artifactId>parent</artifactId>
-		<version>1.0.0</version>
+		<version>1.0.0-SNAPSHOT</version>
 	</parent>
 
 	<artifactId>support-v4-animator</artifactId>
 	<packaging>apklib</packaging>
 	<version>r13</version>
+
+	<url>http://www.github.com/kedzie/support_v4_nineoldandroids</url>
 
 	<properties>
 		<github.global.server>github</github.global.server>
@@ -31,7 +33,7 @@
 
 	<dependencies>
 		<dependency>
-			<groupId>com.google.android</groupId>
+			<groupId>android</groupId>
 			<artifactId>android</artifactId>
 			<scope>provided</scope>
 		</dependency>
@@ -59,6 +61,7 @@
 			<plugin>
 				<groupId>org.codehaus.mojo</groupId>
 				<artifactId>build-helper-maven-plugin</artifactId>
+				<version>1.7</version>
 				<executions>
 					<execution>
 						<phase>generate-sources</phase>
@@ -84,6 +87,10 @@
 			<plugin>
 				<groupId>com.jayway.maven.plugins.android.generation2</groupId>
 				<artifactId>android-maven-plugin</artifactId>
+			</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-gpg-plugin</artifactId>
 			</plugin>
 			<plugin>
 				<artifactId>maven-site-plugin</artifactId>
@@ -136,7 +143,16 @@
 				<artifactId>maven-javadoc-plugin</artifactId>
 				<version>2.8.1</version>
 				<configuration>
-				    <sourcepath>${basedir}/java</sourcepath>
+					<source>froyo</source>
+					<source>eclair</source>
+					<source>gingerbread</source>
+					<source>honeycomb</source>
+					<source>honeycomb_mr2</source>
+					<source>ics</source>
+					<source>ics-mr1</source>
+					<source>jellybean</source>
+					<source>jellybean-mr1</source>
+				    <sourcepath>${basedir}/java:${basedir}/froyo:${basedir}/eclair:${basedir}/gingerbread:${basedir}/honeycomb:${basedir}/honeycomb_mr2:${basedir}/ics:${basedir}/ics-mr1:${basedir}/jellybean:${basedir}/jellybean-mr1</sourcepath>
 					<doclet>org.jboss.apiviz.APIviz</doclet>
 					<docletArtifact>
 						<groupId>org.jboss.apiviz</groupId>

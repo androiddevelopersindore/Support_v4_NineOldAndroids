@@ -4,18 +4,25 @@
 	<modelVersion>4.0.0</modelVersion>
 
 	<parent>
-		<groupId>com.supportanimator</groupId>
+		<groupId>com.github.kedzie.supportanimator</groupId>
 		<artifactId>parent</artifactId>
-		<version>1.0.0</version>
+		<version>1.0.0-SNAPSHOT</version>
 	</parent>
 
 	<artifactId>sample</artifactId>
 	<name>SupportAnimatorSample</name>
 	<packaging>apk</packaging>
+	<url>http://www.github.com/kedzie/support_v4_nineoldandroids</url>
+
+	<scm>
+		<url>https://github.com/kedzie/support_v4_nineoldandroids</url>
+		<connection>scm:git:git://github.com/kedzie/support_v4_nineoldandroids.git</connection>
+		<developerConnection>scm:git:git://github.com/kedzie/support_v4_nineoldandroids.git</developerConnection>
+	</scm>
 
 	<dependencies>
 		<dependency>
-			<groupId>com.google.android</groupId>
+			<groupId>android</groupId>
 			<artifactId>android</artifactId>
 			<scope>provided</scope>
 		</dependency>
