@@ -1,18 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 	
 	<parent>
 		<groupId>com.github.kedzie.supportanimator</groupId>
 		<artifactId>parent</artifactId>
-		<version>1.0.0-SNAPSHOT</version>
+		<version>1.0.0</version>
 	</parent>
 
 	<artifactId>support-v4-animator</artifactId>
 	<packaging>apklib</packaging>
-	<version>r13</version>
+	<version>1.0.0</version>
 
 	<url>http://www.github.com/kedzie/support_v4_nineoldandroids</url>
 
@@ -24,7 +23,8 @@
 		<url>https://github.com/kedzie/support_v4_nineoldandroids</url>
 		<connection>scm:git:git://github.com/kedzie/support_v4_nineoldandroids.git</connection>
 		<developerConnection>scm:git:git://github.com/kedzie/support_v4_nineoldandroids.git</developerConnection>
-	</scm>
+	  <tag>v1.0.0</tag>
+  </scm>
 
 	<issueManagement>
 		<system>GitHub Issues</system>
