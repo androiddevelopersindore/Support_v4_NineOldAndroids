@@ -1,8 +1,5 @@
 package android.support.v4.app;
 
-import java.util.ArrayList;
-import java.util.List;
-
 import android.app.Activity;
 import android.content.res.TypedArray;
 import android.graphics.drawable.Drawable;
@@ -11,7 +8,10 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 
-import com.supportanimator.supportv4.R;
+import com.github.kedzie.supportanimator.R;
+
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * 

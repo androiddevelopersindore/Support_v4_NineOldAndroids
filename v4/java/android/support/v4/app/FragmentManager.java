@@ -748,7 +748,7 @@ final class FragmentManagerImpl extends FragmentManager {
         //If transition style is overidden then use it, otherwise create standard animations programmatically.
         if(transitionStyle > 0) {
             int styleIndex = transitToStyleIndex(transit, enter);
-            TypedArray a = mActivity.obtainStyledAttributes(transitionStyle, com.supportanimator.supportv4.R.styleable.FragmentAnimation);
+            TypedArray a = mActivity.obtainStyledAttributes(transitionStyle, com.github.kedzie.supportanimator.R.styleable.FragmentAnimation);
             int res = a.getResourceId(styleIndex, 0);
             Log.d(TAG, "Style animator resource: " + res);
             a.recycle();
@@ -2046,18 +2046,18 @@ final class FragmentManagerImpl extends FragmentManager {
         switch (transit) {
             case FragmentTransaction.TRANSIT_FRAGMENT_OPEN:
                 animAttr = enter
-                    ? com.supportanimator.supportv4.R.styleable.FragmentAnimation_fragmentOpenEnterAnimation
-                    : com.supportanimator.supportv4.R.styleable.FragmentAnimation_fragmentOpenExitAnimation;
+                    ? com.github.kedzie.supportanimator.R.styleable.FragmentAnimation_fragmentOpenEnterAnimation
+                    : com.github.kedzie.supportanimator.R.styleable.FragmentAnimation_fragmentOpenExitAnimation;
                 break;
             case FragmentTransaction.TRANSIT_FRAGMENT_CLOSE:
                 animAttr = enter
-                    ? com.supportanimator.supportv4.R.styleable.FragmentAnimation_fragmentCloseEnterAnimation
-                    : com.supportanimator.supportv4.R.styleable.FragmentAnimation_fragmentCloseExitAnimation;
+                    ? com.github.kedzie.supportanimator.R.styleable.FragmentAnimation_fragmentCloseEnterAnimation
+                    : com.github.kedzie.supportanimator.R.styleable.FragmentAnimation_fragmentCloseExitAnimation;
                 break;
             case FragmentTransaction.TRANSIT_FRAGMENT_FADE:
                 animAttr = enter
-                    ? com.supportanimator.supportv4.R.styleable.FragmentAnimation_fragmentFadeEnterAnimation
-                    : com.supportanimator.supportv4.R.styleable.FragmentAnimation_fragmentFadeExitAnimation;
+                    ? com.github.kedzie.supportanimator.R.styleable.FragmentAnimation_fragmentFadeEnterAnimation
+                    : com.github.kedzie.supportanimator.R.styleable.FragmentAnimation_fragmentFadeExitAnimation;
                 break;
         }
         return animAttr;

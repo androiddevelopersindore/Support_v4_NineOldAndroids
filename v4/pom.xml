@@ -11,7 +11,6 @@
 
 	<artifactId>support-v4-animator</artifactId>
 	<packaging>apklib</packaging>
-	<version>r13</version>
 
 	<url>http://www.github.com/kedzie/Support_v4_NineOldAndroids</url>
 

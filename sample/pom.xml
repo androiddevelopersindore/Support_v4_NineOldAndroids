@@ -10,7 +10,6 @@
 	</parent>
 
 	<artifactId>sample</artifactId>
-	<version>1.0.0</version>
 	<name>SupportAnimatorSample</name>
 	<packaging>apk</packaging>
 	<url>http://www.github.com/kedzie/Support_v4_NineOldAndroids</url>
