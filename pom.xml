@@ -6,11 +6,11 @@
 	<groupId>com.github.kedzie.supportanimator</groupId>
 	<artifactId>parent</artifactId>
 	<packaging>pom</packaging>
-	<version>1.0.0</version>
+	<version>13.0.0-SNAPSHOT</version>
 
 	<name>Android Support Library (v4) with NineOldAndroids</name>
 	<description>The Android Support Library with NineOldAndroids/ActionBarSherlock</description>
-	<url>http://www.github.com/kedzie/support_v4_nineoldandroids</url>
+	<url>http://www.github.com/kedzie/Support_v4_NineOldAndroids</url>
 	<inceptionYear>2013</inceptionYear>
 
 	<modules>
@@ -43,15 +43,15 @@
 	</licenses>
 
 	<scm>
-		<url>https://github.com/kedzie/support_v4_nineoldandroids</url>
-		<connection>scm:git:git://github.com/kedzie/support_v4_nineoldandroids.git</connection>
-		<developerConnection>scm:git:git://github.com/kedzie/support_v4_nineoldandroids.git</developerConnection>
+		<url>https://github.com/kedzie/Support_v4_NineOldAndroids</url>
+		<connection>scm:git:git://github.com/kedzie/Support_v4_NineOldAndroids.git</connection>
+		<developerConnection>scm:git:git://github.com/kedzie/Support_v4_NineOldAndroids.git</developerConnection>
 	  <tag>v1.0.0</tag>
   </scm>
 
 	<issueManagement>
 		<system>GitHub Issues</system>
-		<url>https://github.com/kedzie/support_v4_nineoldandroids/issues</url>
+		<url>https://github.com/kedzie/Support_v4_NineOldAndroids/issues</url>
 	</issueManagement>
 
 	<distributionManagement>

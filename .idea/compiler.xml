@@ -8,6 +8,7 @@
       <directory url="file://$PROJECT_DIR$/sample/gen-external-apklibs/com.actionbarsherlock_actionbarsherlock_4.3.1/gen" includeSubdirectories="true" />
       <directory url="file://$PROJECT_DIR$/v4/bin/generated-sources/r" includeSubdirectories="true" />
       <directory url="file://$PROJECT_DIR$/v4/bin/generated-sources/aidl" includeSubdirectories="true" />
+      <directory url="file://$PROJECT_DIR$/sample/gen-external-apklibs/com.supportanimator_support-v4-animator_r13/gen" includeSubdirectories="true" />
     </excludeFromCompile>
     <resourceExtensions />
     <wildcardResourcePatterns>
@@ -24,19 +25,19 @@
       <profile default="true" name="Default" enabled="false">
         <processorPath useClasspath="true" />
       </profile>
-      <profile default="false" name="Annotation profile for sample" enabled="true">
-        <sourceOutputDir name="bin/generated-sources/annotations" />
-        <sourceTestOutputDir name="bin/generated-test-sources/test-annotations" />
-        <outputRelativeToContentRoot value="true" />
-        <processorPath useClasspath="true" />
-        <module name="sample" />
-      </profile>
       <profile default="false" name="Annotation profile for support-v4-animator" enabled="true">
         <sourceOutputDir name="bin/generated-sources/annotations" />
         <sourceTestOutputDir name="bin/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <processorPath useClasspath="true" />
         <module name="support-v4-animator" />
+      </profile>
+      <profile default="false" name="Annotation profile for sample" enabled="true">
+        <sourceOutputDir name="bin/generated-sources/annotations" />
+        <sourceTestOutputDir name="bin/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <processorPath useClasspath="true" />
+        <module name="sample" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>

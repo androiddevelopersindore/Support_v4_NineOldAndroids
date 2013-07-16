@@ -3,6 +3,13 @@
   <component name="CopyrightManager" default="">
     <module2copyright />
   </component>
+  <component name="CppTools.Loader" reportImplicitCastToBool="false" reportNameReferencedOnce="false" version="3" compilerSelect="AUTO" />
+  <component name="EclipseCodeFormatter">
+    <option name="defaultSettings" value="true" />
+    <option name="id" value="1372696478589" />
+    <option name="name" value="default" />
+    <option name="pathToConfigFileJava" value="$USER_HOME$/Desktop/formatter.xml" />
+  </component>
   <component name="FrameworkDetectionExcludesConfiguration">
     <file type="android" url="file://$PROJECT_DIR$/sample" />
     <file type="android" url="file://$PROJECT_DIR$/v4" />
