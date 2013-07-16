@@ -15,10 +15,9 @@
 	<url>http://www.github.com/kedzie/Support_v4_NineOldAndroids</url>
 
 	<scm>
-		<url>https://github.com/kedzie/Support_v4_NineOldAndroids</url>
+		<url>http://github.com/kedzie/Support_v4_NineOldAndroids</url>
 		<connection>scm:git:git://github.com/kedzie/Support_v4_NineOldAndroids.git</connection>
-		<developerConnection>scm:git:git://github.com/kedzie/Support_v4_NineOldAndroids.git</developerConnection>
-	  <tag>v1.0.0</tag>
+		<developerConnection>scm:git:ssh://github.com/kedzie/Support_v4_NineOldAndroids.git</developerConnection>
   </scm>
 
 	<dependencies>
