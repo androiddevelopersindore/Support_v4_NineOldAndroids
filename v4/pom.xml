@@ -21,7 +21,7 @@
 	<scm>
 		<url>http://github.com/kedzie/Support_v4_NineOldAndroids</url>
 		<connection>scm:git:git://github.com/kedzie/Support_v4_NineOldAndroids.git</connection>
-		<developerConnection>scm:git:ssh://github.com/kedzie/Support_v4_NineOldAndroids.git</developerConnection>
+		<developerConnection>scm:git:https://github.com/kedzie/Support_v4_NineOldAndroids.git</developerConnection>
   </scm>
 
 	<issueManagement>
