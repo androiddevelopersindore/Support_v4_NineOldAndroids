@@ -15,6 +15,16 @@ Allows using android [Property Animations][2] with Google's Support Library v4 F
 
 Your project must have [NineOldAndroids][1] in the classpath.  This can be done with Maven or putting the jar into the /libs folder. *This project is packaged as an APK Library* to support style resources.  Import it into eclipse and reference it as an Android Library. Right-click on project and `Properties->Android`.  Finally remove Google's support v4 library from your classpath.
 
+The latest version is available on the Maven Central Repo
+
+```xml
+<dependency>
+	<artifactId>com.github.kedzie.supportanimator</artifactId>
+	<groupId>support-v4-animator</groupId>
+	<version>13.0.0</version>
+</dependency>
+```
+
 ##Usage
 
 Read Google's documentation about [Property Animations][2].  They are different from View animations. For example:
