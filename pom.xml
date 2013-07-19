@@ -10,7 +10,7 @@
 
 	<name>Android Support Library (v4) with NineOldAndroids</name>
 	<description>The Android Support Library with NineOldAndroids/ActionBarSherlock</description>
-	<url>http://www.github.com/kedzie/Support_v4_NineOldAndroids</url>
+	<url>http://kedzie.github.io/Support_v4_NineOldAndroids</url>
 	<inceptionYear>2013</inceptionYear>
 
 	<modules>
@@ -46,7 +46,6 @@
 		<url>http://github.com/kedzie/Support_v4_NineOldAndroids</url>
 		<connection>scm:git:git://github.com/kedzie/Support_v4_NineOldAndroids.git</connection>
 		<developerConnection>scm:git:https://github.com/kedzie/Support_v4_NineOldAndroids.git</developerConnection>
-    <tag>HEAD</tag>
   </scm>
 
 	<issueManagement>
@@ -117,6 +116,18 @@
 		<pluginManagement>
 			<plugins>
 				<plugin>
+                    <artifactId>maven-javadoc-plugin</artifactId>
+                    <version>2.9.1</version>
+                </plugin>
+                <plugin>
+                    <artifactId>maven-deploy-plugin</artifactId>
+                    <version>2.7</version>
+                </plugin>
+                <plugin>
+                    <artifactId>maven-source-plugin</artifactId>
+                    <version>2.2.1</version>
+                </plugin>
+				<plugin>
 					<groupId>com.jayway.maven.plugins.android.generation2</groupId>
 					<artifactId>android-maven-plugin</artifactId>
 					<version>3.6.0</version>
@@ -135,6 +146,20 @@
 						</execution>
 					</executions>
 				</plugin>
+				<plugin>
+					<groupId>org.apache.maven.plugins</groupId>
+					<artifactId>maven-gpg-plugin</artifactId>
+					<version>1.4</version>
+					<executions>
+					  <execution>
+						<id>sign-artifacts</id>
+						<phase>verify</phase>
+						<goals>
+						  <goal>sign</goal>
+						</goals>
+					  </execution>
+					</executions>
+				</plugin>			
 				<plugin>
 					<groupId>org.eclipse.m2e</groupId>
 					<artifactId>lifecycle-mapping</artifactId>
@@ -163,33 +188,5 @@
 		</pluginManagement>
 	</build>
 
-	<profiles>
-		<profile>
-			<id>release</id>
-			<activation>
-				<property>
-					<name>performRelease</name>
-					<value>true</value>
-				</property>
-			</activation>
-			<build>
-				<plugins>
-					<plugin>
-						<groupId>org.apache.maven.plugins</groupId>
-						<artifactId>maven-gpg-plugin</artifactId>
-						<version>1.4</version>
-						<executions>
-						  <execution>
-							<id>sign-artifacts</id>
-							<phase>verify</phase>
-							<goals>
-							  <goal>sign</goal>
-							</goals>
-						  </execution>
-						</executions>
-					</plugin>
-				</plugins>
-			</build>
-		</profile>
-	</profiles>
+	
 </project>
