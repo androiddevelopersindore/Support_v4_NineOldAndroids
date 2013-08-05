@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<manifest xmlns:android="http://schemas.android.com/apk/res/android" android:versionCode="13000000" android:versionName="13.0.0-SNAPSHOT" package="com.github.kedzie.supportanimator">
+<manifest xmlns:android="http://schemas.android.com/apk/res/android" android:versionCode="13000001" android:versionName="13.0.1-SNAPSHOT" package="com.github.kedzie.supportanimator">
 
     <uses-sdk android:minSdkVersion="7" android:targetSdkVersion="17"/>
 
