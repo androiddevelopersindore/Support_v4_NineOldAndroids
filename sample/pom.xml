@@ -31,9 +31,9 @@
 			<artifactId>library</artifactId>
 		</dependency>
 		<dependency>
-		    <groupId>com.supportanimator</groupId>
+		    <groupId>com.github.kedzie.supportanimator</groupId>
 		    <artifactId>support-v4-animator</artifactId>
-		    <version>r13</version>
+		    <version>${project.version}</version>
 			<type>apklib</type>
 		</dependency>
 		<dependency>

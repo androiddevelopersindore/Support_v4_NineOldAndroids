@@ -130,7 +130,7 @@
 				<plugin>
 					<groupId>com.jayway.maven.plugins.android.generation2</groupId>
 					<artifactId>android-maven-plugin</artifactId>
-					<version>3.6.0</version>
+					<version>3.7.1-SNAPSHOT</version>
 					<extensions>true</extensions>
 					<configuration>
 						<sdk><platform>17</platform></sdk>
@@ -146,35 +146,18 @@
 						</execution>
 					</executions>
 				</plugin>
-				<plugin>
-					<groupId>org.eclipse.m2e</groupId>
-					<artifactId>lifecycle-mapping</artifactId>
-					<version>1.0.0</version>
-					<configuration>
-						<lifecycleMappingMetadata>
-							<pluginExecutions>
-								<pluginExecution>
-									<pluginExecutionFilter>
-										<groupId>com.jayway.maven.plugins.android.generation2</groupId>
-										<artifactId>android-maven-plugin</artifactId>
-										<versionRange>[3.6.0,)</versionRange>
-										<goals>
-											<goal>manifest-update</goal>
-										</goals>
-									</pluginExecutionFilter>
-									<action>
-										<ignore />
-									</action>
-								</pluginExecution>
-							</pluginExecutions>
-						</lifecycleMappingMetadata>
-					</configuration>
-				</plugin>
 			</plugins>
 		</pluginManagement>
 	</build>
 
-		<profiles>
+	<repositories>
+        <repository>
+            <id>third.party.closed.source.repo</id>
+            <url>file://${basedir}/maven_repo_3rd_party</url>
+        </repository>
+    </repositories>
+
+	<profiles>
 		<profile>
 			<id>release</id>
 			<activation>

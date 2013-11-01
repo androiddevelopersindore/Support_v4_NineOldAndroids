@@ -13,6 +13,7 @@
         <option name="APK_PATH" value="/v4/bin/support-v4-animator.apk" />
         <option name="LIBRARY_PROJECT" value="true" />
         <option name="RUN_PROCESS_RESOURCES_MAVEN_TASK" value="false" />
+        <option name="COMPILE_CUSTOM_GENERATED_SOURCES" value="false" />
         <includeAssetsFromLibraries>true</includeAssetsFromLibraries>
         <resOverlayFolders>
           <path>/v4/res-overlay</path>
@@ -35,14 +36,9 @@
       <sourceFolder url="file://$MODULE_DIR$/v4/ics-mr1" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/v4/jellybean" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/v4/jellybean-mr1" isTestSource="false" />
-      <excludeFolder url="file://$MODULE_DIR$/v4/bin/apidocs" />
-      <excludeFolder url="file://$MODULE_DIR$/v4/bin/classes" />
       <excludeFolder url="file://$MODULE_DIR$/v4/bin/generated-sources/combined-assets" />
       <excludeFolder url="file://$MODULE_DIR$/v4/bin/generated-sources/combined-resources" />
       <excludeFolder url="file://$MODULE_DIR$/v4/bin/generated-sources/extracted-dependencies" />
-      <excludeFolder url="file://$MODULE_DIR$/v4/bin/javadoc-bundle-options" />
-      <excludeFolder url="file://$MODULE_DIR$/v4/bin/maven-archiver" />
-      <excludeFolder url="file://$MODULE_DIR$/v4/bin/unpack" />
     </content>
     <orderEntry type="jdk" jdkName="Maven Android 4.2.2 Platform" jdkType="Android SDK" />
     <orderEntry type="sourceFolder" forTests="false" />
