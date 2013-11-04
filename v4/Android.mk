@@ -14,9 +14,6 @@
 
 LOCAL_PATH := $(call my-dir)
 
-# Note: the source code is in java/, not src/, because this code is also part of
-# the framework library, and build/core/pathmap.mk expects a java/ subdirectory.
-
 # A helper sub-library that makes direct use of Eclair APIs.
 include $(CLEAR_VARS)
 LOCAL_MODULE := android-support-v4-eclair
@@ -26,11 +23,22 @@ include $(BUILD_STATIC_JAVA_LIBRARY)
 
 # -----------------------------------------------------------------------
 
+# A helper sub-library that makes direct use of Eclair MR1 APIs.
+include $(CLEAR_VARS)
+LOCAL_MODULE := android-support-v4-eclair-mr1
+LOCAL_SDK_VERSION := 7
+LOCAL_SRC_FILES := $(call all-java-files-under, eclair-mr1)
+LOCAL_STATIC_JAVA_LIBRARIES := android-support-v4-eclair
+include $(BUILD_STATIC_JAVA_LIBRARY)
+
+# -----------------------------------------------------------------------
+
 # A helper sub-library that makes direct use of Froyo APIs.
 include $(CLEAR_VARS)
 LOCAL_MODULE := android-support-v4-froyo
 LOCAL_SDK_VERSION := 8
 LOCAL_SRC_FILES := $(call all-java-files-under, froyo)
+LOCAL_STATIC_JAVA_LIBRARIES := android-support-v4-eclair-mr1
 include $(BUILD_STATIC_JAVA_LIBRARY)
 
 # -----------------------------------------------------------------------
@@ -40,6 +48,7 @@ include $(CLEAR_VARS)
 LOCAL_MODULE := android-support-v4-gingerbread
 LOCAL_SDK_VERSION := 9
 LOCAL_SRC_FILES := $(call all-java-files-under, gingerbread)
+LOCAL_STATIC_JAVA_LIBRARIES := android-support-v4-froyo
 include $(BUILD_STATIC_JAVA_LIBRARY)
 
 # -----------------------------------------------------------------------
@@ -49,6 +58,7 @@ include $(CLEAR_VARS)
 LOCAL_MODULE := android-support-v4-honeycomb
 LOCAL_SDK_VERSION := 11
 LOCAL_SRC_FILES := $(call all-java-files-under, honeycomb)
+LOCAL_STATIC_JAVA_LIBRARIES := android-support-v4-gingerbread
 include $(BUILD_STATIC_JAVA_LIBRARY)
 
 # -----------------------------------------------------------------------
@@ -58,6 +68,7 @@ include $(CLEAR_VARS)
 LOCAL_MODULE := android-support-v4-honeycomb-mr2
 LOCAL_SDK_VERSION := 13
 LOCAL_SRC_FILES := $(call all-java-files-under, honeycomb_mr2)
+LOCAL_STATIC_JAVA_LIBRARIES := android-support-v4-honeycomb
 include $(BUILD_STATIC_JAVA_LIBRARY)
 
 # -----------------------------------------------------------------------
@@ -67,6 +78,7 @@ include $(CLEAR_VARS)
 LOCAL_MODULE := android-support-v4-ics
 LOCAL_SDK_VERSION := 14
 LOCAL_SRC_FILES := $(call all-java-files-under, ics)
+LOCAL_STATIC_JAVA_LIBRARIES := android-support-v4-honeycomb-mr2
 include $(BUILD_STATIC_JAVA_LIBRARY)
 
 # -----------------------------------------------------------------------
@@ -76,6 +88,7 @@ include $(CLEAR_VARS)
 LOCAL_MODULE := android-support-v4-ics-mr1
 LOCAL_SDK_VERSION := 15
 LOCAL_SRC_FILES := $(call all-java-files-under, ics-mr1)
+LOCAL_STATIC_JAVA_LIBRARIES := android-support-v4-ics
 include $(BUILD_STATIC_JAVA_LIBRARY)
 
 # -----------------------------------------------------------------------
@@ -85,6 +98,7 @@ include $(CLEAR_VARS)
 LOCAL_MODULE := android-support-v4-jellybean
 LOCAL_SDK_VERSION := 16
 LOCAL_SRC_FILES := $(call all-java-files-under, jellybean)
+LOCAL_STATIC_JAVA_LIBRARIES := android-support-v4-ics-mr1
 include $(BUILD_STATIC_JAVA_LIBRARY)
 
 # -----------------------------------------------------------------------
@@ -94,6 +108,27 @@ include $(CLEAR_VARS)
 LOCAL_MODULE := android-support-v4-jellybean-mr1
 LOCAL_SDK_VERSION := 17
 LOCAL_SRC_FILES := $(call all-java-files-under, jellybean-mr1)
+LOCAL_STATIC_JAVA_LIBRARIES := android-support-v4-jellybean
+include $(BUILD_STATIC_JAVA_LIBRARY)
+
+# -----------------------------------------------------------------------
+
+# A helper sub-library that makes direct use of JellyBean MR2 APIs.
+include $(CLEAR_VARS)
+LOCAL_MODULE := android-support-v4-jellybean-mr2
+LOCAL_SDK_VERSION := 18
+LOCAL_SRC_FILES := $(call all-java-files-under, jellybean-mr2)
+LOCAL_STATIC_JAVA_LIBRARIES := android-support-v4-jellybean-mr1
+include $(BUILD_STATIC_JAVA_LIBRARY)
+
+# -----------------------------------------------------------------------
+
+# A helper sub-library that makes direct use of KitKat APIs.
+include $(CLEAR_VARS)
+LOCAL_MODULE := android-support-v4-kitkat
+LOCAL_SDK_VERSION := 19
+LOCAL_SRC_FILES := $(call all-java-files-under, kitkat)
+LOCAL_STATIC_JAVA_LIBRARIES := android-support-v4-jellybean-mr2
 include $(BUILD_STATIC_JAVA_LIBRARY)
 
 # -----------------------------------------------------------------------
@@ -103,17 +138,5 @@ include $(CLEAR_VARS)
 LOCAL_MODULE := android-support-v4
 LOCAL_SDK_VERSION := 4
 LOCAL_SRC_FILES := $(call all-java-files-under, java)
-LOCAL_STATIC_JAVA_LIBRARIES += \
-        android-support-v4-eclair \
-        android-support-v4-froyo \
-        android-support-v4-gingerbread \
-        android-support-v4-honeycomb \
-        android-support-v4-honeycomb-mr2 \
-        android-support-v4-ics \
-        android-support-v4-ics-mr1 \
-        android-support-v4-jellybean \
-        android-support-v4-jellybean-mr1
+LOCAL_STATIC_JAVA_LIBRARIES += android-support-v4-kitkat
 include $(BUILD_STATIC_JAVA_LIBRARY)
-
-# Include this library in the build server's output directory
-$(call dist-for-goals, droidcore sdk, $(LOCAL_BUILT_MODULE):android-support-v4.jar)

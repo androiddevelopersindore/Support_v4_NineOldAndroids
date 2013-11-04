@@ -19,7 +19,10 @@ package android.support.v4.view.accessibility;
 import android.graphics.Rect;
 import android.os.Build;
 import android.os.Bundle;
+import android.support.v4.accessibilityservice.AccessibilityServiceInfoCompat;
+import android.support.v4.view.ViewCompat;
 import android.view.View;
+import android.view.accessibility.AccessibilityEvent;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -92,6 +95,10 @@ public class AccessibilityNodeInfoCompat {
         public CharSequence getContentDescription(Object info);
         public void setContentDescription(Object info, CharSequence contentDescription);
         public void recycle(Object info);
+        public String getViewIdResourceName(Object info);
+        public void setViewIdResourceName(Object info, String viewId);
+        public int getLiveRegion(Object info);
+        public void setLiveRegion(Object info, int mode);
     }
 
     static class AccessibilityNodeInfoStubImpl implements AccessibilityNodeInfoImpl {
@@ -393,6 +400,26 @@ public class AccessibilityNodeInfoCompat {
         @Override
         public void setParent(Object info, View root, int virtualDescendantId) {
 
+        }
+
+        @Override
+        public String getViewIdResourceName(Object info) {
+            return null;
+        }
+
+        @Override
+        public void setViewIdResourceName(Object info, String viewId) {
+
+        }
+
+        @Override
+        public int getLiveRegion(Object info) {
+            return ViewCompat.ACCESSIBILITY_LIVE_REGION_NONE;
+        }
+
+        @Override
+        public void setLiveRegion(Object info, int mode) {
+            // No-op
         }
     }
 
@@ -700,8 +727,37 @@ public class AccessibilityNodeInfoCompat {
         }
     }
 
+    static class AccessibilityNodeInfoJellybeanMr2Impl extends AccessibilityNodeInfoJellybeanImpl {
+
+        @Override
+        public String getViewIdResourceName(Object info) {
+            return AccessibilityNodeInfoCompatJellybeanMr2.getViewIdResourceName(info);
+        }
+
+        @Override
+        public void setViewIdResourceName(Object info, String viewId) {
+            AccessibilityNodeInfoCompatJellybeanMr2.setViewIdResourceName(info, viewId);
+        }
+    }
+
+    static class AccessibilityNodeInfoKitKatImpl extends AccessibilityNodeInfoJellybeanMr2Impl {
+        @Override
+        public int getLiveRegion(Object info) {
+            return AccessibilityNodeInfoCompatKitKat.getLiveRegion(info);
+        }
+
+        @Override
+        public void setLiveRegion(Object info, int mode) {
+            AccessibilityNodeInfoCompatKitKat.setLiveRegion(info, mode);
+        }
+    }
+
     static {
-        if (Build.VERSION.SDK_INT >= 16) { // JellyBean
+        if (Build.VERSION.SDK_INT >= 19) { // KitKat
+            IMPL = new AccessibilityNodeInfoKitKatImpl();
+        } else if (Build.VERSION.SDK_INT >= 18) { // JellyBean MR2
+            IMPL = new AccessibilityNodeInfoJellybeanMr2Impl();
+        } else if (Build.VERSION.SDK_INT >= 16) { // JellyBean
             IMPL = new AccessibilityNodeInfoJellybeanImpl();
         } else if (Build.VERSION.SDK_INT >= 14) { // ICS
             IMPL = new AccessibilityNodeInfoIcsImpl();
@@ -714,7 +770,7 @@ public class AccessibilityNodeInfoCompat {
 
     private final Object mInfo;
 
-    // Actions.
+    // Actions introduced in IceCreamSandwich
 
     /**
      * Action that focuses the node.
@@ -746,6 +802,8 @@ public class AccessibilityNodeInfoCompat {
      */
     public static final int ACTION_LONG_CLICK = 0x00000020;
 
+    // Actions introduced in JellyBean
+
     /**
      * Action that gives accessibility focus to the node.
      */
@@ -761,15 +819,21 @@ public class AccessibilityNodeInfoCompat {
      * at a given movement granularity. For example, move to the next character,
      * word, etc.
      * <p>
-     * <strong>Arguments:</strong> {@link #ACTION_ARGUMENT_MOVEMENT_GRANULARITY_INT}<br>
-     * <strong>Example:</strong>
+     * <strong>Arguments:</strong> {@link #ACTION_ARGUMENT_MOVEMENT_GRANULARITY_INT}<,
+     * {@link #ACTION_ARGUMENT_EXTEND_SELECTION_BOOLEAN}<br>
+     * <strong>Example:</strong> Move to the previous character and do not extend selection.
      * <code><pre><p>
      *   Bundle arguments = new Bundle();
      *   arguments.putInt(AccessibilityNodeInfo.ACTION_ARGUMENT_MOVEMENT_GRANULARITY_INT,
      *           AccessibilityNodeInfo.MOVEMENT_GRANULARITY_CHARACTER);
+     *   arguments.putBoolean(AccessibilityNodeInfo.ACTION_ARGUMENT_EXTEND_SELECTION_BOOLEAN,
+     *           false);
      *   info.performAction(AccessibilityNodeInfo.ACTION_NEXT_AT_MOVEMENT_GRANULARITY, arguments);
      * </code></pre></p>
      * </p>
+     *
+     * @see #ACTION_ARGUMENT_MOVEMENT_GRANULARITY_INT
+     * @see #ACTION_ARGUMENT_EXTEND_SELECTION_BOOLEAN
      *
      * @see #setMovementGranularities(int)
      * @see #getMovementGranularities()
@@ -787,16 +851,22 @@ public class AccessibilityNodeInfoCompat {
      * at a given movement granularity. For example, move to the next character,
      * word, etc.
      * <p>
-     * <strong>Arguments:</strong> {@link #ACTION_ARGUMENT_MOVEMENT_GRANULARITY_INT}<br>
-     * <strong>Example:</strong>
+     * <strong>Arguments:</strong> {@link #ACTION_ARGUMENT_MOVEMENT_GRANULARITY_INT}<,
+     * {@link #ACTION_ARGUMENT_EXTEND_SELECTION_BOOLEAN}<br>
+     * <strong>Example:</strong> Move to the next character and do not extend selection.
      * <code><pre><p>
      *   Bundle arguments = new Bundle();
      *   arguments.putInt(AccessibilityNodeInfo.ACTION_ARGUMENT_MOVEMENT_GRANULARITY_INT,
      *           AccessibilityNodeInfo.MOVEMENT_GRANULARITY_CHARACTER);
+     *   arguments.putBoolean(AccessibilityNodeInfo.ACTION_ARGUMENT_EXTEND_SELECTION_BOOLEAN,
+     *           false);
      *   info.performAction(AccessibilityNodeInfo.ACTION_PREVIOUS_AT_MOVEMENT_GRANULARITY,
      *           arguments);
      * </code></pre></p>
      * </p>
+     *
+     * @see #ACTION_ARGUMENT_MOVEMENT_GRANULARITY_INT
+     * @see #ACTION_ARGUMENT_EXTEND_SELECTION_BOOLEAN
      *
      * @see #setMovementGranularities(int)
      * @see #getMovementGranularities()
@@ -849,6 +919,45 @@ public class AccessibilityNodeInfoCompat {
      */
     public static final int ACTION_SCROLL_BACKWARD = 0x00002000;
 
+    // Actions introduced in JellyBeanMr2
+
+    /**
+     * Action to copy the current selection to the clipboard.
+     */
+    public static final int ACTION_COPY = 0x00004000;
+
+    /**
+     * Action to paste the current clipboard content.
+     */
+    public static final int ACTION_PASTE = 0x00008000;
+
+    /**
+     * Action to cut the current selection and place it to the clipboard.
+     */
+    public static final int ACTION_CUT = 0x00010000;
+
+    /**
+     * Action to set the selection. Performing this action with no arguments
+     * clears the selection.
+     * <p>
+     * <strong>Arguments:</strong> {@link #ACTION_ARGUMENT_SELECTION_START_INT},
+     * {@link #ACTION_ARGUMENT_SELECTION_END_INT}<br>
+     * <strong>Example:</strong>
+     * <code><pre><p>
+     *   Bundle arguments = new Bundle();
+     *   arguments.putInt(AccessibilityNodeInfo.ACTION_ARGUMENT_SELECTION_START_INT, 1);
+     *   arguments.putInt(AccessibilityNodeInfo.ACTION_ARGUMENT_SELECTION_END_INT, 2);
+     *   info.performAction(AccessibilityNodeInfo.ACTION_SET_SELECTION, arguments);
+     * </code></pre></p>
+     * </p>
+     *
+     * @see #ACTION_ARGUMENT_SELECTION_START_INT
+     * @see #ACTION_ARGUMENT_SELECTION_END_INT
+     */
+    public static final int ACTION_SET_SELECTION = 0x00020000;
+
+    // Action arguments
+
     /**
      * Argument for which movement granularity to be used when traversing the node text.
      * <p>
@@ -870,6 +979,47 @@ public class AccessibilityNodeInfoCompat {
      */
     public static final String ACTION_ARGUMENT_HTML_ELEMENT_STRING =
         "ACTION_ARGUMENT_HTML_ELEMENT_STRING";
+
+    /**
+     * Argument for whether when moving at granularity to extend the selection
+     * or to move it otherwise.
+     * <p>
+     * <strong>Type:</strong> boolean<br>
+     * <strong>Actions:</strong> {@link #ACTION_NEXT_AT_MOVEMENT_GRANULARITY},
+     * {@link #ACTION_PREVIOUS_AT_MOVEMENT_GRANULARITY}
+     * </p>
+     *
+     * @see #ACTION_NEXT_AT_MOVEMENT_GRANULARITY
+     * @see #ACTION_PREVIOUS_AT_MOVEMENT_GRANULARITY
+     */
+    public static final String ACTION_ARGUMENT_EXTEND_SELECTION_BOOLEAN =
+            "ACTION_ARGUMENT_EXTEND_SELECTION_BOOLEAN";
+
+    /**
+     * Argument for specifying the selection start.
+     * <p>
+     * <strong>Type:</strong> int<br>
+     * <strong>Actions:</strong> {@link #ACTION_SET_SELECTION}
+     * </p>
+     *
+     * @see #ACTION_SET_SELECTION
+     */
+    public static final String ACTION_ARGUMENT_SELECTION_START_INT =
+            "ACTION_ARGUMENT_SELECTION_START_INT";
+
+    /**
+     * Argument for specifying the selection end.
+     * <p>
+     * <strong>Type:</strong> int<br>
+     * <strong>Actions:</strong> {@link #ACTION_SET_SELECTION}
+     * </p>
+     *
+     * @see #ACTION_SET_SELECTION
+     */
+    public static final String ACTION_ARGUMENT_SELECTION_END_INT =
+            "ACTION_ARGUMENT_SELECTION_END_INT";
+
+    // Focus types
 
     /**
      * The input focus.
@@ -1724,6 +1874,75 @@ public class AccessibilityNodeInfoCompat {
         IMPL.recycle(mInfo);
     }
 
+    /**
+     * Sets the fully qualified resource name of the source view's id.
+     *
+     * <p>
+     *   <strong>Note:</strong> Cannot be called from an
+     *   {@link android.accessibilityservice.AccessibilityService}.
+     *   This class is made immutable before being delivered to an AccessibilityService.
+     * </p>
+     *
+     * @param viewId The id resource name.
+     */
+    public void setViewIdResourceName(String viewId) {
+        IMPL.setViewIdResourceName(mInfo, viewId);
+    }
+
+    /**
+     * Gets the fully qualified resource name of the source view's id.
+     *
+     * <p>
+     *   <strong>Note:</strong> The primary usage of this API is for UI test automation
+     *   and in order to report the source view id of an {@link AccessibilityNodeInfoCompat}
+     *   the client has to set the {@link AccessibilityServiceInfoCompat#FLAG_REPORT_VIEW_IDS}
+     *   flag when configuring his {@link android.accessibilityservice.AccessibilityService}.
+     * </p>
+     *
+     * @return The id resource name.
+     */
+    public String getViewIdResourceName() {
+        return IMPL.getViewIdResourceName(mInfo);
+    }
+
+    /**
+     * Gets the node's live region mode.
+     * <p>
+     * A live region is a node that contains information that is important for
+     * the user and when it changes the user should be notified. For example,
+     * in a login screen with a TextView that displays an "incorrect password"
+     * notification, that view should be marked as a live region with mode
+     * {@link ViewCompat#ACCESSIBILITY_LIVE_REGION_POLITE}.
+     * <p>
+     * It is the responsibility of the accessibility service to monitor
+     * {@link AccessibilityEventCompat#TYPE_WINDOW_CONTENT_CHANGED} events
+     * indicating changes to live region nodes and their children.
+     *
+     * @return The live region mode, or
+     *         {@link ViewCompat#ACCESSIBILITY_LIVE_REGION_NONE} if the view is
+     *         not a live region.
+     * @see ViewCompat#getAccessibilityLiveRegion(View)
+     */
+    public int getLiveRegion() {
+        return IMPL.getLiveRegion(mInfo);
+    }
+
+    /**
+     * Sets the node's live region mode.
+     * <p>
+     * <strong>Note:</strong> Cannot be called from an
+     * {@link android.accessibilityservice.AccessibilityService}. This class is
+     * made immutable before being delivered to an AccessibilityService.
+     *
+     * @param mode The live region mode, or
+     *        {@link ViewCompat#ACCESSIBILITY_LIVE_REGION_NONE} if the view is
+     *        not a live region.
+     * @see ViewCompat#setAccessibilityLiveRegion(View, int)
+     */
+    public void setLiveRegion(int mode) {
+        IMPL.setLiveRegion(mInfo, mode);
+    }
+
     @Override
     public int hashCode() {
         return (mInfo == null) ? 0 : mInfo.hashCode();
@@ -1749,5 +1968,92 @@ public class AccessibilityNodeInfoCompat {
             return false;
         }
         return true;
+    }
+
+    @Override
+    public String toString() {
+        StringBuilder builder = new StringBuilder();
+        builder.append(super.toString());
+
+        Rect bounds = new Rect();
+
+        getBoundsInParent(bounds);
+        builder.append("; boundsInParent: " + bounds);
+
+        getBoundsInScreen(bounds);
+        builder.append("; boundsInScreen: " + bounds);
+
+        builder.append("; packageName: ").append(getPackageName());
+        builder.append("; className: ").append(getClassName());
+        builder.append("; text: ").append(getText());
+        builder.append("; contentDescription: ").append(getContentDescription());
+        builder.append("; viewId: ").append(getViewIdResourceName());
+
+        builder.append("; checkable: ").append(isCheckable());
+        builder.append("; checked: ").append(isChecked());
+        builder.append("; focusable: ").append(isFocusable());
+        builder.append("; focused: ").append(isFocused());
+        builder.append("; selected: ").append(isSelected());
+        builder.append("; clickable: ").append(isClickable());
+        builder.append("; longClickable: ").append(isLongClickable());
+        builder.append("; enabled: ").append(isEnabled());
+        builder.append("; password: ").append(isPassword());
+        builder.append("; scrollable: " + isScrollable());
+
+        builder.append("; [");
+        for (int actionBits = getActions(); actionBits != 0;) {
+            final int action = 1 << Integer.numberOfTrailingZeros(actionBits);
+            actionBits &= ~action;
+            builder.append(getActionSymbolicName(action));
+            if (actionBits != 0) {
+                builder.append(", ");
+            }
+        }
+        builder.append("]");
+
+        return builder.toString();
+    }
+
+    private static String getActionSymbolicName(int action) {
+        switch (action) {
+            case ACTION_FOCUS:
+                return "ACTION_FOCUS";
+            case ACTION_CLEAR_FOCUS:
+                return "ACTION_CLEAR_FOCUS";
+            case ACTION_SELECT:
+                return "ACTION_SELECT";
+            case ACTION_CLEAR_SELECTION:
+                return "ACTION_CLEAR_SELECTION";
+            case ACTION_CLICK:
+                return "ACTION_CLICK";
+            case ACTION_LONG_CLICK:
+                return "ACTION_LONG_CLICK";
+            case ACTION_ACCESSIBILITY_FOCUS:
+                return "ACTION_ACCESSIBILITY_FOCUS";
+            case ACTION_CLEAR_ACCESSIBILITY_FOCUS:
+                return "ACTION_CLEAR_ACCESSIBILITY_FOCUS";
+            case ACTION_NEXT_AT_MOVEMENT_GRANULARITY:
+                return "ACTION_NEXT_AT_MOVEMENT_GRANULARITY";
+            case ACTION_PREVIOUS_AT_MOVEMENT_GRANULARITY:
+                return "ACTION_PREVIOUS_AT_MOVEMENT_GRANULARITY";
+            case ACTION_NEXT_HTML_ELEMENT:
+                return "ACTION_NEXT_HTML_ELEMENT";
+            case ACTION_PREVIOUS_HTML_ELEMENT:
+                return "ACTION_PREVIOUS_HTML_ELEMENT";
+            case ACTION_SCROLL_FORWARD:
+                return "ACTION_SCROLL_FORWARD";
+            case ACTION_SCROLL_BACKWARD:
+                return "ACTION_SCROLL_BACKWARD";
+            case ACTION_CUT:
+                return "ACTION_CUT";
+            case ACTION_COPY:
+                return "ACTION_COPY";
+            case ACTION_PASTE:
+                return "ACTION_PASTE";
+            case ACTION_SET_SELECTION:
+                return "ACTION_SET_SELECTION";
+            default:
+                return"ACTION_UNKNOWN";
+        }
     }
 }

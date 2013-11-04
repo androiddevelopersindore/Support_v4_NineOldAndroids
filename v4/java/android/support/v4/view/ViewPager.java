@@ -30,7 +30,9 @@ import android.os.Parcelable;
 import android.os.SystemClock;
 import android.support.v4.os.ParcelableCompat;
 import android.support.v4.os.ParcelableCompatCreatorCallbacks;
+import android.support.v4.view.accessibility.AccessibilityEventCompat;
 import android.support.v4.view.accessibility.AccessibilityNodeInfoCompat;
+import android.support.v4.view.accessibility.AccessibilityRecordCompat;
 import android.support.v4.widget.EdgeEffectCompat;
 import android.util.AttributeSet;
 import android.util.Log;
@@ -94,7 +96,7 @@ public class ViewPager extends ViewGroup {
     private static final int MIN_FLING_VELOCITY = 400; // dips
 
     private static final int[] LAYOUT_ATTRS = new int[] {
-        android.R.attr.layout_gravity
+            android.R.attr.layout_gravity
     };
 
     /**
@@ -551,7 +553,7 @@ public class ViewPager extends ViewGroup {
     }
 
     private void scrollToItem(int item, boolean smoothScroll, int velocity,
-            boolean dispatchSelected) {
+                              boolean dispatchSelected) {
         final ItemInfo curInfo = infoForPosition(item);
         int destX = 0;
         if (curInfo != null) {
@@ -576,6 +578,7 @@ public class ViewPager extends ViewGroup {
             }
             completeScroll(false);
             scrollTo(destX, 0);
+            pageScrolled(destX);
         }
     }
 
@@ -984,8 +987,9 @@ public class ViewPager extends ViewGroup {
             float extraWidthLeft = 0.f;
             int itemIndex = curIndex - 1;
             ItemInfo ii = itemIndex >= 0 ? mItems.get(itemIndex) : null;
-            final float leftWidthNeeded = 2.f - curItem.widthFactor +
-                                          (float) getPaddingLeft() / (float) getClientWidth();
+            final int clientWidth = getClientWidth();
+            final float leftWidthNeeded = clientWidth <= 0 ? 0 :
+                    2.f - curItem.widthFactor + (float) getPaddingLeft() / (float) clientWidth;
             for (int pos = mCurItem - 1; pos >= 0; pos--) {
                 if (extraWidthLeft >= leftWidthNeeded && pos < startPos) {
                     if (ii == null) {
@@ -1018,8 +1022,8 @@ public class ViewPager extends ViewGroup {
             itemIndex = curIndex + 1;
             if (extraWidthRight < 2.f) {
                 ii = itemIndex < mItems.size() ? mItems.get(itemIndex) : null;
-                final float rightWidthNeeded = (float) getPaddingRight() / (float) getClientWidth()
-                                               + 2.f;
+                final float rightWidthNeeded = clientWidth <= 0 ? 0 :
+                        (float) getPaddingRight() / (float) clientWidth + 2.f;
                 for (int pos = mCurItem + 1; pos < N; pos++) {
                     if (extraWidthRight >= rightWidthNeeded && pos > endPos) {
                         if (ii == null) {
@@ -1125,7 +1129,7 @@ public class ViewPager extends ViewGroup {
                 ItemInfo ii = null;
                 float offset = oldCurInfo.offset + oldCurInfo.widthFactor + marginOffset;
                 for (int pos = oldCurPosition + 1;
-                        pos <= curItem.position && itemIndex < mItems.size(); pos++) {
+                     pos <= curItem.position && itemIndex < mItems.size(); pos++) {
                     ii = mItems.get(itemIndex);
                     while (pos > ii.position && itemIndex < mItems.size() - 1) {
                         itemIndex++;
@@ -1145,7 +1149,7 @@ public class ViewPager extends ViewGroup {
                 ItemInfo ii = null;
                 float offset = oldCurInfo.offset;
                 for (int pos = oldCurPosition - 1;
-                        pos >= curItem.position && itemIndex >= 0; pos--) {
+                     pos >= curItem.position && itemIndex >= 0; pos--) {
                     ii = mItems.get(itemIndex);
                     while (pos < ii.position && itemIndex > 0) {
                         itemIndex--;
@@ -1229,15 +1233,15 @@ public class ViewPager extends ViewGroup {
 
         public static final Parcelable.Creator<SavedState> CREATOR
                 = ParcelableCompat.newCreator(new ParcelableCompatCreatorCallbacks<SavedState>() {
-                    @Override
-                    public SavedState createFromParcel(Parcel in, ClassLoader loader) {
-                        return new SavedState(in, loader);
-                    }
-                    @Override
-                    public SavedState[] newArray(int size) {
-                        return new SavedState[size];
-                    }
-                });
+            @Override
+            public SavedState createFromParcel(Parcel in, ClassLoader loader) {
+                return new SavedState(in, loader);
+            }
+            @Override
+            public SavedState[] newArray(int size) {
+                return new SavedState[size];
+            }
+        });
 
         SavedState(Parcel in, ClassLoader loader) {
             super(in);
@@ -1462,7 +1466,7 @@ public class ViewPager extends ViewGroup {
         if (oldWidth > 0 && !mItems.isEmpty()) {
             final int widthWithMargin = width - getPaddingLeft() - getPaddingRight() + margin;
             final int oldWidthWithMargin = oldWidth - getPaddingLeft() - getPaddingRight()
-                                           + oldMargin;
+                    + oldMargin;
             final int xpos = getScrollX();
             final float pageOffset = (float) xpos / oldWidthWithMargin;
             final int newOffsetPixels = (int) (pageOffset * widthWithMargin);
@@ -1479,7 +1483,7 @@ public class ViewPager extends ViewGroup {
             final ItemInfo ii = infoForPosition(mCurItem);
             final float scrollOffset = ii != null ? Math.min(ii.offset, mLastOffset) : 0;
             final int scrollPos = (int) (scrollOffset *
-                                         (width - getPaddingLeft() - getPaddingRight()));
+                    (width - getPaddingLeft() - getPaddingRight()));
             if (scrollPos != getScrollX()) {
                 completeScroll(false);
                 scrollTo(scrollPos, getScrollY());
@@ -1843,6 +1847,7 @@ public class ViewPager extends ViewGroup {
                 if (xDiff > mTouchSlop && xDiff * 0.5f > yDiff) {
                     if (DEBUG) Log.v(TAG, "Starting drag!");
                     mIsBeingDragged = true;
+                    requestParentDisallowInterceptTouchEvent(true);
                     setScrollState(SCROLL_STATE_DRAGGING);
                     mLastMotionX = dx > 0 ? mInitialMotionX + mTouchSlop :
                             mInitialMotionX - mTouchSlop;
@@ -1883,6 +1888,7 @@ public class ViewPager extends ViewGroup {
                     mPopulatePending = false;
                     populate();
                     mIsBeingDragged = true;
+                    requestParentDisallowInterceptTouchEvent(true);
                     setScrollState(SCROLL_STATE_DRAGGING);
                 } else {
                     completeScroll(false);
@@ -1945,8 +1951,6 @@ public class ViewPager extends ViewGroup {
                 mScroller.abortAnimation();
                 mPopulatePending = false;
                 populate();
-                mIsBeingDragged = true;
-                setScrollState(SCROLL_STATE_DRAGGING);
 
                 // Remember where the motion event started
                 mLastMotionX = mInitialMotionX = ev.getX();
@@ -1965,11 +1969,18 @@ public class ViewPager extends ViewGroup {
                     if (xDiff > mTouchSlop && xDiff > yDiff) {
                         if (DEBUG) Log.v(TAG, "Starting drag!");
                         mIsBeingDragged = true;
+                        requestParentDisallowInterceptTouchEvent(true);
                         mLastMotionX = x - mInitialMotionX > 0 ? mInitialMotionX + mTouchSlop :
                                 mInitialMotionX - mTouchSlop;
                         mLastMotionY = y;
                         setScrollState(SCROLL_STATE_DRAGGING);
                         setScrollingCacheEnabled(true);
+
+                        // Disallow Parent Intercept, just in case
+                        ViewParent parent = getParent();
+                        if (parent != null) {
+                            parent.requestDisallowInterceptTouchEvent(true);
+                        }
                     }
                 }
                 // Not else! Note that mIsBeingDragged can be set above.
@@ -2031,6 +2042,13 @@ public class ViewPager extends ViewGroup {
             ViewCompat.postInvalidateOnAnimation(this);
         }
         return true;
+    }
+
+    private void requestParentDisallowInterceptTouchEvent(boolean disallowIntercept) {
+        final ViewParent parent = getParent();
+        if (parent != null) {
+            parent.requestDisallowInterceptTouchEvent(disallowIntercept);
+        }
     }
 
     private boolean performDrag(float x) {
@@ -2400,6 +2418,22 @@ public class ViewPager extends ViewGroup {
         }
     }
 
+    public boolean canScrollHorizontally(int direction) {
+        if (mAdapter == null) {
+            return false;
+        }
+
+        final int width = getClientWidth();
+        final int scrollX = getScrollX();
+        if (direction < 0) {
+            return (scrollX > (int) (width * mFirstOffset));
+        } else if (direction > 0) {
+            return (scrollX < (int) (width * mLastOffset));
+        } else {
+            return false;
+        }
+    }
+
     /**
      * Tests scrollability within child views of v given a delta of dx.
      *
@@ -2481,7 +2515,7 @@ public class ViewPager extends ViewGroup {
         } else if (currentFocused != null) {
             boolean isChild = false;
             for (ViewParent parent = currentFocused.getParent(); parent instanceof ViewGroup;
-                    parent = parent.getParent()) {
+                 parent = parent.getParent()) {
                 if (parent == this) {
                     isChild = true;
                     break;
@@ -2492,7 +2526,7 @@ public class ViewPager extends ViewGroup {
                 final StringBuilder sb = new StringBuilder();
                 sb.append(currentFocused.getClass().getSimpleName());
                 for (ViewParent parent = currentFocused.getParent(); parent instanceof ViewGroup;
-                        parent = parent.getParent()) {
+                     parent = parent.getParent()) {
                     sb.append(" => ").append(parent.getClass().getSimpleName());
                 }
                 Log.e(TAG, "arrowScroll tried to find focus based on non-child " +
@@ -2608,9 +2642,9 @@ public class ViewPager extends ViewGroup {
         // to avoid the focus search finding layouts when a more precise search
         // among the focusable children would be more interesting.
         if (
-            descendantFocusability != FOCUS_AFTER_DESCENDANTS ||
-                // No focusable descendants
-                (focusableCount == views.size())) {
+                descendantFocusability != FOCUS_AFTER_DESCENDANTS ||
+                        // No focusable descendants
+                        (focusableCount == views.size())) {
             // Note that we can't call the superclass here, because it will
             // add all views in.  So we need to do the same thing View does.
             if (!isFocusable()) {
@@ -2650,7 +2684,7 @@ public class ViewPager extends ViewGroup {
      */
     @Override
     protected boolean onRequestFocusInDescendants(int direction,
-            Rect previouslyFocusedRect) {
+                                                  Rect previouslyFocusedRect) {
         int index;
         int increment;
         int end;
@@ -2680,11 +2714,12 @@ public class ViewPager extends ViewGroup {
 
     @Override
     public boolean dispatchPopulateAccessibilityEvent(AccessibilityEvent event) {
-        // ViewPagers should only report accessibility info for the current page,
-        // otherwise things get very confusing.
+        // Dispatch scroll events from this ViewPager.
+        if (event.getEventType() == AccessibilityEventCompat.TYPE_VIEW_SCROLLED) {
+            return super.dispatchPopulateAccessibilityEvent(event);
+        }
 
-        // TODO: Should this note something about the paging container?
-
+        // Dispatch all other accessibility events from the current page.
         final int childCount = getChildCount();
         for (int i = 0; i < childCount; i++) {
             final View child = getChildAt(i);
@@ -2726,17 +2761,25 @@ public class ViewPager extends ViewGroup {
         public void onInitializeAccessibilityEvent(View host, AccessibilityEvent event) {
             super.onInitializeAccessibilityEvent(host, event);
             event.setClassName(ViewPager.class.getName());
+            final AccessibilityRecordCompat recordCompat = AccessibilityRecordCompat.obtain();
+            recordCompat.setScrollable(canScroll());
+            if (event.getEventType() == AccessibilityEventCompat.TYPE_VIEW_SCROLLED
+                    && mAdapter != null) {
+                recordCompat.setItemCount(mAdapter.getCount());
+                recordCompat.setFromIndex(mCurItem);
+                recordCompat.setToIndex(mCurItem);
+            }
         }
 
         @Override
         public void onInitializeAccessibilityNodeInfo(View host, AccessibilityNodeInfoCompat info) {
             super.onInitializeAccessibilityNodeInfo(host, info);
             info.setClassName(ViewPager.class.getName());
-            info.setScrollable(mAdapter != null && mAdapter.getCount() > 1);
-            if (mAdapter != null && mCurItem >= 0 && mCurItem < mAdapter.getCount() - 1) {
+            info.setScrollable(canScroll());
+            if (canScrollHorizontally(1)) {
                 info.addAction(AccessibilityNodeInfoCompat.ACTION_SCROLL_FORWARD);
             }
-            if (mAdapter != null && mCurItem > 0 && mCurItem < mAdapter.getCount()) {
+            if (canScrollHorizontally(-1)) {
                 info.addAction(AccessibilityNodeInfoCompat.ACTION_SCROLL_BACKWARD);
             }
         }
@@ -2748,19 +2791,23 @@ public class ViewPager extends ViewGroup {
             }
             switch (action) {
                 case AccessibilityNodeInfoCompat.ACTION_SCROLL_FORWARD: {
-                    if (mAdapter != null && mCurItem >= 0 && mCurItem < mAdapter.getCount() - 1) {
+                    if (canScrollHorizontally(1)) {
                         setCurrentItem(mCurItem + 1);
                         return true;
                     }
                 } return false;
                 case AccessibilityNodeInfoCompat.ACTION_SCROLL_BACKWARD: {
-                    if (mAdapter != null && mCurItem > 0 && mCurItem < mAdapter.getCount()) {
+                    if (canScrollHorizontally(-1)) {
                         setCurrentItem(mCurItem - 1);
                         return true;
                     }
                 } return false;
             }
             return false;
+        }
+
+        private boolean canScroll() {
+            return (mAdapter != null) && (mAdapter.getCount() > 1);
         }
     }
 

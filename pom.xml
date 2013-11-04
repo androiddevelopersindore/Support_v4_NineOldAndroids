@@ -6,7 +6,7 @@
 	<groupId>com.github.kedzie.supportanimator</groupId>
 	<artifactId>parent</artifactId>
 	<packaging>pom</packaging>
-	<version>13.0.1-SNAPSHOT</version>
+	<version>19.0.0-SNAPSHOT</version>
 
 	<name>Android Support Library (v4) with NineOldAndroids</name>
 	<description>The Android Support Library with NineOldAndroids/ActionBarSherlock</description>
@@ -71,7 +71,7 @@
 			<dependency>
 				<groupId>android</groupId>
 				<artifactId>android</artifactId>
-				<version>4.2.2_r2</version>				
+				<version>4.4_r1</version>
 			</dependency>
 			<dependency>
 				<groupId>com.nineoldandroids</groupId>
@@ -149,13 +149,6 @@
 			</plugins>
 		</pluginManagement>
 	</build>
-
-	<repositories>
-        <repository>
-            <id>third.party.closed.source.repo</id>
-            <url>file://${basedir}/maven_repo_3rd_party</url>
-        </repository>
-    </repositories>
 
 	<profiles>
 		<profile>

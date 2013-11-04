@@ -474,8 +474,978 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="122077a7-82d9-4868-8eef-caf92edb82f3" name="Default" comment="">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v7/appcompat/res/drawable-hdpi/abc_ab_bottom_solid_dark_holo.9.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v7/appcompat/res/drawable-mdpi/abc_ab_bottom_solid_dark_holo.9.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v7/appcompat/res/drawable-xhdpi/abc_ab_bottom_solid_dark_holo.9.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v7/appcompat/res/drawable-hdpi/abc_ab_bottom_solid_light_holo.9.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v7/appcompat/res/drawable-mdpi/abc_ab_bottom_solid_light_holo.9.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v7/appcompat/res/drawable-xhdpi/abc_ab_bottom_solid_light_holo.9.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v7/appcompat/res/drawable-hdpi/abc_ab_bottom_transparent_dark_holo.9.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v7/appcompat/res/drawable-mdpi/abc_ab_bottom_transparent_dark_holo.9.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v7/appcompat/res/drawable-xhdpi/abc_ab_bottom_transparent_dark_holo.9.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v7/appcompat/res/drawable-hdpi/abc_ab_bottom_transparent_light_holo.9.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v7/appcompat/res/drawable-mdpi/abc_ab_bottom_transparent_light_holo.9.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v7/appcompat/res/drawable-xhdpi/abc_ab_bottom_transparent_light_holo.9.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v7/appcompat/res/drawable-hdpi/abc_ab_share_pack_holo_dark.9.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v7/appcompat/res/drawable-mdpi/abc_ab_share_pack_holo_dark.9.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v7/appcompat/res/drawable-xhdpi/abc_ab_share_pack_holo_dark.9.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v7/appcompat/res/drawable-hdpi/abc_ab_share_pack_holo_light.9.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v7/appcompat/res/drawable-mdpi/abc_ab_share_pack_holo_light.9.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v7/appcompat/res/drawable-xhdpi/abc_ab_share_pack_holo_light.9.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v7/appcompat/res/drawable-hdpi/abc_ab_solid_dark_holo.9.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v7/appcompat/res/drawable-mdpi/abc_ab_solid_dark_holo.9.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v7/appcompat/res/drawable-xhdpi/abc_ab_solid_dark_holo.9.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v7/appcompat/res/drawable-hdpi/abc_ab_solid_light_holo.9.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v7/appcompat/res/drawable-mdpi/abc_ab_solid_light_holo.9.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v7/appcompat/res/drawable-xhdpi/abc_ab_solid_light_holo.9.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v7/appcompat/res/drawable-hdpi/abc_ab_stacked_solid_dark_holo.9.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v7/appcompat/res/drawable-mdpi/abc_ab_stacked_solid_dark_holo.9.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v7/appcompat/res/drawable-xhdpi/abc_ab_stacked_solid_dark_holo.9.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v7/appcompat/res/drawable-hdpi/abc_ab_stacked_solid_light_holo.9.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v7/appcompat/res/drawable-mdpi/abc_ab_stacked_solid_light_holo.9.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v7/appcompat/res/drawable-xhdpi/abc_ab_stacked_solid_light_holo.9.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v7/appcompat/res/drawable-hdpi/abc_ab_stacked_transparent_dark_holo.9.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v7/appcompat/res/drawable-mdpi/abc_ab_stacked_transparent_dark_holo.9.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v7/appcompat/res/drawable-xhdpi/abc_ab_stacked_transparent_dark_holo.9.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v7/appcompat/res/drawable-hdpi/abc_ab_stacked_transparent_light_holo.9.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v7/appcompat/res/drawable-mdpi/abc_ab_stacked_transparent_light_holo.9.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v7/appcompat/res/drawable-xhdpi/abc_ab_stacked_transparent_light_holo.9.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v7/appcompat/res/drawable-hdpi/abc_ab_transparent_dark_holo.9.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v7/appcompat/res/drawable-mdpi/abc_ab_transparent_dark_holo.9.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v7/appcompat/res/drawable-xhdpi/abc_ab_transparent_dark_holo.9.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v7/appcompat/res/drawable-hdpi/abc_ab_transparent_light_holo.9.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v7/appcompat/res/drawable-mdpi/abc_ab_transparent_light_holo.9.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v7/appcompat/res/drawable-xhdpi/abc_ab_transparent_light_holo.9.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v7/appcompat/res/drawable-hdpi/abc_cab_background_bottom_holo_dark.9.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v7/appcompat/res/drawable-mdpi/abc_cab_background_bottom_holo_dark.9.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v7/appcompat/res/drawable-xhdpi/abc_cab_background_bottom_holo_dark.9.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v7/appcompat/res/drawable-hdpi/abc_cab_background_bottom_holo_light.9.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v7/appcompat/res/drawable-mdpi/abc_cab_background_bottom_holo_light.9.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v7/appcompat/res/drawable-xhdpi/abc_cab_background_bottom_holo_light.9.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v7/appcompat/res/drawable-hdpi/abc_cab_background_top_holo_dark.9.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v7/appcompat/res/drawable-mdpi/abc_cab_background_top_holo_dark.9.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v7/appcompat/res/drawable-xhdpi/abc_cab_background_top_holo_dark.9.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v7/appcompat/res/drawable-hdpi/abc_cab_background_top_holo_light.9.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v7/appcompat/res/drawable-mdpi/abc_cab_background_top_holo_light.9.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v7/appcompat/res/drawable-xhdpi/abc_cab_background_top_holo_light.9.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v7/appcompat/res/drawable-hdpi/abc_ic_ab_back_holo_dark.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v7/appcompat/res/drawable-mdpi/abc_ic_ab_back_holo_dark.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v7/appcompat/res/drawable-xhdpi/abc_ic_ab_back_holo_dark.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v7/appcompat/res/drawable-hdpi/abc_ic_ab_back_holo_light.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v7/appcompat/res/drawable-mdpi/abc_ic_ab_back_holo_light.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v7/appcompat/res/drawable-xhdpi/abc_ic_ab_back_holo_light.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v7/appcompat/res/drawable-hdpi/abc_ic_cab_done_holo_dark.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v7/appcompat/res/drawable-mdpi/abc_ic_cab_done_holo_dark.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v7/appcompat/res/drawable-xhdpi/abc_ic_cab_done_holo_dark.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v7/appcompat/res/drawable-hdpi/abc_ic_cab_done_holo_light.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v7/appcompat/res/drawable-mdpi/abc_ic_cab_done_holo_light.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v7/appcompat/res/drawable-xhdpi/abc_ic_cab_done_holo_light.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v7/appcompat/res/drawable-hdpi/abc_ic_clear_disabled.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v7/appcompat/res/drawable-mdpi/abc_ic_clear_disabled.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v7/appcompat/res/drawable-xhdpi/abc_ic_clear_disabled.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v7/appcompat/res/drawable-hdpi/abc_ic_clear_normal.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v7/appcompat/res/drawable-mdpi/abc_ic_clear_normal.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v7/appcompat/res/drawable-hdpi/abc_ic_clear_search_api_disabled_holo_light.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v7/appcompat/res/drawable-mdpi/abc_ic_clear_search_api_disabled_holo_light.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v7/appcompat/res/drawable-xhdpi/abc_ic_clear_search_api_disabled_holo_light.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v7/appcompat/res/drawable-hdpi/abc_ic_clear_search_api_holo_light.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v7/appcompat/res/drawable-mdpi/abc_ic_clear_search_api_holo_light.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v7/appcompat/res/drawable-xhdpi/abc_ic_clear_search_api_holo_light.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v7/appcompat/res/drawable-hdpi/abc_ic_commit_search_api_holo_dark.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v7/appcompat/res/drawable-mdpi/abc_ic_commit_search_api_holo_dark.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v7/appcompat/res/drawable-xhdpi/abc_ic_commit_search_api_holo_dark.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v7/appcompat/res/drawable-hdpi/abc_ic_commit_search_api_holo_light.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v7/appcompat/res/drawable-mdpi/abc_ic_commit_search_api_holo_light.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v7/appcompat/res/drawable-xhdpi/abc_ic_commit_search_api_holo_light.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v7/appcompat/res/drawable-hdpi/abc_ic_go.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v7/appcompat/res/drawable-mdpi/abc_ic_go.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v7/appcompat/res/drawable-xhdpi/abc_ic_go.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v7/appcompat/res/drawable-hdpi/abc_ic_go_search_api_holo_light.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v7/appcompat/res/drawable-mdpi/abc_ic_go_search_api_holo_light.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v7/appcompat/res/drawable-xhdpi/abc_ic_go_search_api_holo_light.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v7/appcompat/res/drawable-hdpi/abc_ic_menu_moreoverflow_normal_holo_dark.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v7/appcompat/res/drawable-mdpi/abc_ic_menu_moreoverflow_normal_holo_dark.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v7/appcompat/res/drawable-xhdpi/abc_ic_menu_moreoverflow_normal_holo_dark.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v7/appcompat/res/drawable-hdpi/abc_ic_menu_moreoverflow_normal_holo_light.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v7/appcompat/res/drawable-mdpi/abc_ic_menu_moreoverflow_normal_holo_light.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v7/appcompat/res/drawable-xhdpi/abc_ic_menu_moreoverflow_normal_holo_light.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v7/appcompat/res/drawable-hdpi/abc_ic_menu_share_holo_dark.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v7/appcompat/res/drawable-mdpi/abc_ic_menu_share_holo_dark.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v7/appcompat/res/drawable-xhdpi/abc_ic_menu_share_holo_dark.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v7/appcompat/res/drawable-hdpi/abc_ic_menu_share_holo_light.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v7/appcompat/res/drawable-mdpi/abc_ic_menu_share_holo_light.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v7/appcompat/res/drawable-xhdpi/abc_ic_menu_share_holo_light.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v7/appcompat/res/drawable-hdpi/abc_ic_search.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v7/appcompat/res/drawable-mdpi/abc_ic_search.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v7/appcompat/res/drawable-xhdpi/abc_ic_search.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v7/appcompat/res/drawable-hdpi/abc_ic_search_api_holo_light.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v7/appcompat/res/drawable-mdpi/abc_ic_search_api_holo_light.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v7/appcompat/res/drawable-xhdpi/abc_ic_search_api_holo_light.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v7/appcompat/res/drawable-hdpi/abc_ic_voice_search.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v7/appcompat/res/drawable-mdpi/abc_ic_voice_search.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v7/appcompat/res/drawable-xhdpi/abc_ic_voice_search.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v7/appcompat/res/drawable-hdpi/abc_ic_voice_search_api_holo_light.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v7/appcompat/res/drawable-mdpi/abc_ic_voice_search_api_holo_light.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v7/appcompat/res/drawable-xhdpi/abc_ic_voice_search_api_holo_light.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v7/appcompat/res/drawable-hdpi/abc_list_divider_holo_dark.9.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v7/appcompat/res/drawable-mdpi/abc_list_divider_holo_dark.9.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v7/appcompat/res/drawable-xhdpi/abc_list_divider_holo_dark.9.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v7/appcompat/res/drawable-hdpi/abc_list_divider_holo_light.9.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v7/appcompat/res/drawable-mdpi/abc_list_divider_holo_light.9.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v7/appcompat/res/drawable-xhdpi/abc_list_divider_holo_light.9.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v7/appcompat/res/drawable-hdpi/abc_list_focused_holo.9.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v7/appcompat/res/drawable-mdpi/abc_list_focused_holo.9.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v7/appcompat/res/drawable-xhdpi/abc_list_focused_holo.9.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v7/appcompat/res/drawable-hdpi/abc_list_longpressed_holo.9.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v7/appcompat/res/drawable-mdpi/abc_list_longpressed_holo.9.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v7/appcompat/res/drawable-xhdpi/abc_list_longpressed_holo.9.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v7/appcompat/res/drawable-hdpi/abc_list_pressed_holo_dark.9.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v7/appcompat/res/drawable-mdpi/abc_list_pressed_holo_dark.9.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v7/appcompat/res/drawable-xhdpi/abc_list_pressed_holo_dark.9.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v7/appcompat/res/drawable-hdpi/abc_list_pressed_holo_light.9.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v7/appcompat/res/drawable-mdpi/abc_list_pressed_holo_light.9.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v7/appcompat/res/drawable-xhdpi/abc_list_pressed_holo_light.9.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v7/appcompat/res/drawable-hdpi/abc_list_selector_disabled_holo_dark.9.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v7/appcompat/res/drawable-mdpi/abc_list_selector_disabled_holo_dark.9.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v7/appcompat/res/drawable-xhdpi/abc_list_selector_disabled_holo_dark.9.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v7/appcompat/res/drawable-hdpi/abc_list_selector_disabled_holo_light.9.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v7/appcompat/res/drawable-mdpi/abc_list_selector_disabled_holo_light.9.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v7/appcompat/res/drawable-xhdpi/abc_list_selector_disabled_holo_light.9.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v7/appcompat/res/drawable-hdpi/abc_menu_dropdown_panel_holo_dark.9.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v7/appcompat/res/drawable-mdpi/abc_menu_dropdown_panel_holo_dark.9.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v7/appcompat/res/drawable-xhdpi/abc_menu_dropdown_panel_holo_dark.9.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v7/appcompat/res/drawable-hdpi/abc_menu_dropdown_panel_holo_light.9.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v7/appcompat/res/drawable-mdpi/abc_menu_dropdown_panel_holo_light.9.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v7/appcompat/res/drawable-xhdpi/abc_menu_dropdown_panel_holo_light.9.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v7/appcompat/res/drawable-hdpi/abc_menu_hardkey_panel_holo_dark.9.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v7/appcompat/res/drawable-mdpi/abc_menu_hardkey_panel_holo_dark.9.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v7/appcompat/res/drawable-xhdpi/abc_menu_hardkey_panel_holo_dark.9.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v7/appcompat/res/drawable-hdpi/abc_menu_hardkey_panel_holo_light.9.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v7/appcompat/res/drawable-mdpi/abc_menu_hardkey_panel_holo_light.9.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v7/appcompat/res/drawable-xhdpi/abc_menu_hardkey_panel_holo_light.9.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v7/appcompat/res/drawable-hdpi/abc_spinner_ab_default_holo_dark.9.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v7/appcompat/res/drawable-mdpi/abc_spinner_ab_default_holo_dark.9.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v7/appcompat/res/drawable-xhdpi/abc_spinner_ab_default_holo_dark.9.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v7/appcompat/res/drawable-hdpi/abc_spinner_ab_default_holo_light.9.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v7/appcompat/res/drawable-mdpi/abc_spinner_ab_default_holo_light.9.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v7/appcompat/res/drawable-xhdpi/abc_spinner_ab_default_holo_light.9.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v7/appcompat/res/drawable-hdpi/abc_spinner_ab_disabled_holo_dark.9.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v7/appcompat/res/drawable-mdpi/abc_spinner_ab_disabled_holo_dark.9.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v7/appcompat/res/drawable-xhdpi/abc_spinner_ab_disabled_holo_dark.9.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v7/appcompat/res/drawable-hdpi/abc_spinner_ab_disabled_holo_light.9.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v7/appcompat/res/drawable-mdpi/abc_spinner_ab_disabled_holo_light.9.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v7/appcompat/res/drawable-xhdpi/abc_spinner_ab_disabled_holo_light.9.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v7/appcompat/res/drawable-hdpi/abc_spinner_ab_focused_holo_dark.9.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v7/appcompat/res/drawable-mdpi/abc_spinner_ab_focused_holo_dark.9.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v7/appcompat/res/drawable-xhdpi/abc_spinner_ab_focused_holo_dark.9.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v7/appcompat/res/drawable-hdpi/abc_spinner_ab_focused_holo_light.9.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v7/appcompat/res/drawable-mdpi/abc_spinner_ab_focused_holo_light.9.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v7/appcompat/res/drawable-xhdpi/abc_spinner_ab_focused_holo_light.9.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v7/appcompat/res/drawable-hdpi/abc_spinner_ab_pressed_holo_dark.9.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v7/appcompat/res/drawable-mdpi/abc_spinner_ab_pressed_holo_dark.9.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v7/appcompat/res/drawable-xhdpi/abc_spinner_ab_pressed_holo_dark.9.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v7/appcompat/res/drawable-hdpi/abc_spinner_ab_pressed_holo_light.9.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v7/appcompat/res/drawable-mdpi/abc_spinner_ab_pressed_holo_light.9.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v7/appcompat/res/drawable-xhdpi/abc_spinner_ab_pressed_holo_light.9.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v7/appcompat/res/drawable-hdpi/abc_tab_selected_focused_holo.9.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v7/appcompat/res/drawable-mdpi/abc_tab_selected_focused_holo.9.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v7/appcompat/res/drawable-xhdpi/abc_tab_selected_focused_holo.9.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v7/appcompat/res/drawable-hdpi/abc_tab_selected_holo.9.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v7/appcompat/res/drawable-mdpi/abc_tab_selected_holo.9.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v7/appcompat/res/drawable-xhdpi/abc_tab_selected_holo.9.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v7/appcompat/res/drawable-hdpi/abc_tab_selected_pressed_holo.9.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v7/appcompat/res/drawable-mdpi/abc_tab_selected_pressed_holo.9.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v7/appcompat/res/drawable-xhdpi/abc_tab_selected_pressed_holo.9.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v7/appcompat/res/drawable-hdpi/abc_tab_unselected_pressed_holo.9.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v7/appcompat/res/drawable-mdpi/abc_tab_unselected_pressed_holo.9.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v7/appcompat/res/drawable-xhdpi/abc_tab_unselected_pressed_holo.9.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v7/appcompat/res/drawable-hdpi/abc_textfield_search_default_holo_dark.9.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v7/appcompat/res/drawable-mdpi/abc_textfield_search_default_holo_dark.9.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v7/appcompat/res/drawable-xhdpi/abc_textfield_search_default_holo_dark.9.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v7/appcompat/res/drawable-hdpi/abc_textfield_search_default_holo_light.9.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v7/appcompat/res/drawable-mdpi/abc_textfield_search_default_holo_light.9.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v7/appcompat/res/drawable-xhdpi/abc_textfield_search_default_holo_light.9.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v7/appcompat/res/drawable-hdpi/abc_textfield_search_right_default_holo_dark.9.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v7/appcompat/res/drawable-mdpi/abc_textfield_search_right_default_holo_dark.9.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v7/appcompat/res/drawable-xhdpi/abc_textfield_search_right_default_holo_dark.9.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v7/appcompat/res/drawable-hdpi/abc_textfield_search_right_default_holo_light.9.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v7/appcompat/res/drawable-mdpi/abc_textfield_search_right_default_holo_light.9.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v7/appcompat/res/drawable-xhdpi/abc_textfield_search_right_default_holo_light.9.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v7/appcompat/res/drawable-hdpi/abc_textfield_search_right_selected_holo_dark.9.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v7/appcompat/res/drawable-mdpi/abc_textfield_search_right_selected_holo_dark.9.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v7/appcompat/res/drawable-xhdpi/abc_textfield_search_right_selected_holo_dark.9.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v7/appcompat/res/drawable-hdpi/abc_textfield_search_right_selected_holo_light.9.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v7/appcompat/res/drawable-mdpi/abc_textfield_search_right_selected_holo_light.9.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v7/appcompat/res/drawable-xhdpi/abc_textfield_search_right_selected_holo_light.9.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v7/appcompat/res/drawable-hdpi/abc_textfield_search_selected_holo_dark.9.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v7/appcompat/res/drawable-mdpi/abc_textfield_search_selected_holo_dark.9.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v7/appcompat/res/drawable-xhdpi/abc_textfield_search_selected_holo_dark.9.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v7/appcompat/res/drawable-hdpi/abc_textfield_search_selected_holo_light.9.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v7/appcompat/res/drawable-mdpi/abc_textfield_search_selected_holo_light.9.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v7/appcompat/res/drawable-xhdpi/abc_textfield_search_selected_holo_light.9.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v7/mediarouter/res/drawable-hdpi/mr_ic_audio_vol.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v7/mediarouter/res/drawable-mdpi/mr_ic_audio_vol.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v7/mediarouter/res/drawable-xhdpi/mr_ic_audio_vol.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v7/mediarouter/res/drawable-xxhdpi/mr_ic_audio_vol.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v7/mediarouter/res/drawable-hdpi/mr_ic_media_route_disabled_holo_dark.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v7/mediarouter/res/drawable-mdpi/mr_ic_media_route_disabled_holo_dark.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v7/mediarouter/res/drawable-xhdpi/mr_ic_media_route_disabled_holo_dark.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v7/mediarouter/res/drawable-xxhdpi/mr_ic_media_route_disabled_holo_dark.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v7/mediarouter/res/drawable-hdpi/mr_ic_media_route_disabled_holo_light.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v7/mediarouter/res/drawable-mdpi/mr_ic_media_route_disabled_holo_light.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v7/mediarouter/res/drawable-xhdpi/mr_ic_media_route_disabled_holo_light.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v7/mediarouter/res/drawable-xxhdpi/mr_ic_media_route_disabled_holo_light.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v7/mediarouter/res/drawable-hdpi/mr_ic_media_route_off_holo_dark.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v7/mediarouter/res/drawable-mdpi/mr_ic_media_route_off_holo_dark.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v7/mediarouter/res/drawable-xhdpi/mr_ic_media_route_off_holo_dark.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v7/mediarouter/res/drawable-xxhdpi/mr_ic_media_route_off_holo_dark.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v7/mediarouter/res/drawable-hdpi/mr_ic_media_route_off_holo_light.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v7/mediarouter/res/drawable-mdpi/mr_ic_media_route_off_holo_light.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v7/mediarouter/res/drawable-xhdpi/mr_ic_media_route_off_holo_light.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v7/mediarouter/res/drawable-xxhdpi/mr_ic_media_route_off_holo_light.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v7/mediarouter/res/drawable-hdpi/mr_ic_media_route_on_0_holo_dark.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v7/mediarouter/res/drawable-mdpi/mr_ic_media_route_on_0_holo_dark.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v7/mediarouter/res/drawable-xhdpi/mr_ic_media_route_on_0_holo_dark.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v7/mediarouter/res/drawable-xxhdpi/mr_ic_media_route_on_0_holo_dark.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v7/mediarouter/res/drawable-hdpi/mr_ic_media_route_on_0_holo_light.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v7/mediarouter/res/drawable-mdpi/mr_ic_media_route_on_0_holo_light.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v7/mediarouter/res/drawable-xhdpi/mr_ic_media_route_on_0_holo_light.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v7/mediarouter/res/drawable-xxhdpi/mr_ic_media_route_on_0_holo_light.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v7/mediarouter/res/drawable-hdpi/mr_ic_media_route_on_1_holo_dark.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v7/mediarouter/res/drawable-mdpi/mr_ic_media_route_on_1_holo_dark.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v7/mediarouter/res/drawable-xhdpi/mr_ic_media_route_on_1_holo_dark.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v7/mediarouter/res/drawable-xxhdpi/mr_ic_media_route_on_1_holo_dark.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v7/mediarouter/res/drawable-hdpi/mr_ic_media_route_on_1_holo_light.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v7/mediarouter/res/drawable-mdpi/mr_ic_media_route_on_1_holo_light.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v7/mediarouter/res/drawable-xhdpi/mr_ic_media_route_on_1_holo_light.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v7/mediarouter/res/drawable-xxhdpi/mr_ic_media_route_on_1_holo_light.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v7/mediarouter/res/drawable-hdpi/mr_ic_media_route_on_2_holo_dark.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v7/mediarouter/res/drawable-mdpi/mr_ic_media_route_on_2_holo_dark.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v7/mediarouter/res/drawable-xhdpi/mr_ic_media_route_on_2_holo_dark.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v7/mediarouter/res/drawable-xxhdpi/mr_ic_media_route_on_2_holo_dark.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v7/mediarouter/res/drawable-hdpi/mr_ic_media_route_on_2_holo_light.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v7/mediarouter/res/drawable-mdpi/mr_ic_media_route_on_2_holo_light.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v7/mediarouter/res/drawable-xhdpi/mr_ic_media_route_on_2_holo_light.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v7/mediarouter/res/drawable-xxhdpi/mr_ic_media_route_on_2_holo_light.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v7/mediarouter/res/drawable-hdpi/mr_ic_media_route_on_holo_dark.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v7/mediarouter/res/drawable-mdpi/mr_ic_media_route_on_holo_dark.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v7/mediarouter/res/drawable-xhdpi/mr_ic_media_route_on_holo_dark.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v7/mediarouter/res/drawable-xxhdpi/mr_ic_media_route_on_holo_dark.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v7/mediarouter/res/drawable-hdpi/mr_ic_media_route_on_holo_light.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v7/mediarouter/res/drawable-mdpi/mr_ic_media_route_on_holo_light.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v7/mediarouter/res/drawable-xhdpi/mr_ic_media_route_on_holo_light.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v7/mediarouter/res/drawable-xxhdpi/mr_ic_media_route_on_holo_light.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v7/mediarouter/.classpath" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v7/appcompat/.gitignore" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v7/mediarouter/.gitignore" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v7/appcompat/.project" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v7/mediarouter/.project" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v7/gridlayout/src/.readme" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v7/mediarouter/src/.readme" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v7/appcompat/src/android/support/v7/internal/widget/AbsActionBarView.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v7/appcompat/src/android/support/v7/internal/widget/AbsSpinnerICS.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v4/jellybean-mr2/android/support/v4/view/accessibility/AccessibilityNodeInfoCompatJellybeanMr2.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v4/kitkat/android/support/v4/view/accessibility/AccessibilityNodeInfoCompatKitKat.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v4/kitkat/android/support/v4/view/accessibility/AccessibilityNodeProviderCompatKitKat.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v4/jellybean-mr2/android/support/v4/accessibilityservice/AccessibilityServiceInfoCompatJellyBeanMr2.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v7/appcompat/src/android/support/v7/app/ActionBar.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v7/appcompat/src/android/support/v7/app/ActionBarActivity.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v7/appcompat/src/android/support/v7/app/ActionBarActivityDelegate.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v7/appcompat/src/android/support/v7/app/ActionBarActivityDelegateBase.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v7/appcompat/src/android/support/v7/app/ActionBarActivityDelegateHC.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v7/appcompat/src/android/support/v7/app/ActionBarActivityDelegateICS.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v7/appcompat/src/android/support/v7/app/ActionBarActivityDelegateJB.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v7/appcompat/src/android/support/v7/internal/widget/ActionBarContainer.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v7/appcompat/src/android/support/v7/internal/widget/ActionBarContextView.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v7/appcompat/src/android/support/v7/app/ActionBarImplBase.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v7/appcompat/src/android/support/v7/app/ActionBarImplHC.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v7/appcompat/src/android/support/v7/app/ActionBarImplICS.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v7/appcompat/src/android/support/v7/app/ActionBarImplJB.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v7/appcompat/src/android/support/v7/internal/widget/ActionBarOverlayLayout.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v7/appcompat/src/android/support/v7/internal/view/ActionBarPolicy.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v7/appcompat/src/android/support/v7/internal/widget/ActionBarView.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v7/appcompat/src/android/support/v7/internal/view/menu/ActionMenuItem.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v7/appcompat/src/android/support/v7/internal/view/menu/ActionMenuItemView.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v7/appcompat/src/android/support/v7/internal/view/menu/ActionMenuPresenter.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v7/appcompat/src/android/support/v7/internal/view/menu/ActionMenuView.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v7/appcompat/src/android/support/v7/view/ActionMode.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v7/appcompat/src/android/support/v7/internal/view/ActionModeWrapper.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v4/java/android/support/v4/view/ActionProvider.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v7/appcompat/src/android/support/v7/internal/widget/ActivityChooserModel.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v7/appcompat/src/android/support/v7/internal/widget/ActivityChooserView.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v7/appcompat/src/android/support/v7/internal/widget/AdapterViewICS.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v8/renderscript/java/src/android/support/v8/renderscript/Allocation.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v8/renderscript/java/src/android/support/v8/renderscript/AllocationThunker.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/tests/Android.mk" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v7/appcompat/Android.mk" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v7/gridlayout/Android.mk" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v7/mediarouter/Android.mk" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v8/renderscript/Android.mk" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v8/renderscript/jni/Android.mk" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v8/renderscript/rs_support/Android.mk" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/tests/AndroidManifest.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v7/appcompat/AndroidManifest.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v7/mediarouter/AndroidManifest.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v4/java/android/support/v4/util/ArrayMap.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v4/java/android/support/v4/widget/AutoScrollHelper.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v7/appcompat/src/android/support/v7/internal/view/menu/BaseMenuPresenter.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v7/appcompat/src/android/support/v7/internal/view/menu/BaseMenuWrapper.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v8/renderscript/java/src/android/support/v8/renderscript/BaseObj.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v7/appcompat/src/android/support/v7/internal/view/menu/BaseWrapper.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v4/java/android/support/v4/text/BidiFormatter.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v4/tests/java/android/support/v4/text/BidiFormatterTest.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v8/renderscript/java/src/android/support/v8/renderscript/Byte2.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v8/renderscript/java/src/android/support/v8/renderscript/Byte3.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v8/renderscript/java/src/android/support/v8/renderscript/Byte4.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/CleanSpec.mk" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v7/appcompat/src/android/support/v7/view/CollapsibleActionView.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v7/appcompat/src/android/support/v7/internal/widget/CompatTextView.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v4/java/android/support/v4/util/ContainerHelpers.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v4/java/android/support/v4/widget/ContentLoadingProgressBar.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v4/java/android/support/v4/hardware/display/DisplayManagerCompat.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v4/jellybean-mr1/android/support/v4/hardware/display/DisplayManagerJellybeanMr1.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v8/renderscript/java/src/android/support/v8/renderscript/Double2.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v8/renderscript/java/src/android/support/v8/renderscript/Double3.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v8/renderscript/java/src/android/support/v8/renderscript/Double4.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v4/java/android/support/v4/graphics/drawable/DrawableCompat.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v4/honeycomb/android/support/v4/graphics/drawable/DrawableCompatHoneycomb.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v4/kitkat/android/support/v4/graphics/drawable/DrawableCompatKitKat.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v7/mediarouter/dummy/Dummy.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v8/renderscript/java/src/android/support/v8/renderscript/Element.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v8/renderscript/java/src/android/support/v8/renderscript/ElementThunker.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v7/appcompat/src/android/support/v7/internal/view/menu/ExpandedMenuView.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v4/java/android/support/v4/widget/ExploreByTouchHelper.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v8/renderscript/java/src/android/support/v8/renderscript/FieldPacker.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/tests/java/android/support/v4/content/FileProviderTest.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v8/renderscript/java/src/android/support/v8/renderscript/Float2.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v8/renderscript/java/src/android/support/v8/renderscript/Float3.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v8/renderscript/java/src/android/support/v8/renderscript/Float4.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v4/java/android/support/v4/text/ICUCompat.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v4/ics/android/support/v4/text/ICUCompatIcs.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v8/renderscript/java/src/android/support/v8/renderscript/Int2.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v8/renderscript/java/src/android/support/v8/renderscript/Int3.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v8/renderscript/java/src/android/support/v8/renderscript/Int4.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v7/appcompat/src/android/support/v7/internal/widget/LinearLayoutICS.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v7/appcompat/src/android/support/v7/internal/view/menu/ListMenuItemView.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v7/appcompat/src/android/support/v7/internal/view/menu/ListMenuPresenter.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v7/appcompat/src/android/support/v7/internal/widget/ListPopupWindow.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v4/java/android/support/v4/widget/ListPopupWindowCompat.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v4/kitkat/android/support/v4/widget/ListPopupWindowCompatKitKat.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v4/java/android/support/v4/widget/ListViewAutoScrollHelper.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v8/renderscript/java/src/android/support/v8/renderscript/Long2.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v8/renderscript/java/src/android/support/v8/renderscript/Long3.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v8/renderscript/java/src/android/support/v8/renderscript/Long4.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v4/java/android/support/v4/util/MapCollections.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v4/java/android/support/v4/view/MarginLayoutParamsCompat.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v4/jellybean-mr1/android/support/v4/view/MarginLayoutParamsCompatJellybeanMr1.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v8/renderscript/java/src/android/support/v8/renderscript/Matrix2f.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v8/renderscript/java/src/android/support/v8/renderscript/Matrix3f.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v8/renderscript/java/src/android/support/v8/renderscript/Matrix4f.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__android_android_4_4_r1.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v7/mediarouter/src/android/support/v7/media/MediaControlIntent.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v7/mediarouter/src/android/support/v7/media/MediaItemMetadata.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v7/mediarouter/src/android/support/v7/media/MediaItemStatus.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v7/mediarouter/src/android/support/v7/app/MediaRouteActionProvider.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v7/mediarouter/src/android/support/v7/app/MediaRouteButton.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v7/mediarouter/src/android/support/v7/app/MediaRouteChooserDialog.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v7/mediarouter/src/android/support/v7/app/MediaRouteChooserDialogFragment.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v7/mediarouter/src/android/support/v7/app/MediaRouteControllerDialog.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v7/mediarouter/src/android/support/v7/app/MediaRouteControllerDialogFragment.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v7/mediarouter/src/android/support/v7/media/MediaRouteDescriptor.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v7/mediarouter/src/android/support/v7/app/MediaRouteDialogFactory.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v7/mediarouter/src/android/support/v7/app/MediaRouteDiscoveryFragment.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v7/mediarouter/src/android/support/v7/media/MediaRouteDiscoveryRequest.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v7/mediarouter/src/android/support/v7/media/MediaRouteProvider.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v7/mediarouter/src/android/support/v7/media/MediaRouteProviderDescriptor.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v7/mediarouter/src/android/support/v7/media/MediaRouteProviderService.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v7/mediarouter/src/android/support/v7/media/MediaRouteSelector.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v7/mediarouter/src/android/support/v7/media/MediaRouter.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v7/mediarouter/jellybean/android/support/v7/media/MediaRouterJellybean.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v7/mediarouter/jellybean-mr1/android/support/v7/media/MediaRouterJellybeanMr1.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v7/mediarouter/jellybean-mr2/android/support/v7/media/MediaRouterJellybeanMr2.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v7/mediarouter/src/android/support/v7/app/MediaRouterThemeHelper.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v7/mediarouter/src/android/support/v7/media/MediaSessionStatus.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v7/appcompat/src/android/support/v7/internal/view/menu/MenuBuilder.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v7/appcompat/src/android/support/v7/internal/view/menu/MenuDialogHelper.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v4/ics/android/support/v4/view/MenuItemCompatIcs.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v7/appcompat/src/android/support/v7/internal/view/menu/MenuItemImpl.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v7/appcompat/src/android/support/v7/internal/view/menu/MenuItemWrapperICS.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v7/appcompat/src/android/support/v7/internal/view/menu/MenuItemWrapperJB.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v7/appcompat/src/android/support/v7/internal/view/menu/MenuPopupHelper.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v7/appcompat/src/android/support/v7/internal/view/menu/MenuPresenter.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v7/appcompat/src/android/support/v7/internal/view/menu/MenuView.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v7/appcompat/src/android/support/v7/internal/view/menu/MenuWrapperFactory.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v7/appcompat/src/android/support/v7/internal/view/menu/MenuWrapperICS.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v7/appcompat/src/android/support/v7/internal/widget/NativeActionModeAwareLayout.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v7/appcompat/src/android/support/v7/widget/PopupMenu.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v4/java/android/support/v4/widget/PopupMenuCompat.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v4/kitkat/android/support/v4/widget/PopupMenuCompatKitKat.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v4/java/android/support/v4/print/PrintHelper.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v4/kitkat/android/support/v4/print/PrintHelperKitkat.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v7/appcompat/src/android/support/v7/internal/widget/ProgressBarICS.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v7/appcompat/README.txt" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v7/mediarouter/README.txt" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v8/renderscript/java/src/android/support/v8/renderscript/RSDriverException.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v8/renderscript/java/src/android/support/v8/renderscript/RSIllegalArgumentException.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v8/renderscript/java/src/android/support/v8/renderscript/RSInvalidStateException.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v8/renderscript/java/src/android/support/v8/renderscript/RSRuntimeException.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v7/mediarouter/src/android/support/v7/media/RegisteredMediaRouteProvider.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v7/mediarouter/src/android/support/v7/media/RegisteredMediaRouteProviderWatcher.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v7/mediarouter/src/android/support/v7/media/RemoteControlClientCompat.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v7/mediarouter/src/android/support/v7/media/RemotePlaybackClient.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v8/renderscript/java/src/android/support/v8/renderscript/RenderScript.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v8/renderscript/java/src/android/support/v8/renderscript/RenderScriptThunker.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v8/renderscript/java/src/android/support/v8/renderscript/Sampler.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v8/renderscript/java/src/android/support/v8/renderscript/SamplerThunker.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v4/java/android/support/v4/view/ScaleGestureDetectorCompat.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v4/kitkat/android/support/v4/view/ScaleGestureDetectorCompatKitKat.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v8/renderscript/java/src/android/support/v8/renderscript/Script.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v8/renderscript/java/src/android/support/v8/renderscript/ScriptC.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v8/renderscript/java/src/android/support/v8/renderscript/ScriptCThunker.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v8/renderscript/java/src/android/support/v8/renderscript/ScriptGroup.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v8/renderscript/java/src/android/support/v8/renderscript/ScriptGroupThunker.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v8/renderscript/java/src/android/support/v8/renderscript/ScriptIntrinsic3DLUT.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v8/renderscript/java/src/android/support/v8/renderscript/ScriptIntrinsic3DLUTThunker.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v8/renderscript/java/src/android/support/v8/renderscript/ScriptIntrinsicBlend.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v8/renderscript/java/src/android/support/v8/renderscript/ScriptIntrinsicBlendThunker.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v8/renderscript/java/src/android/support/v8/renderscript/ScriptIntrinsicBlur.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v8/renderscript/java/src/android/support/v8/renderscript/ScriptIntrinsicBlurThunker.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v8/renderscript/java/src/android/support/v8/renderscript/ScriptIntrinsicColorMatrix.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v8/renderscript/java/src/android/support/v8/renderscript/ScriptIntrinsicColorMatrixThunker.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v8/renderscript/java/src/android/support/v8/renderscript/ScriptIntrinsicConvolve3x3.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v8/renderscript/java/src/android/support/v8/renderscript/ScriptIntrinsicConvolve3x3Thunker.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v8/renderscript/java/src/android/support/v8/renderscript/ScriptIntrinsicConvolve5x5.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v8/renderscript/java/src/android/support/v8/renderscript/ScriptIntrinsicConvolve5x5Thunker.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v8/renderscript/java/src/android/support/v8/renderscript/ScriptIntrinsicLUT.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v8/renderscript/java/src/android/support/v8/renderscript/ScriptIntrinsicLUTThunker.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v8/renderscript/java/src/android/support/v8/renderscript/ScriptIntrinsicYuvToRGB.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v8/renderscript/java/src/android/support/v8/renderscript/ScriptIntrinsicYuvToRGBThunker.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v7/appcompat/src/android/support/v7/internal/widget/ScrollingTabContainerView.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v7/appcompat/src/android/support/v7/widget/SearchView.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v7/appcompat/src/android/support/v7/widget/ShareActionProvider.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v8/renderscript/java/src/android/support/v8/renderscript/Short2.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v8/renderscript/java/src/android/support/v8/renderscript/Short3.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v8/renderscript/java/src/android/support/v8/renderscript/Short4.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v4/java/android/support/v4/util/SimpleArrayMap.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v7/appcompat/src/android/support/v7/internal/widget/SpinnerICS.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v7/appcompat/src/android/support/v7/internal/view/menu/SubMenuBuilder.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v7/appcompat/src/android/support/v7/internal/view/menu/SubMenuWrapperICS.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v7/appcompat/src/android/support/v7/widget/SuggestionsAdapter.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v4/java/android/support/v4/internal/view/SupportMenu.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v7/appcompat/src/android/support/v7/internal/view/SupportMenuInflater.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v4/java/android/support/v4/internal/view/SupportMenuItem.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v4/java/android/support/v4/internal/view/SupportSubMenu.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v7/mediarouter/src/android/support/v7/media/SystemMediaRouteProvider.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v4/java/android/support/v4/text/TextDirectionHeuristicCompat.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v4/java/android/support/v4/text/TextDirectionHeuristicsCompat.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v4/java/android/support/v4/text/TextUtilsCompat.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v4/java/android/support/v4/media/TransportController.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v4/java/android/support/v4/media/TransportMediator.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v4/jellybean-mr2/android/support/v4/media/TransportMediatorCallback.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v4/jellybean-mr2/android/support/v4/media/TransportMediatorJellybeanMR2.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v4/java/android/support/v4/media/TransportPerformer.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v4/java/android/support/v4/media/TransportStateListener.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v8/renderscript/java/src/android/support/v8/renderscript/Type.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v8/renderscript/java/src/android/support/v8/renderscript/TypeThunker.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v4/eclair-mr1/android/support/v4/view/ViewCompatEclairMr1.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v4/kitkat/android/support/v4/view/ViewCompatKitKat.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v4/jellybean-mr2/android/support/v4/view/ViewGroupCompatJellybeanMR2.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v4/java/android/support/v4/view/ViewParentCompat.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v4/ics/android/support/v4/view/ViewParentCompatICS.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v4/java/android/support/v4/content/WakefulBroadcastReceiver.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v4/java/android/support/v4/view/WindowCompat.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v7/appcompat/res/layout/abc_action_bar_decor.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v7/appcompat/res/layout-v11/abc_action_bar_decor.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v7/appcompat/res/layout/abc_action_bar_decor_include.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v7/appcompat/res/layout/abc_action_bar_decor_overlay.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v7/appcompat/res/layout/abc_action_bar_home.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v7/appcompat/res/layout/abc_action_bar_tab.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v7/appcompat/res/layout/abc_action_bar_tabbar.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v7/appcompat/res/layout/abc_action_bar_title_item.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v7/appcompat/res/layout/abc_action_bar_view_list_nav_layout.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v7/appcompat/res/layout/abc_action_menu_item_layout.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v7/appcompat/res/layout/abc_action_menu_layout.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v7/appcompat/res/layout/abc_action_mode_bar.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v7/appcompat/res/layout/abc_action_mode_close_item.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v7/appcompat/res/layout/abc_activity_chooser_view.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v7/appcompat/res/layout-v14/abc_activity_chooser_view.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v7/appcompat/res/layout/abc_activity_chooser_view_include.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v7/appcompat/res/layout/abc_activity_chooser_view_list_item.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v7/appcompat/res/layout/abc_expanded_menu_layout.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v7/appcompat/res/anim/abc_fade_in.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v7/appcompat/res/anim/abc_fade_out.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v7/appcompat/res/drawable/abc_ic_clear.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v7/appcompat/res/drawable/abc_ic_clear_holo_light.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v7/appcompat/res/drawable/abc_item_background_holo_dark.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v7/appcompat/res/drawable/abc_item_background_holo_light.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v7/appcompat/res/layout/abc_list_menu_item_checkbox.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v7/appcompat/res/layout/abc_list_menu_item_icon.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v7/appcompat/res/layout/abc_list_menu_item_layout.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v7/appcompat/res/layout/abc_list_menu_item_radio.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v7/appcompat/res/drawable/abc_list_selector_background_transition_holo_dark.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v7/appcompat/res/drawable/abc_list_selector_background_transition_holo_light.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v7/appcompat/res/drawable/abc_list_selector_holo_dark.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v7/appcompat/res/drawable/abc_list_selector_holo_light.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v7/appcompat/res/layout/abc_popup_menu_item_layout.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v7/appcompat/res/drawable/abc_search_dropdown_dark.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v7/appcompat/res/layout/abc_search_dropdown_item_icons_2line.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v7/appcompat/res/drawable/abc_search_dropdown_light.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v7/appcompat/res/color/abc_search_url_text_holo.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v7/appcompat/res/layout/abc_search_view.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v7/appcompat/res/anim/abc_slide_in_bottom.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v7/appcompat/res/anim/abc_slide_in_top.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v7/appcompat/res/anim/abc_slide_out_bottom.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v7/appcompat/res/anim/abc_slide_out_top.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v7/appcompat/res/drawable/abc_spinner_ab_holo_dark.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v7/appcompat/res/drawable/abc_spinner_ab_holo_light.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v7/appcompat/res/drawable/abc_tab_indicator_ab_holo.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v7/appcompat/res/drawable/abc_textfield_searchview_holo_dark.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v7/appcompat/res/drawable/abc_textfield_searchview_holo_light.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v7/appcompat/res/drawable/abc_textfield_searchview_right_holo_dark.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v7/appcompat/res/drawable/abc_textfield_searchview_right_holo_light.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v8/renderscript/jni/android_renderscript_RenderScript.cpp" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v7/appcompat/res/values/attrs.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v7/mediarouter/res/values/attrs.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v7/appcompat/res/values/bools.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v7/appcompat/res/values-land/bools.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v7/appcompat/res/values-large/bools.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v7/appcompat/res/values-w480dp/bools.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v7/appcompat/res/values-w720dp/bools.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v7/appcompat/res/values-xlarge/bools.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/build.gradle" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v13/build.gradle" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v4/build.gradle" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v7/appcompat/build.gradle" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v7/gridlayout/build.gradle" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v7/mediarouter/build.gradle" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v7/appcompat/res/values/colors.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v7/appcompat/res/values/config.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v7/appcompat/res/values-land/config.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v7/appcompat/res/values-large/config.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v7/appcompat/res/values-sw600dp/config.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v7/appcompat/res/values-w480dp/config.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v7/appcompat/res/values/dimens.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v7/appcompat/res/values-land/dimens.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v7/appcompat/res/values-large/dimens.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v7/appcompat/res/values-sw600dp/dimens.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v7/appcompat/res/values-w360dp/dimens.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v7/appcompat/res/values-w500dp/dimens.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v7/appcompat/res/values-w600dp/dimens.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v7/appcompat/res/values-xlarge/dimens.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v7/appcompat/res/values/ids.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/local.properties" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v7/mediarouter/res/drawable/mr_ic_media_route_connecting_holo_dark.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v7/mediarouter/res/drawable/mr_ic_media_route_connecting_holo_light.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v7/mediarouter/res/drawable/mr_ic_media_route_holo_dark.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v7/mediarouter/res/drawable/mr_ic_media_route_holo_light.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v7/mediarouter/res/layout/mr_media_route_chooser_dialog.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v7/mediarouter/res/layout/mr_media_route_controller_dialog.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v7/mediarouter/res/layout-v11/mr_media_route_controller_dialog.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v7/mediarouter/res/layout/mr_media_route_list_item.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v7/mediarouter/res/layout-v17/mr_media_route_list_item.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v7/mediarouter/src/android/support/v7/media/package.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/tests/res/xml/paths.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v7/appcompat/project.properties" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v7/mediarouter/project.properties" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/settings.gradle" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v7/appcompat/res/values/strings.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v7/appcompat/res/values-af/strings.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v7/appcompat/res/values-am/strings.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v7/appcompat/res/values-ar/strings.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v7/appcompat/res/values-bg/strings.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v7/appcompat/res/values-ca/strings.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v7/appcompat/res/values-cs/strings.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v7/appcompat/res/values-da/strings.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v7/appcompat/res/values-de/strings.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v7/appcompat/res/values-el/strings.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v7/appcompat/res/values-en-rGB/strings.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v7/appcompat/res/values-en-rIN/strings.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v7/appcompat/res/values-es/strings.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v7/appcompat/res/values-es-rUS/strings.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v7/appcompat/res/values-et-rEE/strings.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v7/appcompat/res/values-fa/strings.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v7/appcompat/res/values-fi/strings.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v7/appcompat/res/values-fr/strings.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v7/appcompat/res/values-fr-rCA/strings.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v7/appcompat/res/values-hi/strings.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v7/appcompat/res/values-hr/strings.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v7/appcompat/res/values-hu/strings.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v7/appcompat/res/values-hy-rAM/strings.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v7/appcompat/res/values-in/strings.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v7/appcompat/res/values-it/strings.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v7/appcompat/res/values-iw/strings.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v7/appcompat/res/values-ja/strings.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v7/appcompat/res/values-ka-rGE/strings.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v7/appcompat/res/values-km-rKH/strings.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v7/appcompat/res/values-ko/strings.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v7/appcompat/res/values-lo-rLA/strings.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v7/appcompat/res/values-lt/strings.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v7/appcompat/res/values-lv/strings.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v7/appcompat/res/values-mn-rMN/strings.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v7/appcompat/res/values-ms-rMY/strings.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v7/appcompat/res/values-nb/strings.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v7/appcompat/res/values-nl/strings.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v7/appcompat/res/values-pl/strings.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v7/appcompat/res/values-pt/strings.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v7/appcompat/res/values-pt-rPT/strings.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v7/appcompat/res/values-ro/strings.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v7/appcompat/res/values-ru/strings.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v7/appcompat/res/values-sk/strings.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v7/appcompat/res/values-sl/strings.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v7/appcompat/res/values-sr/strings.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v7/appcompat/res/values-sv/strings.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v7/appcompat/res/values-sw/strings.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v7/appcompat/res/values-th/strings.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v7/appcompat/res/values-tl/strings.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v7/appcompat/res/values-tr/strings.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v7/appcompat/res/values-uk/strings.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v7/appcompat/res/values-vi/strings.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v7/appcompat/res/values-zh-rCN/strings.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v7/appcompat/res/values-zh-rHK/strings.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v7/appcompat/res/values-zh-rTW/strings.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v7/appcompat/res/values-zu/strings.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v7/mediarouter/res/values/strings.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v7/mediarouter/res/values-af/strings.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v7/mediarouter/res/values-am/strings.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v7/mediarouter/res/values-ar/strings.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v7/mediarouter/res/values-bg/strings.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v7/mediarouter/res/values-ca/strings.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v7/mediarouter/res/values-cs/strings.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v7/mediarouter/res/values-da/strings.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v7/mediarouter/res/values-de/strings.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v7/mediarouter/res/values-el/strings.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v7/mediarouter/res/values-en-rGB/strings.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v7/mediarouter/res/values-en-rIN/strings.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v7/mediarouter/res/values-es/strings.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v7/mediarouter/res/values-es-rUS/strings.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v7/mediarouter/res/values-et-rEE/strings.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v7/mediarouter/res/values-fa/strings.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v7/mediarouter/res/values-fi/strings.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v7/mediarouter/res/values-fr/strings.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v7/mediarouter/res/values-fr-rCA/strings.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v7/mediarouter/res/values-hi/strings.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v7/mediarouter/res/values-hr/strings.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v7/mediarouter/res/values-hu/strings.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v7/mediarouter/res/values-hy-rAM/strings.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v7/mediarouter/res/values-in/strings.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v7/mediarouter/res/values-it/strings.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v7/mediarouter/res/values-iw/strings.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v7/mediarouter/res/values-ja/strings.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v7/mediarouter/res/values-ka-rGE/strings.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v7/mediarouter/res/values-km-rKH/strings.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v7/mediarouter/res/values-ko/strings.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v7/mediarouter/res/values-lo-rLA/strings.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v7/mediarouter/res/values-lt/strings.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v7/mediarouter/res/values-lv/strings.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v7/mediarouter/res/values-mn-rMN/strings.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v7/mediarouter/res/values-ms-rMY/strings.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v7/mediarouter/res/values-nb/strings.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v7/mediarouter/res/values-nl/strings.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v7/mediarouter/res/values-pl/strings.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v7/mediarouter/res/values-pt/strings.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v7/mediarouter/res/values-pt-rPT/strings.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v7/mediarouter/res/values-ro/strings.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v7/mediarouter/res/values-ru/strings.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v7/mediarouter/res/values-sk/strings.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v7/mediarouter/res/values-sl/strings.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v7/mediarouter/res/values-sr/strings.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v7/mediarouter/res/values-sv/strings.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v7/mediarouter/res/values-sw/strings.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v7/mediarouter/res/values-th/strings.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v7/mediarouter/res/values-tl/strings.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v7/mediarouter/res/values-tr/strings.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v7/mediarouter/res/values-uk/strings.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v7/mediarouter/res/values-vi/strings.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v7/mediarouter/res/values-zh-rCN/strings.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v7/mediarouter/res/values-zh-rHK/strings.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v7/mediarouter/res/values-zh-rTW/strings.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v7/mediarouter/res/values-zu/strings.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v7/appcompat/res/values/styles.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v7/mediarouter/res/values/styles.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v7/appcompat/res/values/styles_base.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v7/appcompat/res/values-v11/styles_base.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v7/appcompat/res/values-v14/styles_base.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v7/appcompat/res/layout/support_simple_spinner_dropdown_item.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v7/appcompat/res/values/themes.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v7/mediarouter/res/values/themes.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v7/appcompat/res/values/themes_base.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v7/appcompat/res/values-v11/themes_base.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/v7/appcompat/res/values-v14/themes_base.xml" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__android_android_4_2_2_r2.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_actionbarsherlock_actionbarsherlock_apklib_4_3_1.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_supportanimator_support_v4_animator_apklib_r13.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/renderscript/v8/Android.mk" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/renderscript/v8/java/src/android/support/v8/renderscript/Allocation.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/renderscript/v8/java/src/android/support/v8/renderscript/AllocationAdapter.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/renderscript/v8/java/src/android/support/v8/renderscript/BaseObj.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/renderscript/v8/java/src/android/support/v8/renderscript/Byte2.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/renderscript/v8/java/src/android/support/v8/renderscript/Byte3.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/renderscript/v8/java/src/android/support/v8/renderscript/Byte4.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/renderscript/v8/java/src/android/support/v8/renderscript/Double2.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/renderscript/v8/java/src/android/support/v8/renderscript/Double3.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/renderscript/v8/java/src/android/support/v8/renderscript/Double4.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/renderscript/v8/java/src/android/support/v8/renderscript/Element.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/renderscript/v8/java/src/android/support/v8/renderscript/FieldPacker.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/renderscript/v8/java/src/android/support/v8/renderscript/Float2.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/renderscript/v8/java/src/android/support/v8/renderscript/Float3.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/renderscript/v8/java/src/android/support/v8/renderscript/Float4.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/renderscript/v8/java/src/android/support/v8/renderscript/Int2.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/renderscript/v8/java/src/android/support/v8/renderscript/Int3.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/renderscript/v8/java/src/android/support/v8/renderscript/Int4.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/renderscript/v8/java/src/android/support/v8/renderscript/Long2.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/renderscript/v8/java/src/android/support/v8/renderscript/Long3.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/renderscript/v8/java/src/android/support/v8/renderscript/Long4.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/renderscript/v8/java/src/android/support/v8/renderscript/Matrix2f.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/renderscript/v8/java/src/android/support/v8/renderscript/Matrix3f.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/renderscript/v8/java/src/android/support/v8/renderscript/Matrix4f.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/renderscript/v8/java/src/android/support/v8/renderscript/RSDriverException.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/renderscript/v8/java/src/android/support/v8/renderscript/RSIllegalArgumentException.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/renderscript/v8/java/src/android/support/v8/renderscript/RSInvalidStateException.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/renderscript/v8/java/src/android/support/v8/renderscript/RSReflect.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/renderscript/v8/java/src/android/support/v8/renderscript/RSRuntimeException.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/renderscript/v8/java/src/android/support/v8/renderscript/RenderScript.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/renderscript/v8/java/src/android/support/v8/renderscript/Sampler.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/renderscript/v8/java/src/android/support/v8/renderscript/Script.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/renderscript/v8/java/src/android/support/v8/renderscript/ScriptC.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/renderscript/v8/java/src/android/support/v8/renderscript/ScriptGroup.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/renderscript/v8/java/src/android/support/v8/renderscript/ScriptIntrinsicBlend.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/renderscript/v8/java/src/android/support/v8/renderscript/ScriptIntrinsicBlur.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/renderscript/v8/java/src/android/support/v8/renderscript/ScriptIntrinsicColorMatrix.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/renderscript/v8/java/src/android/support/v8/renderscript/ScriptIntrinsicConvolve3x3.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/renderscript/v8/java/src/android/support/v8/renderscript/ScriptIntrinsicConvolve5x5.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/renderscript/v8/java/src/android/support/v8/renderscript/ScriptIntrinsicLUT.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/renderscript/v8/java/src/android/support/v8/renderscript/ScriptIntrinsicYuvToRGB.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/renderscript/v8/java/src/android/support/v8/renderscript/Short2.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/renderscript/v8/java/src/android/support/v8/renderscript/Short3.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/renderscript/v8/java/src/android/support/v8/renderscript/Short4.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/renderscript/v8/java/src/android/support/v8/renderscript/Type.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/renderscript/v8/jni/Android.mk" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/renderscript/v8/jni/android_renderscript_RenderScript.cpp" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/renderscript/v8/rs_support/Android.mk" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/renderscript/v8/rs_support/driver/rsdAllocation.cpp" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/renderscript/v8/rs_support/driver/rsdAllocation.h" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/renderscript/v8/rs_support/driver/rsdBcc.cpp" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/renderscript/v8/rs_support/driver/rsdBcc.h" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/renderscript/v8/rs_support/driver/rsdCore.cpp" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/renderscript/v8/rs_support/driver/rsdCore.h" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/renderscript/v8/rs_support/driver/rsdIntrinsicBlend.cpp" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/renderscript/v8/rs_support/driver/rsdIntrinsicBlur.cpp" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/renderscript/v8/rs_support/driver/rsdIntrinsicColorMatrix.cpp" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/renderscript/v8/rs_support/driver/rsdIntrinsicConvolve3x3.cpp" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/renderscript/v8/rs_support/driver/rsdIntrinsicConvolve5x5.cpp" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/renderscript/v8/rs_support/driver/rsdIntrinsicInlines.h" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/renderscript/v8/rs_support/driver/rsdIntrinsicLUT.cpp" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/renderscript/v8/rs_support/driver/rsdIntrinsicYuvToRGB.cpp" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/renderscript/v8/rs_support/driver/rsdIntrinsics.cpp" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/renderscript/v8/rs_support/driver/rsdIntrinsics.h" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/renderscript/v8/rs_support/driver/rsdIntrinsics_Convolve.S" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/renderscript/v8/rs_support/driver/rsdRuntime.h" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/renderscript/v8/rs_support/driver/rsdRuntimeMath.cpp" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/renderscript/v8/rs_support/driver/rsdRuntimeStubs.cpp" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/renderscript/v8/rs_support/driver/rsdSampler.cpp" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/renderscript/v8/rs_support/driver/rsdSampler.h" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/renderscript/v8/rs_support/driver/rsdScriptGroup.cpp" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/renderscript/v8/rs_support/driver/rsdScriptGroup.h" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/renderscript/v8/rs_support/rs.h" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/renderscript/v8/rs_support/rs.spec" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/renderscript/v8/rs_support/rsAdapter.cpp" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/renderscript/v8/rs_support/rsAdapter.h" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/renderscript/v8/rs_support/rsAllocation.cpp" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/renderscript/v8/rs_support/rsAllocation.h" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/renderscript/v8/rs_support/rsComponent.cpp" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/renderscript/v8/rs_support/rsComponent.h" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/renderscript/v8/rs_support/rsContext.cpp" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/renderscript/v8/rs_support/rsContext.h" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/renderscript/v8/rs_support/rsDefines.h" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/renderscript/v8/rs_support/rsDevice.cpp" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/renderscript/v8/rs_support/rsDevice.h" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/renderscript/v8/rs_support/rsElement.cpp" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/renderscript/v8/rs_support/rsElement.h" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/renderscript/v8/rs_support/rsEnv.h" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/renderscript/v8/rs_support/rsFifo.h" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/renderscript/v8/rs_support/rsFifoSocket.cpp" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/renderscript/v8/rs_support/rsFifoSocket.h" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/renderscript/v8/rs_support/rsMatrix2x2.cpp" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/renderscript/v8/rs_support/rsMatrix2x2.h" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/renderscript/v8/rs_support/rsMatrix3x3.cpp" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/renderscript/v8/rs_support/rsMatrix3x3.h" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/renderscript/v8/rs_support/rsMatrix4x4.cpp" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/renderscript/v8/rs_support/rsMatrix4x4.h" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/renderscript/v8/rs_support/rsMutex.cpp" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/renderscript/v8/rs_support/rsMutex.h" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/renderscript/v8/rs_support/rsObjectBase.cpp" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/renderscript/v8/rs_support/rsObjectBase.h" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/renderscript/v8/rs_support/rsRuntime.h" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/renderscript/v8/rs_support/rsSampler.cpp" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/renderscript/v8/rs_support/rsSampler.h" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/renderscript/v8/rs_support/rsScript.cpp" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/renderscript/v8/rs_support/rsScript.h" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/renderscript/v8/rs_support/rsScriptC.cpp" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/renderscript/v8/rs_support/rsScriptC.h" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/renderscript/v8/rs_support/rsScriptC_Lib.cpp" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/renderscript/v8/rs_support/rsScriptGroup.cpp" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/renderscript/v8/rs_support/rsScriptGroup.h" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/renderscript/v8/rs_support/rsScriptIntrinsic.cpp" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/renderscript/v8/rs_support/rsScriptIntrinsic.h" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/renderscript/v8/rs_support/rsSignal.cpp" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/renderscript/v8/rs_support/rsSignal.h" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/renderscript/v8/rs_support/rsStream.cpp" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/renderscript/v8/rs_support/rsStream.h" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/renderscript/v8/rs_support/rsThreadIO.cpp" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/renderscript/v8/rs_support/rsThreadIO.h" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/renderscript/v8/rs_support/rsType.cpp" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/renderscript/v8/rs_support/rsType.h" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/renderscript/v8/rs_support/rsUtils.h" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/renderscript/v8/rs_support/rs_hal.h" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/renderscript/v8/rs_support/rsgApi.cpp.rsg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/renderscript/v8/rs_support/rsgApiFuncDecl.h.rsg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/renderscript/v8/rs_support/rsgApiReplay.cpp.rsg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/renderscript/v8/rs_support/rsgApiStructs.h.rsg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/renderscript/v8/rs_support/rsg_generator.c" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/renderscript/v8/rs_support/scriptc/rs_allocation.rsh" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/renderscript/v8/rs_support/scriptc/rs_atomic.rsh" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/renderscript/v8/rs_support/scriptc/rs_cl.rsh" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/renderscript/v8/rs_support/scriptc/rs_core.rsh" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/renderscript/v8/rs_support/scriptc/rs_debug.rsh" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/renderscript/v8/rs_support/scriptc/rs_element.rsh" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/renderscript/v8/rs_support/scriptc/rs_graphics.rsh" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/renderscript/v8/rs_support/scriptc/rs_math.rsh" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/renderscript/v8/rs_support/scriptc/rs_matrix.rsh" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/renderscript/v8/rs_support/scriptc/rs_mesh.rsh" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/renderscript/v8/rs_support/scriptc/rs_object.rsh" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/renderscript/v8/rs_support/scriptc/rs_program.rsh" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/renderscript/v8/rs_support/scriptc/rs_quaternion.rsh" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/renderscript/v8/rs_support/scriptc/rs_sampler.rsh" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/renderscript/v8/rs_support/scriptc/rs_time.rsh" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/renderscript/v8/rs_support/scriptc/rs_types.rsh" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/renderscript/v8/rs_support/spec.h" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/renderscript/v8/rs_support/spec.l" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/v7/Android.mk" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/v7/gridlayout/gen/android/support/v7/gridlayout/BuildConfig.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/v7/gridlayout/gen/android/support/v7/gridlayout/R.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/v7/gridlayout/src/android/support/v7/widget/ViewGroup.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/volley/.gitignore" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/volley/.project" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/volley/Android.mk" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/volley/AndroidManifest.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/volley/proguard.cfg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/volley/project.properties" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/volley/src/com/android/volley/AuthFailureError.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/volley/src/com/android/volley/Cache.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/volley/src/com/android/volley/CacheDispatcher.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/volley/src/com/android/volley/DefaultRetryPolicy.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/volley/src/com/android/volley/ExecutorDelivery.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/volley/src/com/android/volley/Network.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/volley/src/com/android/volley/NetworkDispatcher.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/volley/src/com/android/volley/NetworkError.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/volley/src/com/android/volley/NetworkResponse.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/volley/src/com/android/volley/NoConnectionError.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/volley/src/com/android/volley/ParseError.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/volley/src/com/android/volley/Request.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/volley/src/com/android/volley/RequestQueue.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/volley/src/com/android/volley/Response.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/volley/src/com/android/volley/ResponseDelivery.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/volley/src/com/android/volley/RetryPolicy.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/volley/src/com/android/volley/ServerError.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/volley/src/com/android/volley/TimeoutError.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/volley/src/com/android/volley/VolleyError.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/volley/src/com/android/volley/VolleyLog.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/volley/src/com/android/volley/toolbox/AndroidAuthenticator.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/volley/src/com/android/volley/toolbox/Authenticator.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/volley/src/com/android/volley/toolbox/BasicNetwork.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/volley/src/com/android/volley/toolbox/ByteArrayPool.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/volley/src/com/android/volley/toolbox/ClearCacheRequest.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/volley/src/com/android/volley/toolbox/DiskBasedCache.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/volley/src/com/android/volley/toolbox/HttpClientStack.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/volley/src/com/android/volley/toolbox/HttpHeaderParser.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/volley/src/com/android/volley/toolbox/HttpStack.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/volley/src/com/android/volley/toolbox/HurlStack.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/volley/src/com/android/volley/toolbox/ImageRequest.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/volley/src/com/android/volley/toolbox/JsonArrayRequest.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/volley/src/com/android/volley/toolbox/JsonObjectRequest.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/volley/src/com/android/volley/toolbox/JsonRequest.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/volley/src/com/android/volley/toolbox/NoCache.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/volley/src/com/android/volley/toolbox/PoolingByteArrayOutputStream.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/volley/src/com/android/volley/toolbox/RequestFuture.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/volley/src/com/android/volley/toolbox/StringRequest.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/volley/tests/.classpath" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/volley/tests/.project" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/volley/tests/Android.mk" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/volley/tests/AndroidManifest.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/volley/tests/project.properties" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/volley/tests/res/raw/large_jpeg_1024_500.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/volley/tests/src/com/android/volley/CacheDispatcherTest.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/volley/tests/src/com/android/volley/NetworkDispatcherTest.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/volley/tests/src/com/android/volley/RequestQueueTest.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/volley/tests/src/com/android/volley/RequestTest.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/volley/tests/src/com/android/volley/ResponseDeliveryTest.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/volley/tests/src/com/android/volley/mock/MockCache.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/volley/tests/src/com/android/volley/mock/MockHttpClient.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/volley/tests/src/com/android/volley/mock/MockHttpStack.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/volley/tests/src/com/android/volley/mock/MockNetwork.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/volley/tests/src/com/android/volley/mock/MockRequest.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/volley/tests/src/com/android/volley/mock/MockResponseDelivery.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/volley/tests/src/com/android/volley/mock/WaitableQueue.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/volley/tests/src/com/android/volley/toolbox/BasicNetworkTest.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/volley/tests/src/com/android/volley/toolbox/ByteArrayPoolTest.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/volley/tests/src/com/android/volley/toolbox/HttpHeaderParserTest.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/volley/tests/src/com/android/volley/toolbox/ImageRequestTest.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/volley/tests/src/com/android/volley/toolbox/PoolingByteArrayOutputStreamTest.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/volley/tests/src/com/android/volley/utils/CacheTestUtils.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/volley/tests/src/com/android/volley/utils/ImmediateResponseDelivery.java" afterPath="" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/renderscript/v8/java/src/android/support/v8/renderscript/ScriptIntrinsic.java" afterPath="$PROJECT_DIR$/v8/renderscript/java/src/android/support/v8/renderscript/ScriptIntrinsic.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/v7/gridlayout/readme" afterPath="$PROJECT_DIR$/v7/appcompat/src/.readme" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/volley/.classpath" afterPath="$PROJECT_DIR$/v7/appcompat/.classpath" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/v7/gridlayout/.gitignore" afterPath="$PROJECT_DIR$/v7/gridlayout/.gitignore" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/v4/java/android/support/v4/view/accessibility/AccessibilityEventCompat.java" afterPath="$PROJECT_DIR$/v4/java/android/support/v4/view/accessibility/AccessibilityEventCompat.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/v4/java/android/support/v4/view/accessibility/AccessibilityNodeInfoCompat.java" afterPath="$PROJECT_DIR$/v4/java/android/support/v4/view/accessibility/AccessibilityNodeInfoCompat.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/v4/java/android/support/v4/view/accessibility/AccessibilityNodeProviderCompat.java" afterPath="$PROJECT_DIR$/v4/java/android/support/v4/view/accessibility/AccessibilityNodeProviderCompat.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/v4/java/android/support/v4/view/accessibility/AccessibilityRecordCompat.java" afterPath="$PROJECT_DIR$/v4/java/android/support/v4/view/accessibility/AccessibilityRecordCompat.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/v4/java/android/support/v4/accessibilityservice/AccessibilityServiceInfoCompat.java" afterPath="$PROJECT_DIR$/v4/java/android/support/v4/accessibilityservice/AccessibilityServiceInfoCompat.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/v4/java/android/support/v4/app/ActionBarDrawerToggle.java" afterPath="$PROJECT_DIR$/v4/java/android/support/v4/app/ActionBarDrawerToggle.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/v4/java/android/support/v4/app/ActivityCompat.java" afterPath="$PROJECT_DIR$/v4/java/android/support/v4/app/ActivityCompat.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/v4/jellybean/android/support/v4/app/ActivityCompatJB.java" afterPath="$PROJECT_DIR$/v4/jellybean/android/support/v4/app/ActivityCompatJB.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/v13/Android.mk" afterPath="$PROJECT_DIR$/v13/Android.mk" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/v4/Android.mk" afterPath="$PROJECT_DIR$/v4/Android.mk" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/v7/gridlayout/AndroidManifest.xml" afterPath="$PROJECT_DIR$/v7/gridlayout/AndroidManifest.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/v4/java/android/support/v4/content/AsyncTaskLoader.java" afterPath="$PROJECT_DIR$/v4/java/android/support/v4/content/AsyncTaskLoader.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/v4/java/android/support/v4/content/CursorLoader.java" afterPath="$PROJECT_DIR$/v4/java/android/support/v4/content/CursorLoader.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/v4/java/android/support/v4/widget/DrawerLayout.java" afterPath="$PROJECT_DIR$/v4/java/android/support/v4/widget/DrawerLayout.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/v4/java/android/support/v4/content/FileProvider.java" afterPath="$PROJECT_DIR$/v4/java/android/support/v4/content/FileProvider.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/v4/java/android/support/v4/app/Fragment.java" afterPath="$PROJECT_DIR$/v4/java/android/support/v4/app/Fragment.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/v4/java/android/support/v4/app/FragmentActivity.java" afterPath="$PROJECT_DIR$/v4/java/android/support/v4/app/FragmentActivity.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/v4/java/android/support/v4/app/FragmentManager.java" afterPath="$PROJECT_DIR$/v4/java/android/support/v4/app/FragmentManager.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/v13/java/android/support/v13/app/FragmentTabHost.java" afterPath="$PROJECT_DIR$/v13/java/android/support/v13/app/FragmentTabHost.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/v4/java/android/support/v4/app/FragmentTabHost.java" afterPath="$PROJECT_DIR$/v4/java/android/support/v4/app/FragmentTabHost.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/v7/gridlayout/src/android/support/v7/widget/GridLayout.java" afterPath="$PROJECT_DIR$/v7/gridlayout/src/android/support/v7/widget/GridLayout.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/v4/java/android/support/v4/view/KeyEventCompat.java" afterPath="$PROJECT_DIR$/v4/java/android/support/v4/view/KeyEventCompat.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/v4/eclair/android/support/v4/view/KeyEventCompatEclair.java" afterPath="$PROJECT_DIR$/v4/eclair/android/support/v4/view/KeyEventCompatEclair.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/v4/java/android/support/v4/content/Loader.java" afterPath="$PROJECT_DIR$/v4/java/android/support/v4/content/Loader.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/v4/java/android/support/v4/app/LoaderManager.java" afterPath="$PROJECT_DIR$/v4/java/android/support/v4/app/LoaderManager.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/v4/java/android/support/v4/util/LongSparseArray.java" afterPath="$PROJECT_DIR$/v4/java/android/support/v4/util/LongSparseArray.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/v4/java/android/support/v4/view/MenuCompat.java" afterPath="$PROJECT_DIR$/v4/java/android/support/v4/view/MenuCompat.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/v4/java/android/support/v4/view/MenuItemCompat.java" afterPath="$PROJECT_DIR$/v4/java/android/support/v4/view/MenuItemCompat.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/v4/honeycomb/android/support/v4/view/MenuItemCompatHoneycomb.java" afterPath="$PROJECT_DIR$/v4/honeycomb/android/support/v4/view/MenuItemCompatHoneycomb.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/v7/gridlayout/README.txt" afterPath="$PROJECT_DIR$/v7/gridlayout/README.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/v4/java/android/support/v4/app/ShareCompat.java" afterPath="$PROJECT_DIR$/v4/java/android/support/v4/app/ShareCompat.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/v4/java/android/support/v4/widget/SlidingPaneLayout.java" afterPath="$PROJECT_DIR$/v4/java/android/support/v4/widget/SlidingPaneLayout.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/v4/java/android/support/v4/util/SparseArrayCompat.java" afterPath="$PROJECT_DIR$/v4/java/android/support/v4/util/SparseArrayCompat.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/v4/java/android/support/v4/app/TaskStackBuilder.java" afterPath="$PROJECT_DIR$/v4/java/android/support/v4/app/TaskStackBuilder.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/v4/honeycomb/android/support/v4/app/TaskStackBuilderHoneycomb.java" afterPath="$PROJECT_DIR$/v4/honeycomb/android/support/v4/app/TaskStackBuilderHoneycomb.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/v4/ics/android/support/v4/net/TrafficStatsCompatIcs.java" afterPath="$PROJECT_DIR$/v4/ics/android/support/v4/net/TrafficStatsCompatIcs.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/v4/java/android/support/v4/view/ViewCompat.java" afterPath="$PROJECT_DIR$/v4/java/android/support/v4/view/ViewCompat.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/v4/honeycomb/android/support/v4/view/ViewCompatHC.java" afterPath="$PROJECT_DIR$/v4/honeycomb/android/support/v4/view/ViewCompatHC.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/v4/jellybean/android/support/v4/view/ViewCompatJB.java" afterPath="$PROJECT_DIR$/v4/jellybean/android/support/v4/view/ViewCompatJB.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/v4/java/android/support/v4/view/ViewGroupCompat.java" afterPath="$PROJECT_DIR$/v4/java/android/support/v4/view/ViewGroupCompat.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/v4/java/android/support/v4/view/ViewPager.java" afterPath="$PROJECT_DIR$/v4/java/android/support/v4/view/ViewPager.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/modules.xml" afterPath="$PROJECT_DIR$/.idea/modules.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/pom.xml" afterPath="$PROJECT_DIR$/pom.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/sample/pom.xml" afterPath="$PROJECT_DIR$/sample/pom.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/v4/pom.xml" afterPath="$PROJECT_DIR$/v4/pom.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/v7/gridlayout/project.properties" afterPath="$PROJECT_DIR$/v7/gridlayout/project.properties" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/sample.iml" afterPath="$PROJECT_DIR$/sample.iml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/support-v4-animator.iml" afterPath="$PROJECT_DIR$/support-v4-animator.iml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="support_v4_nineoldandroids.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -538,17 +1508,7 @@
     <favorites_list name="support_v4_nineoldandroids" />
   </component>
   <component name="FileEditorManager">
-    <leaf>
-      <file leaf-file-name="styles.xml" pinned="false" current="true" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/sample/res/values/styles.xml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="351">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-    </leaf>
+    <leaf />
   </component>
   <component name="FindManager">
     <FindUsagesManager>
@@ -566,12 +1526,12 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/pom.xml" />
         <option value="$PROJECT_DIR$/v4/AndroidManifest.xml" />
-        <option value="$PROJECT_DIR$/v4/pom.xml" />
-        <option value="$PROJECT_DIR$/sample/pom.xml" />
         <option value="$PROJECT_DIR$/v4/gingerbread/android/support/v4/app/ActionBarSherlockDrawerToggleImpl.java" />
         <option value="$PROJECT_DIR$/v4/java/android/support/v4/app/FragmentManager.java" />
+        <option value="$PROJECT_DIR$/sample/pom.xml" />
+        <option value="$PROJECT_DIR$/pom.xml" />
+        <option value="$PROJECT_DIR$/v4/pom.xml" />
       </list>
     </option>
   </component>
@@ -586,10 +1546,10 @@
     </option>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="207" />
-    <option name="y" value="60" />
-    <option name="width" value="974" />
-    <option name="height" value="551" />
+    <option name="x" value="197" />
+    <option name="y" value="52" />
+    <option name="width" value="1049" />
+    <option name="height" value="589" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="false">
     <OptionsSetting value="true" id="Add" />
@@ -635,60 +1595,6 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="support_v4_nineoldandroids" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Support_v4_NineOldAndroids" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="sample" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="support_v4_nineoldandroids" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Support_v4_NineOldAndroids" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="sample" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="res" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="support_v4_nineoldandroids" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Support_v4_NineOldAndroids" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="sample" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="res" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="values" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
         </subPane>
       </pane>
       <pane id="PackagesPane" />
@@ -719,6 +1625,7 @@
       <option name="CLASS_NAME" value="" />
       <option name="PACKAGE_NAME" value="" />
       <option name="TARGET_SELECTION_MODE" value="EMULATOR" />
+      <option name="USE_LAST_SELECTED_DEVICE" value="false" />
       <option name="PREFERRED_AVD" value="" />
       <option name="USE_COMMAND_LINE" value="true" />
       <option name="COMMAND_LINE" value="" />
@@ -785,6 +1692,25 @@
       <patterns />
       <method />
     </configuration>
+    <configuration default="true" type="AndroidRunConfigurationType" factoryName="Android Application">
+      <module name="" />
+      <option name="ACTIVITY_CLASS" value="" />
+      <option name="MODE" value="default_activity" />
+      <option name="DEPLOY" value="true" />
+      <option name="ARTIFACT_NAME" value="" />
+      <option name="TARGET_SELECTION_MODE" value="EMULATOR" />
+      <option name="USE_LAST_SELECTED_DEVICE" value="false" />
+      <option name="PREFERRED_AVD" value="" />
+      <option name="USE_COMMAND_LINE" value="true" />
+      <option name="COMMAND_LINE" value="" />
+      <option name="WIPE_USER_DATA" value="false" />
+      <option name="DISABLE_BOOT_ANIMATION" value="false" />
+      <option name="NETWORK_SPEED" value="full" />
+      <option name="NETWORK_LATENCY" value="none" />
+      <option name="CLEAR_LOGCAT" value="false" />
+      <option name="SHOW_LOGCAT_AUTOMATICALLY" value="true" />
+      <method />
+    </configuration>
     <list size="0" />
     <configuration name="&lt;template&gt;" type="TestNG" default="true" selected="false">
       <option name="MAIN_CLASS_NAME" />
@@ -807,27 +1733,29 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="207" y="60" width="974" height="551" extended-state="6" />
-    <editor active="true" />
+    <frame x="197" y="52" width="1049" height="589" extended-state="1" />
+    <editor active="false" />
     <layout>
       <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="TCPMON" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="TunnelliJ" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Build Variants" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Android" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.3171806" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.29298067" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="TCPMON" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Gerrit" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
@@ -837,6 +1765,11 @@
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
     </layout>
+  </component>
+  <component name="Vcs.Log.UiProperties">
+    <option name="RECENTLY_FILTERED_USERS">
+      <collection />
+    </option>
   </component>
   <component name="VcsContentAnnotationSettings">
     <option name="myLimit" value="2678400000" />
@@ -850,6 +1783,13 @@
     <breakpoint-manager />
   </component>
   <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/sample/res/values/styles.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="285">
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/sample/AndroidManifest.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state line="1" column="136" selection-start="175" selection-end="194" vertical-scroll-proportion="0.030303031" vertical-offset="0" max-vertical-offset="495">
@@ -857,30 +1797,9 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/pom.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="191" column="20" selection-start="5542" selection-end="5542" vertical-scroll-proportion="5.4242425" vertical-offset="180" max-vertical-offset="3015">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/sample/project.properties">
       <provider selected="true" editor-type-id="text-editor">
         <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="330" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/sample/pom.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="12" column="28" selection-start="485" selection-end="485" vertical-scroll-proportion="0.27419356" vertical-offset="61" max-vertical-offset="1005">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/v4/pom.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="12" column="33" selection-start="504" selection-end="504" vertical-scroll-proportion="0.36363637" vertical-offset="0" max-vertical-offset="2850">
-          <folding />
-        </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/v4/AndroidManifest.xml">
@@ -907,9 +1826,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/v4/res/values/attrs.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="364">
-          <folding />
-        </state>
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="364" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/sample/res/values/styles.xml">
@@ -919,6 +1836,50 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/sample/pom.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="65" column="19" selection-start="2030" selection-end="2030" vertical-scroll-proportion="2.511628" vertical-offset="3" max-vertical-offset="1110">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pom.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="73" column="28" selection-start="2268" selection-end="2268" vertical-scroll-proportion="0.45736435" vertical-offset="918" max-vertical-offset="2835">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/v4/kitkat/android/support/v4/graphics/drawable/DrawableCompatKitKat.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="23" column="6" selection-start="797" selection-end="797" vertical-scroll-proportion="0.36" vertical-offset="0" max-vertical-offset="375">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/v4/pom.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="81" column="46" selection-start="2503" selection-end="2503" vertical-scroll-proportion="0.82945734" vertical-offset="894" max-vertical-offset="2925">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+  </component>
+  <component name="masterDetails">
+    <states>
+      <state key="ProjectJDKs.UI">
+        <settings>
+          <last-edited>Maven Android API 19 Platform</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+    </states>
   </component>
   <component name="se.expertsystem.intellij.aop.aspectj.AspectJProjectComponent">
     <setting name="isActivated" value="false" />
