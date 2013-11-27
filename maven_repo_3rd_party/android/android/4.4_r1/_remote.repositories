@@ -1,0 +1,5 @@
+#NOTE: This is an Aether internal implementation file, its format can be changed without prior notice.
+#Mon Nov 04 13:19:10 CST 2013
+android-4.4_r1.jar>=
+android-4.4_r1.pom>=
+android-4.4_r1-sources.jar>=
