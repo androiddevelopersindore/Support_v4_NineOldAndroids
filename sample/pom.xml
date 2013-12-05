@@ -32,16 +32,6 @@
 		    <artifactId>support-v4-animator</artifactId>
 		    <version>${project.version}</version>
 			<type>apklib</type>
-		</dependency>
-<!--
-<dependency>
-			<groupId>com.nineoldandroids</groupId>
-			<artifactId>library</artifactId>
-		</dependency>
-		<dependency>
-			<groupId>com.actionbarsherlock</groupId>
-			<artifactId>actionbarsherlock</artifactId>
-			<type>apklib</type>
 			<exclusions>
 				<exclusion>
 					<groupId>com.google.android</groupId>
@@ -49,7 +39,6 @@
 				</exclusion>
 			</exclusions>
 		</dependency>
--->
 	</dependencies>
 
 	<build>

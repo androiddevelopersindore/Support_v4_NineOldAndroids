@@ -21,7 +21,7 @@ The latest version is available on the Maven Central Repo
 <dependency>
 	<artifactId>com.github.kedzie.supportanimator</artifactId>
 	<groupId>support-v4-animator</groupId>
-	<version>13.0.0</version>
+	<version>19.0.0</version>
 </dependency>
 ```
 
