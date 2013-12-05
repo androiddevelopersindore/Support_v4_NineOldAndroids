@@ -26,15 +26,17 @@
 			<artifactId>android</artifactId>
 			<scope>provided</scope>
 		</dependency>
-		<dependency>
-			<groupId>com.nineoldandroids</groupId>
-			<artifactId>library</artifactId>
-		</dependency>
+		
 		<dependency>
 		    <groupId>com.github.kedzie.supportanimator</groupId>
 		    <artifactId>support-v4-animator</artifactId>
 		    <version>${project.version}</version>
 			<type>apklib</type>
+		</dependency>
+<!--
+<dependency>
+			<groupId>com.nineoldandroids</groupId>
+			<artifactId>library</artifactId>
 		</dependency>
 		<dependency>
 			<groupId>com.actionbarsherlock</groupId>
@@ -47,6 +49,7 @@
 				</exclusion>
 			</exclusions>
 		</dependency>
+-->
 	</dependencies>
 
 	<build>
