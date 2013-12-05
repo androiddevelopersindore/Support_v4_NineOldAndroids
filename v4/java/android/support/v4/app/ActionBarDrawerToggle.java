@@ -295,6 +295,27 @@ public class ActionBarDrawerToggle implements DrawerLayout.DrawerListener {
         return false;
     }
 
+	/**
+     * This method should be called by your <code>Activity</code>'s
+     * {@link Activity#onOptionsItemSelected(android.view.MenuItem) onOptionsItemSelected} method.
+     * If it returns true, your <code>onOptionsItemSelected</code> method should return true and
+     * skip further processing.
+     *
+     * @param item the MenuItem instance representing the selected menu item
+     * @return true if the event was handled and further processing should not occur
+     */
+    public boolean onOptionsItemSelected(com.actionbarsherlock.view.MenuItem item) {
+        if (item != null && item.getItemId() == ID_HOME && mDrawerIndicatorEnabled) {
+            if (mDrawerLayout.isDrawerVisible(GravityCompat.START)) {
+                mDrawerLayout.closeDrawer(GravityCompat.START);
+            } else {
+                mDrawerLayout.openDrawer(GravityCompat.START);
+            }
+            return true;
+        }
+        return false;
+    }
+
     /**
      * {@link DrawerLayout.DrawerListener} callback method. If you do not use your
      * ActionBarDrawerToggle instance directly as your DrawerLayout's listener, you should call
