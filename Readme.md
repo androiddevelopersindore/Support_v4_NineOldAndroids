@@ -48,7 +48,7 @@ Look at the sample application for a complete example and read below for instruc
 
 ###<a name="transition"></a>Animator Fragment Transitions
 
-This fork allows using [NineOldAndroids][1] Object Animators for fragment transitions.  View animations will no longer work.
+This fork allows using [NineOldAndroids][1] Object Animators for fragment transitions.  View animations will also work but only for Custom Transitions.
 
 ####<a name="standard"></a>Standard Transitions
 
@@ -63,7 +63,11 @@ tx.setTransition(FragmentTransaction.TRANSIT_FRAGMENT_OPEN);
 Specify custom transition animations in the transaction
 
 ```java
+//Assign Object Animators for transitions
 tx.setCustomTransitions(R.animator.flip_left_in, R.animator.flip_left_out, R.animator.flip_right_in, R.animator.flip_right_out)
+
+//View Animations also work
+tx.setCustomTransitions(R.anim.slide_in_right, R.anim.slide_out_left, R.anim.slide_in_left, R.anim.slide_out_right)
 ```
 
 ####<a name="fragment"></a>Fragment Implementation Specified Transitions

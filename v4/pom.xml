@@ -148,16 +148,7 @@
 				<artifactId>maven-javadoc-plugin</artifactId>
 				<version>2.8.1</version>
 				<configuration>
-					<source>froyo</source>
-					<source>eclair</source>
-					<source>gingerbread</source>
-					<source>honeycomb</source>
-					<source>honeycomb_mr2</source>
-					<source>ics</source>
-					<source>ics-mr1</source>
-					<source>jellybean</source>
-					<source>jellybean-mr1</source>
-				    <sourcepath>${basedir}/java:${basedir}/froyo:${basedir}/eclair:${basedir}/gingerbread:${basedir}/honeycomb:${basedir}/honeycomb_mr2:${basedir}/ics:${basedir}/ics-mr1:${basedir}/jellybean:${basedir}/jellybean-mr1</sourcepath>
+				    <sourcepath>${basedir}/java:${basedir}/froyo:${basedir}/eclair:${basedir}/gingerbread:${basedir}/honeycomb:${basedir}/honeycomb_mr2:${basedir}/ics:${basedir}/ics-mr1:${basedir}/jellybean:${basedir}/jellybean-mr1:${basedir}/jellybean-mr2:${basedir}/kitkat</sourcepath>
 					<doclet>org.jboss.apiviz.APIviz</doclet>
 					<docletArtifact>
 						<groupId>org.jboss.apiviz</groupId>

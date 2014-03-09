@@ -30,8 +30,10 @@ public class TransitionActivity extends SherlockFragmentActivity {
 	private FragmentTransaction makeTransaction() {
 		FragmentTransaction tx = getSupportFragmentManager().beginTransaction().addToBackStack(null);
 		String mode = mPrefs.getString(PREF_TRANSITION_MODE, "");
-		if(mode.equals("Custom"))
+		if(mode.equals("CustomAnimator"))
 			tx.setCustomAnimations(R.anim.flip_left_in, R.anim.flip_left_out, R.anim.flip_right_in, R.anim.flip_right_out);
+        if(mode.equals("CustomAnimation"))
+            tx.setCustomAnimations(R.anim.slide_in_right, R.anim.slide_out_left, R.anim.slide_in_left, R.anim.slide_out_right);
 		else if(mode.equals("Standard"))
 			tx.setTransition(Integer.parseInt(mPrefs.getString(PREF_STANDARD_TRANSITION, "")));
 		else if(mode.equals("Style")) {

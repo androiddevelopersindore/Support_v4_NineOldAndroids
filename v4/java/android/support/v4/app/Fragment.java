@@ -178,7 +178,7 @@ public class Fragment implements ComponentCallbacks, OnCreateContextMenuListener
     // Non-null if the fragment's view hierarchy is currently animating away,
     // meaning we need to wait a bit on completely destroying it.  This is the
     // view that is animating.
-    Animator mAnimatingAway;
+    Object mAnimatingAway;
 
     // If mAnimatingAway != null, this is the state we should move to once the
     // animation is done.

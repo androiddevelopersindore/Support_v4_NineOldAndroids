@@ -30,6 +30,7 @@
       <excludeFolder url="file://$MODULE_DIR$/sample/bin/generated-sources/combined-assets" />
       <excludeFolder url="file://$MODULE_DIR$/sample/bin/generated-sources/combined-resources" />
       <excludeFolder url="file://$MODULE_DIR$/sample/bin/generated-sources/extracted-dependencies" />
+      <excludeFolder url="file://$MODULE_DIR$/sample/bin/idea-classes" />
       <excludeFolder url="file://$MODULE_DIR$/sample/bin/maven-archiver" />
       <excludeFolder url="file://$MODULE_DIR$/sample/bin/unpack" />
       <excludeFolder url="file://$MODULE_DIR$/sample/target/generated-sources/aidl" />
@@ -38,9 +39,9 @@
     <orderEntry type="jdk" jdkName="Maven Android 4.2.2 Platform" jdkType="Android SDK" />
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="library" scope="PROVIDED" name="Maven: android:android:4.4_r1" level="project" />
-    <orderEntry type="library" name="Maven: com.nineoldandroids:library:2.4.0" level="project" />
     <orderEntry type="module" module-name="support-v4-animator" />
-    <orderEntry type="module" module-name="~apklib-com.actionbarsherlock_actionbarsherlock_4.3.1" />
+    <orderEntry type="library" name="Maven: com.nineoldandroids:library:2.4.0" level="project" />
+    <orderEntry type="module" module-name="~apklib-com.actionbarsherlock_actionbarsherlock_4.4.0" />
   </component>
 </module>
 

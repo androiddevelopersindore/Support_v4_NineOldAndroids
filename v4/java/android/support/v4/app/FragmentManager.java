@@ -18,6 +18,7 @@ package android.support.v4.app;
 
 import android.content.Context;
 import android.content.res.Configuration;
+import android.content.res.Resources;
 import android.content.res.TypedArray;
 import android.os.Bundle;
 import android.os.Handler;
@@ -33,6 +34,8 @@ import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
 import android.view.animation.DecelerateInterpolator;
 import android.view.animation.Interpolator;
 
@@ -745,16 +748,26 @@ final class FragmentManagerImpl extends FragmentManager {
         return anim;
     }
     
-    Animator loadAnimator(Fragment fragment, int transit, boolean enter,
+    Object loadAnimator(Fragment fragment, int transit, boolean enter,
             int transitionStyle) {
         Animator animObj = fragment.onCreateAnimator(transit, enter, fragment.mNextAnim);
         if (animObj != null) 
             return animObj;
         
         if (fragment.mNextAnim != 0) {
-        	Animator anim = AnimatorInflater.loadAnimator(mActivity, fragment.mNextAnim);
-        	if(anim!=null)
-        		return anim;
+            try {
+                Animator anim = AnimatorInflater.loadAnimator(mActivity, fragment.mNextAnim);
+                if (anim != null)
+                    return anim;
+            } catch(Exception e) {
+                try {
+                    Animation anim = AnimationUtils.loadAnimation(mActivity, fragment.mNextAnim);
+                    if(anim!=null)
+                        return anim;
+                } catch(Exception ex) {
+                    Log.w(TAG, "Failed to custom animation.", ex);
+                }
+            }
         }
         
         if (transit == 0) {
@@ -763,9 +776,8 @@ final class FragmentManagerImpl extends FragmentManager {
         
         //If transition style is overidden then use it, otherwise create standard animations programmatically.
         if(transitionStyle > 0) {
-            int styleIndex = transitToStyleIndex(transit, enter);
             TypedArray a = mActivity.obtainStyledAttributes(transitionStyle, com.github.kedzie.supportanimator.R.styleable.FragmentAnimation);
-            int res = a.getResourceId(styleIndex, 0);
+            int res = a.getResourceId(transitToStyleIndex(transit, enter), 0);
             Log.d(TAG, "Style animator resource: " + res);
             a.recycle();
             return AnimatorInflater.loadAnimator(mActivity, res);
@@ -911,10 +923,13 @@ final class FragmentManagerImpl extends FragmentManager {
                                 f.mInnerView = f.mView;
                                 f.mView = NoSaveStateFrameLayout.wrap(f.mView);
                                 if (container != null) {
-                                	Animator anim = loadAnimator(f, transit, true, transitionStyle);
-                                    if (anim != null) {
+                                	Object animObj = loadAnimator(f, transit, true, transitionStyle);
+                                    if (animObj != null && animObj instanceof Animator) {
+                                        Animator anim = (Animator)animObj;
                                     	anim.setTarget(f.mView);
                                     	anim.start();
+                                    } else if (animObj != null && animObj instanceof Animation) {
+                                        f.mView.startAnimation((Animation) animObj);
                                     }
                                     container.addView(f.mView);
                                 }
@@ -976,30 +991,53 @@ final class FragmentManagerImpl extends FragmentManager {
                         }
                         f.performDestroyView();
                         if (f.mView != null && f.mContainer != null) {
-                        	Animator anim = null;
+                        	Object animObj = null;
                             if (mCurState > Fragment.INITIALIZING && !mDestroyed) {
-                                anim = loadAnimator(f, transit, false,
-                                        transitionStyle);
+                                animObj = loadAnimator(f, transit, false, transitionStyle);
                             }
-                            if (anim != null) {
+                            if (animObj != null && animObj instanceof Animator) {
+                                Animator anim = (Animator) animObj;
                                 final Fragment finalFragment = f;
                                 final ViewGroup finalContainer = f.mContainer;
                                 final View finalView = f.mView;
                                 f.mAnimatingAway = anim;
                                 f.mStateAfterAnimating = newState;
                                 anim.addListener(new AnimatorListenerAdapter() {
-                                	@Override
-                                	public void onAnimationEnd(Animator animation) {
-                                	    finalContainer.removeView(finalView);
-                                		if (finalFragment.mAnimatingAway != null) {
-                                		    finalFragment.mAnimatingAway = null;
+                                    @Override
+                                    public void onAnimationEnd(Animator animation) {
+                                        finalContainer.removeView(finalView);
+                                        if (finalFragment.mAnimatingAway != null) {
+                                            finalFragment.mAnimatingAway = null;
                                             moveToState(finalFragment, finalFragment.mStateAfterAnimating,
                                                     0, 0, false);
                                         }
-                                	}
-								});
+                                    }
+                                });
                                 anim.setTarget(f.mView);
                                 anim.start();
+                            } else if(animObj != null && animObj instanceof Animation) {
+                                Animation anim = (Animation)animObj;
+                                final Fragment fragment = f;
+                                f.mAnimatingAway = f.mView;
+                                f.mStateAfterAnimating = newState;
+                                anim.setAnimationListener(new Animation.AnimationListener() {
+                                    @Override
+                                    public void onAnimationEnd(Animation animation) {
+                                        if (fragment.mAnimatingAway != null) {
+                                            fragment.mAnimatingAway = null;
+                                            moveToState(fragment, fragment.mStateAfterAnimating,
+                                                    0, 0, false);
+                                        }
+                                    }
+                                    @Override
+                                    public void onAnimationRepeat(Animation animation) {
+                                    }
+                                    @Override
+                                    public void onAnimationStart(Animation animation) {
+                                    }
+                                });
+                                f.mView.startAnimation(anim);
+                                f.mContainer.removeView(f.mView);
                             } else {
                                 f.mContainer.removeView(f.mView);
                             }
@@ -1018,9 +1056,14 @@ final class FragmentManagerImpl extends FragmentManager {
                                 // animation right now -- it is not needed,
                                 // and we can't wait any more on destroying
                                 // the fragment.
-                                Animator v = f.mAnimatingAway;
+                                if(f.mAnimatingAway instanceof Animator) {
+                                    Animator animator = (Animator) f.mAnimatingAway;
+                                    animator.cancel();
+                                } else if(f.mAnimatingAway instanceof View) {
+                                    View v = (View) f.mAnimatingAway;
+                                    v.clearAnimation();
+                                }
                                 f.mAnimatingAway = null;
-                                v.cancel();
                             }
                         }
                         if (f.mAnimatingAway != null) {
@@ -1188,20 +1231,23 @@ final class FragmentManagerImpl extends FragmentManager {
         if (!fragment.mHidden) {
             fragment.mHidden = true;
             if (fragment.mView != null) {
-            	Animator anim = loadAnimator(fragment, transition, false,
-                        transitionStyle);
-                if (anim != null) {
-                	anim.setTarget(fragment.mView);
-                	anim.start();
-                	final Fragment finalFragment = fragment; 
-                	anim.addListener(new AnimatorListenerAdapter() {
-                	    @Override
-                	    public void onAnimationEnd(Animator animation) {
-                	        if (finalFragment.mView != null) {
+            	Object animObj = loadAnimator(fragment, transition, false, transitionStyle);
+                if (animObj!=null && animObj instanceof Animator) {
+                    Animator anim = (Animator) animObj;
+                    anim.setTarget(fragment.mView);
+                    anim.start();
+                    final Fragment finalFragment = fragment;
+                    anim.addListener(new AnimatorListenerAdapter() {
+                        @Override
+                        public void onAnimationEnd(Animator animation) {
+                            if (finalFragment.mView != null) {
                                 finalFragment.mView.setVisibility(View.GONE);
                             }
-                	    }
+                        }
                     });
+                } else if(animObj!=null && animObj instanceof Animation) {
+                    fragment.mView.startAnimation((Animation)animObj);
+                    fragment.mView.setVisibility(View.GONE);
                 } else {
                     fragment.mView.setVisibility(View.GONE);
                 }
@@ -1218,11 +1264,13 @@ final class FragmentManagerImpl extends FragmentManager {
         if (fragment.mHidden) {
             fragment.mHidden = false;
             if (fragment.mView != null) {
-            	Animator anim = loadAnimator(fragment, transition, true,
-                        transitionStyle);
-                if (anim != null) {
+                Object animObj = loadAnimator(fragment, transition, true, transitionStyle);
+                if (animObj!=null && animObj instanceof Animator) {
+                    Animator anim = (Animator) animObj;
                 	anim.setTarget(fragment.mView);
                 	anim.start();
+                } else if(animObj!=null && animObj instanceof Animation) {
+                    fragment.mView.startAnimation((Animation) animObj);
                 }
                 fragment.mView.setVisibility(View.VISIBLE);
             }
