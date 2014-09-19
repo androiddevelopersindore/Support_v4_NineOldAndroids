@@ -83,7 +83,7 @@
 				<groupId>com.actionbarsherlock</groupId>
 				<artifactId>actionbarsherlock</artifactId>
 				<version>4.4.0</version>
-				<type>apklib</type>
+				<type>aar</type>
 				<exclusions>
 					<exclusion>
 						<groupId>com.google.android</groupId>
@@ -96,8 +96,6 @@
 
 	<build>
 		<sourceDirectory>${basedir}/src</sourceDirectory>
-		<directory>${basedir}/bin</directory>
-		<outputDirectory>${basedir}/bin/classes</outputDirectory>
 		<finalName>${project.artifactId}</finalName>
 		<plugins>
 			<plugin>
@@ -138,7 +136,7 @@
 				<plugin>
 					<groupId>com.jayway.maven.plugins.android.generation2</groupId>
 					<artifactId>android-maven-plugin</artifactId>
-					<version>3.8.1</version>
+					<version>3.9.0-rc.2</version>
 					<extensions>true</extensions>
 					<configuration>
 						<sdk><platform>17</platform></sdk>

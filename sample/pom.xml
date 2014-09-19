@@ -27,12 +27,16 @@
 			<artifactId>android</artifactId>
 			<scope>provided</scope>
 		</dependency>
-		
 		<dependency>
 		    <groupId>com.github.kedzie.supportanimator</groupId>
 		    <artifactId>support-v4-animator</artifactId>
 		    <version>${project.version}</version>
-			<type>apklib</type>
+			<type>aar</type>
+		</dependency>
+		<dependency>
+			<groupId>com.actionbarsherlock</groupId>
+			<artifactId>actionbarsherlock</artifactId>
+			<type>aar</type>
 			<exclusions>
 				<exclusion>
 					<groupId>com.google.android</groupId>
