@@ -6,7 +6,7 @@
 	<parent>
 		<groupId>com.github.kedzie.supportanimator</groupId>
 		<artifactId>parent</artifactId>
-		<version>19.0.1-SNAPSHOT</version>
+		<version>22.0.0-SNAPSHOT</version>
 	</parent>
 
 	<artifactId>support-v4-animator</artifactId>
@@ -35,6 +35,11 @@
 			<groupId>android</groupId>
 			<artifactId>android</artifactId>
 			<scope>provided</scope>
+		</dependency>
+		<dependency>
+			<groupId>com.android.support</groupId>
+			<artifactId>support-annotations</artifactId>
+			<version>22.2.1</version>
 		</dependency>
 		<dependency>
 			<groupId>com.nineoldandroids</groupId>
@@ -71,11 +76,13 @@
 						</goals>
 						<configuration>
 							<sources>
+								<source>donut</source>
 								<source>froyo</source>
 								<source>eclair</source>
                                 <source>eclair-mr1</source>
 								<source>gingerbread</source>
 								<source>honeycomb</source>
+								<source>honeycomb_mr1</source>
 								<source>honeycomb_mr2</source>
 								<source>ics</source>
 								<source>ics-mr1</source>
@@ -83,14 +90,20 @@
 								<source>jellybean-mr1</source>
                                 <source>jellybean-mr2</source>
                                 <source>kitkat</source>
+                                <source>api20</source>
+                                <source>api21</source>
+                                <source>api22</source>
 							</sources>
 						</configuration>
 					</execution>
 				</executions>
 			</plugin>
 			<plugin>
-				<groupId>com.jayway.maven.plugins.android.generation2</groupId>
+				<groupId>com.simpligility.maven.plugins</groupId>
 				<artifactId>android-maven-plugin</artifactId>
+				<configuration>
+					<aidlSourceDirectory>java</aidlSourceDirectory>
+				</configuration>
 			</plugin>
 			<plugin>
 				<artifactId>maven-site-plugin</artifactId>

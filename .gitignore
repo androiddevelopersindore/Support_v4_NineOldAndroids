@@ -4,3 +4,7 @@ gen-external-apklibs
 out
 target/
 .gradle
+**/*.releaseBackup
+release.properties
+.idea
+*.iml
