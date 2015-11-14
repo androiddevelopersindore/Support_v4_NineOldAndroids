@@ -23,10 +23,16 @@ import android.graphics.Canvas;
 import android.graphics.Paint;
 import android.graphics.PixelFormat;
 import android.graphics.Rect;
+import android.graphics.drawable.ColorDrawable;
 import android.graphics.drawable.Drawable;
+import android.os.Build;
 import android.os.Parcel;
 import android.os.Parcelable;
 import android.os.SystemClock;
+import android.support.annotation.DrawableRes;
+import android.support.annotation.IntDef;
+import android.support.annotation.Nullable;
+import android.support.v4.content.ContextCompat;
 import android.support.v4.view.AccessibilityDelegateCompat;
 import android.support.v4.view.GravityCompat;
 import android.support.v4.view.KeyEventCompat;
@@ -42,6 +48,10 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.view.ViewParent;
 import android.view.accessibility.AccessibilityEvent;
+
+import java.lang.annotation.Retention;
+import java.lang.annotation.RetentionPolicy;
+import java.util.List;
 
 /**
  * DrawerLayout acts as a top-level container for window content that allows for
@@ -62,14 +72,23 @@ import android.view.accessibility.AccessibilityEvent;
  * stuttering; try to perform expensive operations during the {@link #STATE_IDLE} state.
  * {@link SimpleDrawerListener} offers default/no-op implementations of each callback method.</p>
  *
- * <p>As per the Android Design guide, any drawers positioned to the left/start should
+ * <p>As per the <a href="{@docRoot}design/patterns/navigation-drawer.html">Android Design
+ * guide</a>, any drawers positioned to the left/start should
  * always contain content for navigating around the application, whereas any drawers
  * positioned to the right/end should always contain actions to take on the current content.
  * This preserves the same navigation left, actions right structure present in the Action Bar
  * and elsewhere.</p>
+ *
+ * <p>For more information about how to use DrawerLayout, read <a
+ * href="{@docRoot}training/implementing-navigation/nav-drawer.html">Creating a Navigation
+ * Drawer</a>.</p>
  */
-public class DrawerLayout extends ViewGroup {
+public class DrawerLayout extends ViewGroup implements DrawerLayoutImpl {
     private static final String TAG = "DrawerLayout";
+
+    @IntDef({STATE_IDLE, STATE_DRAGGING, STATE_SETTLING})
+    @Retention(RetentionPolicy.SOURCE)
+    private @interface State {}
 
     /**
      * Indicates that any drawers are in an idle, settled state. No animation is in progress.
@@ -85,6 +104,11 @@ public class DrawerLayout extends ViewGroup {
      * Indicates that a drawer is in the process of settling to a final position.
      */
     public static final int STATE_SETTLING = ViewDragHelper.STATE_SETTLING;
+
+    /** @hide */
+    @IntDef({LOCK_MODE_UNLOCKED, LOCK_MODE_LOCKED_CLOSED, LOCK_MODE_LOCKED_OPEN})
+    @Retention(RetentionPolicy.SOURCE)
+    private @interface LockMode {}
 
     /**
      * The drawer is unlocked.
@@ -102,6 +126,12 @@ public class DrawerLayout extends ViewGroup {
      * may close it programmatically.
      */
     public static final int LOCK_MODE_LOCKED_OPEN = 2;
+
+    /** @hide */
+    @IntDef({Gravity.LEFT, Gravity.RIGHT, GravityCompat.START, GravityCompat.END})
+    @Retention(RetentionPolicy.SOURCE)
+    private @interface EdgeGravity {}
+
 
     private static final int MIN_DRAWER_MARGIN = 64; // dp
 
@@ -130,6 +160,12 @@ public class DrawerLayout extends ViewGroup {
             android.R.attr.layout_gravity
     };
 
+    /** Whether we can use NO_HIDE_DESCENDANTS accessibility importance. */
+    private static final boolean CAN_HIDE_DESCENDANTS = Build.VERSION.SDK_INT >= 19;
+
+    private final ChildAccessibilityDelegate mChildAccessibilityDelegate =
+            new ChildAccessibilityDelegate();
+
     private int mMinDrawerMargin;
 
     private int mScrimColor = DEFAULT_SCRIM_COLOR;
@@ -155,6 +191,13 @@ public class DrawerLayout extends ViewGroup {
 
     private Drawable mShadowLeft;
     private Drawable mShadowRight;
+    private Drawable mStatusBarBackground;
+
+    private CharSequence mTitleLeft;
+    private CharSequence mTitleRight;
+
+    private Object mLastInsets;
+    private boolean mDrawStatusBarBackground;
 
     /**
      * Listener for monitoring events about drawers.
@@ -188,7 +231,7 @@ public class DrawerLayout extends ViewGroup {
          *
          * @param newState The new drawer motion state
          */
-        public void onDrawerStateChanged(int newState);
+        public void onDrawerStateChanged(@State int newState);
     }
 
     /**
@@ -213,6 +256,71 @@ public class DrawerLayout extends ViewGroup {
         }
     }
 
+    interface DrawerLayoutCompatImpl {
+        void configureApplyInsets(View drawerLayout);
+        void dispatchChildInsets(View child, Object insets, int drawerGravity);
+        void applyMarginInsets(MarginLayoutParams lp, Object insets, int drawerGravity);
+        int getTopInset(Object lastInsets);
+        Drawable getDefaultStatusBarBackground(Context context);
+    }
+
+    static class DrawerLayoutCompatImplBase implements DrawerLayoutCompatImpl {
+        public void configureApplyInsets(View drawerLayout) {
+            // This space for rent
+        }
+
+        public void dispatchChildInsets(View child, Object insets, int drawerGravity) {
+            // This space for rent
+        }
+
+        public void applyMarginInsets(MarginLayoutParams lp, Object insets, int drawerGravity) {
+            // This space for rent
+        }
+
+        public int getTopInset(Object insets) {
+            return 0;
+        }
+
+        @Override
+        public Drawable getDefaultStatusBarBackground(Context context) {
+            return null;
+        }
+    }
+
+    static class DrawerLayoutCompatImplApi21 implements DrawerLayoutCompatImpl {
+        public void configureApplyInsets(View drawerLayout) {
+            DrawerLayoutCompatApi21.configureApplyInsets(drawerLayout);
+        }
+
+        public void dispatchChildInsets(View child, Object insets, int drawerGravity) {
+            DrawerLayoutCompatApi21.dispatchChildInsets(child, insets, drawerGravity);
+        }
+
+        public void applyMarginInsets(MarginLayoutParams lp, Object insets, int drawerGravity) {
+            DrawerLayoutCompatApi21.applyMarginInsets(lp, insets, drawerGravity);
+        }
+
+        public int getTopInset(Object insets) {
+            return DrawerLayoutCompatApi21.getTopInset(insets);
+        }
+
+        @Override
+        public Drawable getDefaultStatusBarBackground(Context context) {
+            return DrawerLayoutCompatApi21.getDefaultStatusBarBackground(context);
+        }
+    }
+
+    static {
+        final int version = Build.VERSION.SDK_INT;
+        if (version >= 21) {
+            IMPL = new DrawerLayoutCompatImplApi21();
+        } else {
+            IMPL = new DrawerLayoutCompatImplBase();
+        }
+    }
+
+    static final DrawerLayoutCompatImpl IMPL;
+
     public DrawerLayout(Context context) {
         this(context, null);
     }
@@ -223,7 +331,7 @@ public class DrawerLayout extends ViewGroup {
 
     public DrawerLayout(Context context, AttributeSet attrs, int defStyle) {
         super(context, attrs, defStyle);
-
+        setDescendantFocusability(ViewGroup.FOCUS_AFTER_DESCENDANTS);
         final float density = getResources().getDisplayMetrics().density;
         mMinDrawerMargin = (int) (MIN_DRAWER_MARGIN * density + 0.5f);
         final float minVel = MIN_FLING_VELOCITY * density;
@@ -244,8 +352,27 @@ public class DrawerLayout extends ViewGroup {
         // So that we can catch the back button
         setFocusableInTouchMode(true);
 
+        ViewCompat.setImportantForAccessibility(this,
+                ViewCompat.IMPORTANT_FOR_ACCESSIBILITY_YES);
+
         ViewCompat.setAccessibilityDelegate(this, new AccessibilityDelegate());
         ViewGroupCompat.setMotionEventSplittingEnabled(this, false);
+        if (ViewCompat.getFitsSystemWindows(this)) {
+            IMPL.configureApplyInsets(this);
+            mStatusBarBackground = IMPL.getDefaultStatusBarBackground(context);
+        }
+    }
+
+    /**
+     * @hide Internal use only; called to apply window insets when configured
+     * with fitsSystemWindows="true"
+     */
+    @Override
+    public void setChildInsets(Object insets, boolean draw) {
+        mLastInsets = insets;
+        mDrawStatusBarBackground = draw;
+        setWillNotDraw(!draw && getBackground() == null);
+        requestLayout();
     }
 
     /**
@@ -255,7 +382,7 @@ public class DrawerLayout extends ViewGroup {
      * @param shadowDrawable Shadow drawable to use at the edge of a drawer
      * @param gravity Which drawer the shadow should apply to
      */
-    public void setDrawerShadow(Drawable shadowDrawable, int gravity) {
+    public void setDrawerShadow(Drawable shadowDrawable, @EdgeGravity int gravity) {
         /*
          * TODO Someone someday might want to set more complex drawables here.
          * They're probably nuts, but we might want to consider registering callbacks,
@@ -281,7 +408,7 @@ public class DrawerLayout extends ViewGroup {
      * @param resId Resource id of a shadow drawable to use at the edge of a drawer
      * @param gravity Which drawer the shadow should apply to
      */
-    public void setDrawerShadow(int resId, int gravity) {
+    public void setDrawerShadow(@DrawableRes int resId, @EdgeGravity int gravity) {
         setDrawerShadow(getResources().getDrawable(resId), gravity);
     }
 
@@ -318,7 +445,7 @@ public class DrawerLayout extends ViewGroup {
      * @param lockMode The new lock mode for the given drawer. One of {@link #LOCK_MODE_UNLOCKED},
      *                 {@link #LOCK_MODE_LOCKED_CLOSED} or {@link #LOCK_MODE_LOCKED_OPEN}.
      */
-    public void setDrawerLockMode(int lockMode) {
+    public void setDrawerLockMode(@LockMode int lockMode) {
         setDrawerLockMode(lockMode, Gravity.LEFT);
         setDrawerLockMode(lockMode, Gravity.RIGHT);
     }
@@ -342,7 +469,7 @@ public class DrawerLayout extends ViewGroup {
      * @see #LOCK_MODE_LOCKED_CLOSED
      * @see #LOCK_MODE_LOCKED_OPEN
      */
-    public void setDrawerLockMode(int lockMode, int edgeGravity) {
+    public void setDrawerLockMode(@LockMode int lockMode, @EdgeGravity int edgeGravity) {
         final int absGravity = GravityCompat.getAbsoluteGravity(edgeGravity,
                 ViewCompat.getLayoutDirection(this));
         if (absGravity == Gravity.LEFT) {
@@ -390,7 +517,7 @@ public class DrawerLayout extends ViewGroup {
      * @see #LOCK_MODE_LOCKED_CLOSED
      * @see #LOCK_MODE_LOCKED_OPEN
      */
-    public void setDrawerLockMode(int lockMode, View drawerView) {
+    public void setDrawerLockMode(@LockMode int lockMode, View drawerView) {
         if (!isDrawerView(drawerView)) {
             throw new IllegalArgumentException("View " + drawerView + " is not a " +
                     "drawer with appropriate layout_gravity");
@@ -406,7 +533,8 @@ public class DrawerLayout extends ViewGroup {
      * @return one of {@link #LOCK_MODE_UNLOCKED}, {@link #LOCK_MODE_LOCKED_CLOSED} or
      *         {@link #LOCK_MODE_LOCKED_OPEN}.
      */
-    public int getDrawerLockMode(int edgeGravity) {
+    @LockMode
+    public int getDrawerLockMode(@EdgeGravity int edgeGravity) {
         final int absGravity = GravityCompat.getAbsoluteGravity(
                 edgeGravity, ViewCompat.getLayoutDirection(this));
         if (absGravity == Gravity.LEFT) {
@@ -424,6 +552,7 @@ public class DrawerLayout extends ViewGroup {
      * @return one of {@link #LOCK_MODE_UNLOCKED}, {@link #LOCK_MODE_LOCKED_CLOSED} or
      *         {@link #LOCK_MODE_LOCKED_OPEN}.
      */
+    @LockMode
     public int getDrawerLockMode(View drawerView) {
         final int absGravity = getDrawerViewAbsoluteGravity(drawerView);
         if (absGravity == Gravity.LEFT) {
@@ -435,10 +564,50 @@ public class DrawerLayout extends ViewGroup {
     }
 
     /**
+     * Sets the title of the drawer with the given gravity.
+     * <p>
+     * When accessibility is turned on, this is the title that will be used to
+     * identify the drawer to the active accessibility service.
+     *
+     * @param edgeGravity Gravity.LEFT, RIGHT, START or END. Expresses which
+     *            drawer to set the title for.
+     * @param title The title for the drawer.
+     */
+    public void setDrawerTitle(@EdgeGravity int edgeGravity, CharSequence title) {
+        final int absGravity = GravityCompat.getAbsoluteGravity(
+                edgeGravity, ViewCompat.getLayoutDirection(this));
+        if (absGravity == Gravity.LEFT) {
+            mTitleLeft = title;
+        } else if (absGravity == Gravity.RIGHT) {
+            mTitleRight = title;
+        }
+    }
+
+    /**
+     * Returns the title of the drawer with the given gravity.
+     *
+     * @param edgeGravity Gravity.LEFT, RIGHT, START or END. Expresses which
+     *            drawer to return the title for.
+     * @return The title of the drawer, or null if none set.
+     * @see #setDrawerTitle(int, CharSequence)
+     */
+    @Nullable
+    public CharSequence getDrawerTitle(@EdgeGravity int edgeGravity) {
+        final int absGravity = GravityCompat.getAbsoluteGravity(
+                edgeGravity, ViewCompat.getLayoutDirection(this));
+        if (absGravity == Gravity.LEFT) {
+            return mTitleLeft;
+        } else if (absGravity == Gravity.RIGHT) {
+            return mTitleRight;
+        }
+        return null;
+    }
+
+    /**
      * Resolve the shared state of all drawers from the component ViewDragHelpers.
      * Should be called whenever a ViewDragHelper's state changes.
      */
-    void updateDrawerState(int forGravity, int activeState, View activeDrawer) {
+    void updateDrawerState(int forGravity, @State int activeState, View activeDrawer) {
         final int leftState = mLeftDragger.getViewDragState();
         final int rightState = mRightDragger.getViewDragState();
 
@@ -476,7 +645,18 @@ public class DrawerLayout extends ViewGroup {
             if (mListener != null) {
                 mListener.onDrawerClosed(drawerView);
             }
-            sendAccessibilityEvent(AccessibilityEvent.TYPE_WINDOW_STATE_CHANGED);
+
+            updateChildrenImportantForAccessibility(drawerView, false);
+
+            // Only send WINDOW_STATE_CHANGE if the host has window focus. This
+            // may change if support for multiple foreground windows (e.g. IME)
+            // improves.
+            if (hasWindowFocus()) {
+                final View rootView = getRootView();
+                if (rootView != null) {
+                    rootView.sendAccessibilityEvent(AccessibilityEvent.TYPE_WINDOW_STATE_CHANGED);
+                }
+            }
         }
     }
 
@@ -487,7 +667,32 @@ public class DrawerLayout extends ViewGroup {
             if (mListener != null) {
                 mListener.onDrawerOpened(drawerView);
             }
-            drawerView.sendAccessibilityEvent(AccessibilityEvent.TYPE_WINDOW_STATE_CHANGED);
+
+            updateChildrenImportantForAccessibility(drawerView, true);
+
+            // Only send WINDOW_STATE_CHANGE if the host has window focus.
+            if (hasWindowFocus()) {
+                sendAccessibilityEvent(AccessibilityEvent.TYPE_WINDOW_STATE_CHANGED);
+            }
+
+            drawerView.requestFocus();
+        }
+    }
+
+    private void updateChildrenImportantForAccessibility(View drawerView, boolean isDrawerOpen) {
+        final int childCount = getChildCount();
+        for (int i = 0; i < childCount; i++) {
+            final View child = getChildAt(i);
+            if (!isDrawerOpen && !isDrawerView(child)
+                    || isDrawerOpen && child == drawerView) {
+                // Drawer is closed and this is a content view or this is an
+                // open drawer view, so it should be visible.
+                ViewCompat.setImportantForAccessibility(child,
+                        ViewCompat.IMPORTANT_FOR_ACCESSIBILITY_YES);
+            } else {
+                ViewCompat.setImportantForAccessibility(child,
+                        ViewCompat.IMPORTANT_FOR_ACCESSIBILITY_NO_HIDE_DESCENDANTS);
+            }
         }
     }
 
@@ -574,7 +779,7 @@ public class DrawerLayout extends ViewGroup {
      * @param gravity Absolute gravity value
      * @return LEFT or RIGHT as appropriate, or a hex string
      */
-    static String gravityToString(int gravity) {
+    static String gravityToString(@EdgeGravity int gravity) {
         if ((gravity & Gravity.LEFT) == Gravity.LEFT) {
             return "LEFT";
         }
@@ -630,6 +835,9 @@ public class DrawerLayout extends ViewGroup {
 
         setMeasuredDimension(widthSize, heightSize);
 
+        final boolean applyInsets = mLastInsets != null && ViewCompat.getFitsSystemWindows(this);
+        final int layoutDirection = ViewCompat.getLayoutDirection(this);
+
         // Gravity value for each drawer we've seen. Only one of each permitted.
         int foundDrawers = 0;
         final int childCount = getChildCount();
@@ -641,6 +849,15 @@ public class DrawerLayout extends ViewGroup {
             }
 
             final LayoutParams lp = (LayoutParams) child.getLayoutParams();
+
+            if (applyInsets) {
+                final int cgrav = GravityCompat.getAbsoluteGravity(lp.gravity, layoutDirection);
+                if (ViewCompat.getFitsSystemWindows(child)) {
+                    IMPL.dispatchChildInsets(child, mLastInsets, cgrav);
+                } else {
+                    IMPL.applyMarginInsets(lp, mLastInsets, cgrav);
+                }
+            }
 
             if (isContentView(child)) {
                 // Content views get measured at exactly the layout's size.
@@ -787,6 +1004,58 @@ public class DrawerLayout extends ViewGroup {
         return false;
     }
 
+    /**
+     * Set a drawable to draw in the insets area for the status bar.
+     * Note that this will only be activated if this DrawerLayout fitsSystemWindows.
+     *
+     * @param bg Background drawable to draw behind the status bar
+     */
+    public void setStatusBarBackground(Drawable bg) {
+        mStatusBarBackground = bg;
+    }
+
+    /**
+     * Gets the drawable used to draw in the insets area for the status bar.
+     *
+     * @return The status bar background drawable, or null if none set
+     */
+    public Drawable getStatusBarBackgroundDrawable() {
+        return mStatusBarBackground;
+    }
+
+    /**
+     * Set a drawable to draw in the insets area for the status bar.
+     * Note that this will only be activated if this DrawerLayout fitsSystemWindows.
+     *
+     * @param resId Resource id of a background drawable to draw behind the status bar
+     */
+    public void setStatusBarBackground(int resId) {
+        mStatusBarBackground = resId != 0 ? ContextCompat.getDrawable(getContext(), resId) : null;
+    }
+
+    /**
+     * Set a drawable to draw in the insets area for the status bar.
+     * Note that this will only be activated if this DrawerLayout fitsSystemWindows.
+     *
+     * @param color Color to use as a background drawable to draw behind the status bar
+     *              in 0xAARRGGBB format.
+     */
+    public void setStatusBarBackgroundColor(int color) {
+        mStatusBarBackground = new ColorDrawable(color);
+    }
+
+    @Override
+    public void onDraw(Canvas c) {
+        super.onDraw(c);
+        if (mDrawStatusBarBackground && mStatusBarBackground != null) {
+            final int inset = IMPL.getTopInset(mLastInsets);
+            if (inset > 0) {
+                mStatusBarBackground.setBounds(0, 0, getWidth(), inset);
+                mStatusBarBackground.draw(c);
+            }
+        }
+    }
+
     @Override
     protected boolean drawChild(Canvas canvas, View child, long drawingTime) {
         final int height = getHeight();
@@ -876,9 +1145,11 @@ public class DrawerLayout extends ViewGroup {
                 final float y = ev.getY();
                 mInitialMotionX = x;
                 mInitialMotionY = y;
-                if (mScrimOpacity > 0 &&
-                        isContentView(mLeftDragger.findTopChildUnder((int) x, (int) y))) {
-                    interceptForTap = true;
+                if (mScrimOpacity > 0) {
+                    final View child = mLeftDragger.findTopChildUnder((int) x, (int) y);
+                    if (child != null && isContentView(child)) {
+                        interceptForTap = true;
+                    }
                 }
                 mDisallowInterceptRequested = false;
                 mChildrenCanceledTouch = false;
@@ -1023,6 +1294,8 @@ public class DrawerLayout extends ViewGroup {
             final LayoutParams lp = (LayoutParams) drawerView.getLayoutParams();
             lp.onScreen = 1.f;
             lp.knownOpen = true;
+
+            updateChildrenImportantForAccessibility(drawerView, true);
         } else {
             if (checkDrawerViewAbsoluteGravity(drawerView, Gravity.LEFT)) {
                 mLeftDragger.smoothSlideViewTo(drawerView, 0, drawerView.getTop());
@@ -1040,7 +1313,7 @@ public class DrawerLayout extends ViewGroup {
      * @param gravity Gravity.LEFT to move the left drawer or Gravity.RIGHT for the right.
      *                GravityCompat.START or GravityCompat.END may also be used.
      */
-    public void openDrawer(int gravity) {
+    public void openDrawer(@EdgeGravity int gravity) {
         final View drawerView = findDrawerWithGravity(gravity);
         if (drawerView == null) {
             throw new IllegalArgumentException("No drawer view found with gravity " +
@@ -1080,7 +1353,7 @@ public class DrawerLayout extends ViewGroup {
      * @param gravity Gravity.LEFT to move the left drawer or Gravity.RIGHT for the right.
      *                GravityCompat.START or GravityCompat.END may also be used.
      */
-    public void closeDrawer(int gravity) {
+    public void closeDrawer(@EdgeGravity int gravity) {
         final View drawerView = findDrawerWithGravity(gravity);
         if (drawerView == null) {
             throw new IllegalArgumentException("No drawer view found with gravity " +
@@ -1115,7 +1388,7 @@ public class DrawerLayout extends ViewGroup {
      * @param drawerGravity Gravity of the drawer to check
      * @return true if the given drawer view is in an open state
      */
-    public boolean isDrawerOpen(int drawerGravity) {
+    public boolean isDrawerOpen(@EdgeGravity int drawerGravity) {
         final View drawerView = findDrawerWithGravity(drawerGravity);
         if (drawerView != null) {
             return isDrawerOpen(drawerView);
@@ -1140,13 +1413,13 @@ public class DrawerLayout extends ViewGroup {
 
     /**
      * Check if a given drawer view is currently visible on-screen. The drawer
-     * may be only peeking onto the screen, fully extended, or anywhere inbetween.
+     * may be only peeking onto the screen, fully extended, or anywhere in between.
      * If there is no drawer with the given gravity this method will return false.
      *
      * @param drawerGravity Gravity of the drawer to check
      * @return true if the given drawer is visible on-screen
      */
-    public boolean isDrawerVisible(int drawerGravity) {
+    public boolean isDrawerVisible(@EdgeGravity int drawerGravity) {
         final View drawerView = findDrawerWithGravity(drawerGravity);
         if (drawerView != null) {
             return isDrawerVisible(drawerView);
@@ -1259,28 +1532,53 @@ public class DrawerLayout extends ViewGroup {
     @Override
     protected Parcelable onSaveInstanceState() {
         final Parcelable superState = super.onSaveInstanceState();
-
         final SavedState ss = new SavedState(superState);
 
-        final int childCount = getChildCount();
-        for (int i = 0; i < childCount; i++) {
-            final View child = getChildAt(i);
-            if (!isDrawerView(child)) {
-                continue;
-            }
-
-            final LayoutParams lp = (LayoutParams) child.getLayoutParams();
-            if (lp.knownOpen) {
-                ss.openDrawerGravity = lp.gravity;
-                // Only one drawer can be open at a time.
-                break;
-            }
+        final View openDrawer = findOpenDrawer();
+        if (openDrawer != null) {
+            ss.openDrawerGravity = ((LayoutParams) openDrawer.getLayoutParams()).gravity;
         }
 
         ss.lockModeLeft = mLockModeLeft;
         ss.lockModeRight = mLockModeRight;
 
         return ss;
+    }
+
+    @Override
+    public void addView(View child, int index, ViewGroup.LayoutParams params) {
+        super.addView(child, index, params);
+
+        final View openDrawer = findOpenDrawer();
+        if (openDrawer != null || isDrawerView(child)) {
+            // A drawer is already open or the new view is a drawer, so the
+            // new view should start out hidden.
+            ViewCompat.setImportantForAccessibility(child,
+                    ViewCompat.IMPORTANT_FOR_ACCESSIBILITY_NO_HIDE_DESCENDANTS);
+        } else {
+            // Otherwise this is a content view and no drawer is open, so the
+            // new view should start out visible.
+            ViewCompat.setImportantForAccessibility(child,
+                    ViewCompat.IMPORTANT_FOR_ACCESSIBILITY_YES);
+        }
+
+        // We only need a delegate here if the framework doesn't understand
+        // NO_HIDE_DESCENDANTS importance.
+        if (!CAN_HIDE_DESCENDANTS) {
+            ViewCompat.setAccessibilityDelegate(child, mChildAccessibilityDelegate);
+        }
+    }
+
+    private static boolean includeChildForAccessibility(View child) {
+        // If the child is not important for accessibility we make
+        // sure this hides the entire subtree rooted at it as the
+        // IMPORTANT_FOR_ACCESSIBILITY_NO_HIDE_DESCENDATS is not
+        // supported on older platforms but we want to hide the entire
+        // content and not opened drawers if a drawer is opened.
+        return ViewCompat.getImportantForAccessibility(child)
+                != ViewCompat.IMPORTANT_FOR_ACCESSIBILITY_NO_HIDE_DESCENDANTS
+                    && ViewCompat.getImportantForAccessibility(child)
+                != ViewCompat.IMPORTANT_FOR_ACCESSIBILITY_NO;
     }
 
     /**
@@ -1467,7 +1765,7 @@ public class DrawerLayout extends ViewGroup {
 
         @Override
         public int getViewHorizontalDragRange(View child) {
-            return child.getWidth();
+            return isDrawerView(child) ? child.getWidth() : 0;
         }
 
         @Override
@@ -1529,39 +1827,83 @@ public class DrawerLayout extends ViewGroup {
 
         @Override
         public void onInitializeAccessibilityNodeInfo(View host, AccessibilityNodeInfoCompat info) {
-            final AccessibilityNodeInfoCompat superNode = AccessibilityNodeInfoCompat.obtain(info);
-            super.onInitializeAccessibilityNodeInfo(host, superNode);
+            if (CAN_HIDE_DESCENDANTS) {
+                super.onInitializeAccessibilityNodeInfo(host, info);
+            } else {
+                // Obtain a node for the host, then manually generate the list
+                // of children to only include non-obscured views.
+                final AccessibilityNodeInfoCompat superNode =
+                        AccessibilityNodeInfoCompat.obtain(info);
+                super.onInitializeAccessibilityNodeInfo(host, superNode);
 
-            info.setSource(host);
-            final ViewParent parent = ViewCompat.getParentForAccessibility(host);
-            if (parent instanceof View) {
-                info.setParent((View) parent);
-            }
-            copyNodeInfoNoChildren(info, superNode);
-
-            superNode.recycle();
-
-            final int childCount = getChildCount();
-            for (int i = 0; i < childCount; i++) {
-                final View child = getChildAt(i);
-                if (!filter(child)) {
-                    info.addChild(child);
+                info.setSource(host);
+                final ViewParent parent = ViewCompat.getParentForAccessibility(host);
+                if (parent instanceof View) {
+                    info.setParent((View) parent);
                 }
+                copyNodeInfoNoChildren(info, superNode);
+                superNode.recycle();
+
+                addChildrenForAccessibility(info, (ViewGroup) host);
             }
+
+            info.setClassName(DrawerLayout.class.getName());
+
+            // This view reports itself as focusable so that it can intercept
+            // the back button, but we should prevent this view from reporting
+            // itself as focusable to accessibility services.
+            info.setFocusable(false);
+            info.setFocused(false);
+        }
+
+        @Override
+        public void onInitializeAccessibilityEvent(View host, AccessibilityEvent event) {
+            super.onInitializeAccessibilityEvent(host, event);
+
+            event.setClassName(DrawerLayout.class.getName());
+        }
+
+        @Override
+        public boolean dispatchPopulateAccessibilityEvent(View host, AccessibilityEvent event) {
+            // Special case to handle window state change events. As far as
+            // accessibility services are concerned, state changes from
+            // DrawerLayout invalidate the entire contents of the screen (like
+            // an Activity or Dialog) and they should announce the title of the
+            // new content.
+            if (event.getEventType() == AccessibilityEvent.TYPE_WINDOW_STATE_CHANGED) {
+                final List<CharSequence> eventText = event.getText();
+                final View visibleDrawer = findVisibleDrawer();
+                if (visibleDrawer != null) {
+                    final int edgeGravity = getDrawerViewAbsoluteGravity(visibleDrawer);
+                    final CharSequence title = getDrawerTitle(edgeGravity);
+                    if (title != null) {
+                        eventText.add(title);
+                    }
+                }
+
+                return true;
+            }
+
+            return super.dispatchPopulateAccessibilityEvent(host, event);
         }
 
         @Override
         public boolean onRequestSendAccessibilityEvent(ViewGroup host, View child,
                 AccessibilityEvent event) {
-            if (!filter(child)) {
+            if (CAN_HIDE_DESCENDANTS || includeChildForAccessibility(child)) {
                 return super.onRequestSendAccessibilityEvent(host, child, event);
             }
             return false;
         }
 
-        public boolean filter(View child) {
-            final View openDrawer = findOpenDrawer();
-            return openDrawer != null && openDrawer != child;
+        private void addChildrenForAccessibility(AccessibilityNodeInfoCompat info, ViewGroup v) {
+            final int childCount = v.getChildCount();
+            for (int i = 0; i < childCount; i++) {
+                final View child = v.getChildAt(i);
+                if (includeChildForAccessibility(child)) {
+                    info.addChild(child);
+                }
+            }
         }
 
         /**
@@ -1593,6 +1935,21 @@ public class DrawerLayout extends ViewGroup {
             dest.setLongClickable(src.isLongClickable());
 
             dest.addAction(src.getActions());
+        }
+    }
+
+    final class ChildAccessibilityDelegate extends AccessibilityDelegateCompat {
+        @Override
+        public void onInitializeAccessibilityNodeInfo(View child,
+                AccessibilityNodeInfoCompat info) {
+            super.onInitializeAccessibilityNodeInfo(child, info);
+
+            if (!includeChildForAccessibility(child)) {
+                // If we are ignoring the sub-tree rooted at the child,
+                // break the connection to the rest of the node tree.
+                // For details refer to includeChildForAccessibility.
+                info.setParent(null);
+            }
         }
     }
 }

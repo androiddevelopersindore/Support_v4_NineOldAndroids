@@ -22,7 +22,6 @@ import android.os.Bundle;
 import android.support.v4.accessibilityservice.AccessibilityServiceInfoCompat;
 import android.support.v4.view.ViewCompat;
 import android.view.View;
-import android.view.accessibility.AccessibilityEvent;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -34,7 +33,160 @@ import java.util.List;
  */
 public class AccessibilityNodeInfoCompat {
 
+    public static class AccessibilityActionCompat {
+        private final Object mAction;
+
+        /**
+         * Creates a new instance.
+         *
+         * @param actionId The action id.
+         * @param label The action label.
+         */
+        public AccessibilityActionCompat(int actionId, CharSequence label) {
+            this(IMPL.newAccessibilityAction(actionId, label));
+        }
+
+        private AccessibilityActionCompat(Object action) {
+            mAction = action;
+        }
+
+        /**
+         * Gets the id for this action.
+         *
+         * @return The action id.
+         */
+        public int getId() {
+            return IMPL.getAccessibilityActionId(mAction);
+        }
+
+        /**
+         * Gets the label for this action. Its purpose is to describe the
+         * action to user.
+         *
+         * @return The label.
+         */
+        public CharSequence getLabel() {
+            return IMPL.getAccessibilityActionLabel(mAction);
+        }
+    }
+
+    public static class CollectionInfoCompat {
+        /** Selection mode where items are not selectable. */
+        public static final int SELECTION_MODE_NONE = 0;
+
+        /** Selection mode where a single item may be selected. */
+        public static final int SELECTION_MODE_SINGLE = 1;
+
+        /** Selection mode where multiple items may be selected. */
+        public static final int SELECTION_MODE_MULTIPLE = 2;
+
+        final Object mInfo;
+
+        /**
+         * Returns a cached instance if such is available otherwise a new one.
+         *
+         * @return An instance.
+         */
+        public static CollectionInfoCompat obtain(int rowCount, int columnCount,
+                boolean hierarchical, int selectionMode) {
+            return new CollectionInfoCompat(IMPL.obtainCollectionInfo(rowCount, columnCount,
+                    hierarchical, selectionMode));
+        }
+
+        private CollectionInfoCompat(Object info) {
+            mInfo = info;
+        }
+
+        public int getColumnCount() {
+            return IMPL.getCollectionInfoColumnCount(mInfo);
+        }
+
+        public int getRowCount() {
+            return IMPL.getCollectionInfoRowCount(mInfo);
+        }
+
+        public boolean isHierarchical() {
+            return IMPL.isCollectionInfoHierarchical(mInfo);
+        }
+    }
+
+    public static class CollectionItemInfoCompat {
+
+        private final Object mInfo;
+
+        /**
+         * Returns a cached instance if such is available otherwise a new one.
+         *
+         * @return An instance.
+         */
+        public static CollectionItemInfoCompat obtain(int rowIndex, int rowSpan,
+                int columnIndex, int columnSpan, boolean heading, boolean selected) {
+            return new CollectionItemInfoCompat(IMPL.obtainCollectionItemInfo(rowIndex, rowSpan,
+                    columnIndex, columnSpan, heading, selected));
+        }
+
+        private CollectionItemInfoCompat(Object info) {
+            mInfo = info;
+        }
+
+        public int getColumnIndex() {
+            return IMPL.getCollectionItemColumnIndex(mInfo);
+        }
+
+        public int getColumnSpan() {
+            return IMPL.getCollectionItemColumnSpan(mInfo);
+        }
+
+        public int getRowIndex() {
+            return IMPL.getCollectionItemRowIndex(mInfo);
+        }
+
+        public int getRowSpan() {
+            return IMPL.getCollectionItemRowSpan(mInfo);
+        }
+
+        public boolean isHeading() {
+            return IMPL.isCollectionItemHeading(mInfo);
+        }
+
+        public boolean isSelected() {
+            return IMPL.isCollectionItemSelected(mInfo);
+        }
+    }
+
+    public static class RangeInfoCompat {
+        /** Range type: integer. */
+        public static final int RANGE_TYPE_INT = 0;
+        /** Range type: float. */
+        public static final int RANGE_TYPE_FLOAT = 1;
+        /** Range type: percent with values from zero to one.*/
+        public static final int RANGE_TYPE_PERCENT = 2;
+
+        private final Object mInfo;
+
+        private RangeInfoCompat(Object info) {
+            mInfo = info;
+        }
+
+        public float getCurrent() {
+            return AccessibilityNodeInfoCompatKitKat.RangeInfo.getCurrent(mInfo);
+        }
+
+        public float getMax() {
+            return AccessibilityNodeInfoCompatKitKat.RangeInfo.getMax(mInfo);
+        }
+
+        public float getMin() {
+            return AccessibilityNodeInfoCompatKitKat.RangeInfo.getMin(mInfo);
+        }
+
+        public int getType() {
+            return AccessibilityNodeInfoCompatKitKat.RangeInfo.getType(mInfo);
+        }
+    }
+
     static interface AccessibilityNodeInfoImpl {
+        public Object newAccessibilityAction(int actionId, CharSequence label);
         public Object obtain();
         public Object obtain(View source);
         public Object obtain(Object info);
@@ -50,6 +202,9 @@ public class AccessibilityNodeInfoCompat {
         public void addChild(Object info, View child, int virtualDescendantId);
         public int getActions(Object info);
         public void addAction(Object info, int action);
+        public void addAction(Object info, Object action);
+        public int getAccessibilityActionId(Object action);
+        public CharSequence getAccessibilityActionLabel(Object action);
         public boolean performAction(Object info, int action);
         public boolean performAction(Object info, int action, Bundle arguments);
         public void setMovementGranularities(Object info, int granularities);
@@ -99,9 +254,39 @@ public class AccessibilityNodeInfoCompat {
         public void setViewIdResourceName(Object info, String viewId);
         public int getLiveRegion(Object info);
         public void setLiveRegion(Object info, int mode);
+        public Object getCollectionInfo(Object info);
+        public void setCollectionInfo(Object info, Object collectionInfo);
+        public Object getCollectionItemInfo(Object info);
+        public void setCollectionItemInfo(Object info, Object collectionItemInfo);
+        public Object getRangeInfo(Object info);
+        public List<Object> getActionList(Object info);
+        public Object obtainCollectionInfo(int rowCount, int columnCount, boolean hierarchical,
+                int selectionMode);
+        public int getCollectionInfoColumnCount(Object info);
+        public int getCollectionInfoRowCount(Object info);
+        public boolean isCollectionInfoHierarchical(Object info);
+        public Object obtainCollectionItemInfo(int rowIndex, int rowSpan, int columnIndex,
+                int columnSpan, boolean heading, boolean selected);
+        public int getCollectionItemColumnIndex(Object info);
+        public int getCollectionItemColumnSpan(Object info);
+        public int getCollectionItemRowIndex(Object info);
+        public int getCollectionItemRowSpan(Object info);
+        public boolean isCollectionItemHeading(Object info);
+        public boolean isCollectionItemSelected(Object info);
+        public AccessibilityNodeInfoCompat getTraversalBefore(Object info);
+        public void setTraversalBefore(Object info, View view);
+        public void setTraversalBefore(Object info, View root, int virtualDescendantId);
+        public AccessibilityNodeInfoCompat getTraversalAfter(Object info);
+        public void setTraversalAfter(Object info, View view);
+        public void setTraversalAfter(Object info, View root, int virtualDescendantId);
     }
 
     static class AccessibilityNodeInfoStubImpl implements AccessibilityNodeInfoImpl {
+        @Override
+        public Object newAccessibilityAction(int actionId, CharSequence label) {
+            return null;
+        }
+
         @Override
         public Object obtain() {
             return null;
@@ -125,6 +310,21 @@ public class AccessibilityNodeInfoCompat {
         @Override
         public void addAction(Object info, int action) {
 
+        }
+
+        @Override
+        public void addAction(Object info, Object action) {
+
+        }
+
+        @Override
+        public int getAccessibilityActionId(Object action) {
+            return 0;
+        }
+
+        @Override
+        public CharSequence getAccessibilityActionLabel(Object action) {
+            return null;
         }
 
         @Override
@@ -420,6 +620,117 @@ public class AccessibilityNodeInfoCompat {
         @Override
         public void setLiveRegion(Object info, int mode) {
             // No-op
+        }
+
+        @Override
+        public Object getCollectionInfo(Object info) {
+            return null;
+        }
+
+        @Override
+        public void setCollectionInfo(Object info, Object collectionInfo) {
+        }
+
+        @Override
+        public Object getCollectionItemInfo(Object info) {
+            return null;
+        }
+
+        @Override
+        public void setCollectionItemInfo(Object info, Object collectionItemInfo) {
+        }
+
+        @Override
+        public Object getRangeInfo(Object info) {
+            return null;
+        }
+
+        @Override
+        public List<Object> getActionList(Object info) {
+            return null;
+        }
+
+        @Override
+        public Object obtainCollectionInfo(int rowCount, int columnCount, boolean hierarchical,
+                int selectionMode) {
+            return null;
+        }
+
+        @Override
+        public int getCollectionInfoColumnCount(Object info) {
+            return 0;
+        }
+
+        @Override
+        public int getCollectionInfoRowCount(Object info) {
+            return 0;
+        }
+
+        @Override
+        public boolean isCollectionInfoHierarchical(Object info) {
+            return false;
+        }
+
+        @Override
+        public Object obtainCollectionItemInfo(int rowIndex, int rowSpan, int columnIndex,
+                int columnSpan, boolean heading, boolean selected) {
+            return null;
+        }
+
+        @Override
+        public int getCollectionItemColumnIndex(Object info) {
+            return 0;
+        }
+
+        @Override
+        public int getCollectionItemColumnSpan(Object info) {
+            return 0;
+        }
+
+        @Override
+        public int getCollectionItemRowIndex(Object info) {
+            return 0;
+        }
+
+        @Override
+        public int getCollectionItemRowSpan(Object info) {
+            return 0;
+        }
+
+        @Override
+        public boolean isCollectionItemHeading(Object info) {
+            return false;
+        }
+
+        @Override
+        public boolean isCollectionItemSelected(Object info) {
+            return false;
+        }
+
+        @Override
+        public AccessibilityNodeInfoCompat getTraversalBefore(Object info) {
+            return null;
+        }
+
+        @Override
+        public void setTraversalBefore(Object info, View view) {
+        }
+
+        @Override
+        public void setTraversalBefore(Object info, View root, int virtualDescendantId) {
+        }
+
+        @Override
+        public AccessibilityNodeInfoCompat getTraversalAfter(Object info) {
+            return null;
+        }
+
+        @Override
+        public void setTraversalAfter(Object info, View view) {
+        }
+
+        @Override
+        public void setTraversalAfter(Object info, View root, int virtualDescendantId) {
         }
     }
 
@@ -750,10 +1061,181 @@ public class AccessibilityNodeInfoCompat {
         public void setLiveRegion(Object info, int mode) {
             AccessibilityNodeInfoCompatKitKat.setLiveRegion(info, mode);
         }
+
+        @Override
+        public Object getCollectionInfo(Object info) {
+            return AccessibilityNodeInfoCompatKitKat.getCollectionInfo(info);
+        }
+
+        @Override
+        public void setCollectionInfo(Object info, Object collectionInfo) {
+            AccessibilityNodeInfoCompatKitKat.setCollectionInfo(info, collectionInfo);
+        }
+
+        @Override
+        public Object obtainCollectionInfo(int rowCount, int columnCount,
+                boolean hierarchical, int selectionMode) {
+            return AccessibilityNodeInfoCompatKitKat.obtainCollectionInfo(rowCount, columnCount,
+                    hierarchical, selectionMode);
+        }
+
+        @Override
+        public Object obtainCollectionItemInfo(int rowIndex, int rowSpan, int columnIndex,
+                int columnSpan, boolean heading, boolean selected) {
+            return AccessibilityNodeInfoCompatKitKat
+                    .obtainCollectionItemInfo(rowIndex, rowSpan, columnIndex, columnSpan, heading);
+        }
+
+        @Override
+        public int getCollectionInfoColumnCount(Object info) {
+            return AccessibilityNodeInfoCompatKitKat.CollectionInfo.getColumnCount(info);
+        }
+
+        @Override
+        public int getCollectionInfoRowCount(Object info) {
+            return AccessibilityNodeInfoCompatKitKat.CollectionInfo.getRowCount(info);
+        }
+
+        @Override
+        public boolean isCollectionInfoHierarchical(Object info) {
+            return AccessibilityNodeInfoCompatKitKat.CollectionInfo.isHierarchical(info);
+        }
+
+        @Override
+        public Object getCollectionItemInfo(Object info) {
+            return AccessibilityNodeInfoCompatKitKat.getCollectionItemInfo(info);
+        }
+
+        @Override
+        public Object getRangeInfo(Object info) {
+            return AccessibilityNodeInfoCompatKitKat.getRangeInfo(info);
+        }
+
+        @Override
+        public int getCollectionItemColumnIndex(Object info) {
+            return AccessibilityNodeInfoCompatKitKat.CollectionItemInfo.getColumnIndex(info);
+        }
+
+        @Override
+        public int getCollectionItemColumnSpan(Object info) {
+            return AccessibilityNodeInfoCompatKitKat.CollectionItemInfo.getColumnSpan(info);
+        }
+
+        @Override
+        public int getCollectionItemRowIndex(Object info) {
+            return AccessibilityNodeInfoCompatKitKat.CollectionItemInfo.getRowIndex(info);
+        }
+
+        @Override
+        public int getCollectionItemRowSpan(Object info) {
+            return AccessibilityNodeInfoCompatKitKat.CollectionItemInfo.getRowSpan(info);
+        }
+
+        @Override
+        public boolean isCollectionItemHeading(Object info) {
+            return AccessibilityNodeInfoCompatKitKat.CollectionItemInfo.isHeading(info);
+        }
+
+        @Override
+        public void setCollectionItemInfo(Object info, Object collectionItemInfo) {
+            AccessibilityNodeInfoCompatKitKat.setCollectionItemInfo(info, collectionItemInfo);
+        }
+    }
+
+    static class AccessibilityNodeInfoApi21Impl extends AccessibilityNodeInfoKitKatImpl {
+        @Override
+        public Object newAccessibilityAction(int actionId, CharSequence label) {
+            return AccessibilityNodeInfoCompatApi21.newAccessibilityAction(actionId, label);
+        }
+
+        @Override
+        public List<Object> getActionList(Object info) {
+            return AccessibilityNodeInfoCompatApi21.getActionList(info);
+        }
+
+        @Override
+        public Object obtainCollectionInfo(int rowCount, int columnCount, boolean hierarchical,
+                int selectionMode) {
+            return AccessibilityNodeInfoCompatApi21.obtainCollectionInfo(rowCount, columnCount,
+                    hierarchical, selectionMode);
+        }
+
+        @Override
+        public void addAction(Object info, Object action) {
+            AccessibilityNodeInfoCompatApi21.addAction(info, action);
+        }
+
+        @Override
+        public int getAccessibilityActionId(Object action) {
+            return AccessibilityNodeInfoCompatApi21.getAccessibilityActionId(action);
+        }
+
+        @Override
+        public CharSequence getAccessibilityActionLabel(Object action) {
+            return AccessibilityNodeInfoCompatApi21.getAccessibilityActionLabel(action);
+        }
+
+        @Override
+        public Object obtainCollectionItemInfo(int rowIndex, int rowSpan, int columnIndex,
+                int columnSpan, boolean heading, boolean selected) {
+            return AccessibilityNodeInfoCompatApi21.obtainCollectionItemInfo(rowIndex, rowSpan,
+                    columnIndex, columnSpan, heading, selected);
+        }
+
+        @Override
+        public boolean isCollectionItemSelected(Object info) {
+            return AccessibilityNodeInfoCompatApi21.CollectionItemInfo.isSelected(info);
+        }
+    }
+
+    static class AccessibilityNodeInfoApi22Impl extends AccessibilityNodeInfoApi21Impl {
+        @Override
+        public AccessibilityNodeInfoCompat getTraversalBefore(Object info) {
+            Object nodeInfo = AccessibilityNodeInfoCompatApi22.getTraversalBefore(info);
+            if (nodeInfo == null) {
+                return null;
+            }
+
+            return new AccessibilityNodeInfoCompat(nodeInfo);
+        }
+
+        @Override
+        public void setTraversalBefore(Object info, View view) {
+            AccessibilityNodeInfoCompatApi22.setTraversalBefore(info, view);
+        }
+
+        @Override
+        public void setTraversalBefore(Object info, View root, int virtualDescendantId) {
+            AccessibilityNodeInfoCompatApi22.setTraversalBefore(info, root, virtualDescendantId);
+        }
+
+        @Override
+        public AccessibilityNodeInfoCompat getTraversalAfter(Object info) {
+            Object nodeInfo = AccessibilityNodeInfoCompatApi22.getTraversalAfter(info);
+            if (nodeInfo == null) {
+                return null;
+            }
+
+            return new AccessibilityNodeInfoCompat(nodeInfo);
+        }
+
+        @Override
+        public void setTraversalAfter(Object info, View view) {
+            AccessibilityNodeInfoCompatApi22.setTraversalAfter(info, view);
+        }
+
+        @Override
+        public void setTraversalAfter(Object info, View root, int virtualDescendantId) {
+            AccessibilityNodeInfoCompatApi22.setTraversalAfter(info, root, virtualDescendantId);
+        }
     }
 
     static {
-        if (Build.VERSION.SDK_INT >= 19) { // KitKat
+        if (Build.VERSION.SDK_INT >= 22) {
+            IMPL = new AccessibilityNodeInfoApi22Impl();
+        } else if (Build.VERSION.SDK_INT >= 21) {
+            IMPL = new AccessibilityNodeInfoApi21Impl();
+        } else if (Build.VERSION.SDK_INT >= 19) { // KitKat
             IMPL = new AccessibilityNodeInfoKitKatImpl();
         } else if (Build.VERSION.SDK_INT >= 18) { // JellyBean MR2
             IMPL = new AccessibilityNodeInfoJellybeanMr2Impl();
@@ -956,6 +1438,22 @@ public class AccessibilityNodeInfoCompat {
      */
     public static final int ACTION_SET_SELECTION = 0x00020000;
 
+    /**
+     * Action that sets the text of the node. Performing the action without argument, using <code>
+     * null</code> or empty {@link CharSequence} will clear the text. This action will also put the
+     * cursor at the end of text.
+     * <p>
+     * <strong>Arguments:</strong> {@link #ACTION_ARGUMENT_SET_TEXT_CHARSEQUENCE}<br>
+     * <strong>Example:</strong>
+     * <code><pre><p>
+     *   Bundle arguments = new Bundle();
+     *   arguments.putCharSequence(AccessibilityNodeInfo.ACTION_ARGUMENT_SET_TEXT_CHARSEQUENCE,
+     *       "android");
+     *   info.performAction(AccessibilityNodeInfo.ACTION_SET_TEXT, arguments);
+     * </code></pre></p>
+     */
+    public static final int ACTION_SET_TEXT = 0x00200000;
+
     // Action arguments
 
     /**
@@ -1018,6 +1516,18 @@ public class AccessibilityNodeInfoCompat {
      */
     public static final String ACTION_ARGUMENT_SELECTION_END_INT =
             "ACTION_ARGUMENT_SELECTION_END_INT";
+
+    /**
+     * Argument for specifying the text content to set
+     * <p>
+     * <strong>Type:</strong> CharSequence<br>
+     * <strong>Actions:</strong> {@link #ACTION_SET_TEXT}
+     * </p>
+     *
+     * @see #ACTION_SET_TEXT
+     */
+    public static final String ACTION_ARGUMENT_SET_TEXT_CHARSEQUENCE =
+            "ACTION_ARGUMENT_SET_TEXT_CHARSEQUENCE";
 
     // Focus types
 
@@ -1293,6 +1803,21 @@ public class AccessibilityNodeInfoCompat {
      */
     public void addAction(int action) {
         IMPL.addAction(mInfo, action);
+    }
+
+    /**
+     * Adds an action that can be performed on the node.
+     * <p>
+     * <strong>Note:</strong> Cannot be called from an
+     * {@link android.accessibilityservice.AccessibilityService}. This class is
+     * made immutable before being delivered to an AccessibilityService.
+     * </p>
+     *
+     * @param action The action.
+     * @throws IllegalStateException If called from an AccessibilityService.
+     */
+    public void addAction(AccessibilityActionCompat action) {
+        IMPL.addAction(mInfo, action.mAction);
     }
 
     /**
@@ -1942,6 +2467,70 @@ public class AccessibilityNodeInfoCompat {
     public void setLiveRegion(int mode) {
         IMPL.setLiveRegion(mInfo, mode);
     }
+
+    /**
+     * Gets the collection info if the node is a collection. A collection
+     * child is always a collection item.
+     *
+     * @return The collection info.
+     */
+    public CollectionInfoCompat getCollectionInfo() {
+        Object info = IMPL.getCollectionInfo(mInfo);
+        if (info == null) return null;
+        return new CollectionInfoCompat(info);
+    }
+
+    public void setCollectionInfo(Object collectionInfo) {
+        IMPL.setCollectionInfo(mInfo, ((CollectionInfoCompat) collectionInfo).mInfo);
+    }
+
+    public void setCollectionItemInfo(Object collectionItemInfo) {
+        IMPL.setCollectionItemInfo(mInfo, ((CollectionItemInfoCompat) collectionItemInfo).mInfo);
+    }
+
+    /**
+     * Gets the collection item info if the node is a collection item. A collection
+     * item is always a child of a collection.
+     *
+     * @return The collection item info.
+     */
+    public CollectionItemInfoCompat getCollectionItemInfo() {
+        Object info = IMPL.getCollectionItemInfo(mInfo);
+        if (info == null) return null;
+        return new CollectionItemInfoCompat(info);
+    }
+
+    /**
+     * Gets the range info if this node is a range.
+     *
+     * @return The range.
+     */
+    public RangeInfoCompat getRangeInfo() {
+        Object info = IMPL.getRangeInfo(mInfo);
+        if (info == null) return null;
+        return new RangeInfoCompat(info);
+    }
+
+    /**
+     * Gets the actions that can be performed on the node.
+     *
+     * @return A list of AccessibilityActions.
+     */
+    public List<AccessibilityActionCompat> getActionList() {
+        List<Object> actions = IMPL.getActionList(mInfo);
+        if (actions != null) {
+            List<AccessibilityActionCompat> result = new ArrayList<AccessibilityActionCompat>();
+            final int actionCount = actions.size();
+            for (int i = 0; i < actionCount; i++) {
+                Object action = actions.get(i);
+                result.add(new AccessibilityActionCompat(action));
+            }
+            return result;
+        } else {
+            return Collections.<AccessibilityActionCompat>emptyList();
+        }
+    }
+
 
     @Override
     public int hashCode() {

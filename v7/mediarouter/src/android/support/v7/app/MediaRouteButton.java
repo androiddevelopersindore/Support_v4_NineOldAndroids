@@ -23,6 +23,7 @@ import android.content.res.TypedArray;
 import android.graphics.Canvas;
 import android.graphics.Rect;
 import android.graphics.drawable.Drawable;
+import android.support.annotation.NonNull;
 import android.support.v4.app.FragmentActivity;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.graphics.drawable.DrawableCompat;
@@ -118,7 +119,7 @@ public class MediaRouteButton extends View {
     }
 
     public MediaRouteButton(Context context, AttributeSet attrs, int defStyleAttr) {
-        super(MediaRouterThemeHelper.createThemedContext(context, false), attrs, defStyleAttr);
+        super(MediaRouterThemeHelper.createThemedContext(context), attrs, defStyleAttr);
         context = getContext();
 
         mRouter = MediaRouter.getInstance(context);
@@ -144,6 +145,7 @@ public class MediaRouteButton extends View {
      *
      * @return The selector, never null.
      */
+    @NonNull
     public MediaRouteSelector getRouteSelector() {
         return mSelector;
     }
@@ -179,6 +181,7 @@ public class MediaRouteButton extends View {
      *
      * @return The dialog factory, never null.
      */
+    @NonNull
     public MediaRouteDialogFactory getDialogFactory() {
         return mDialogFactory;
     }
@@ -189,7 +192,7 @@ public class MediaRouteButton extends View {
      *
      * @param factory The dialog factory, must not be null.
      */
-    public void setDialogFactory(MediaRouteDialogFactory factory) {
+    public void setDialogFactory(@NonNull MediaRouteDialogFactory factory) {
         if (factory == null) {
             throw new IllegalArgumentException("factory must not be null");
         }
@@ -504,11 +507,6 @@ public class MediaRouteButton extends View {
             setEnabled(mRouter.isRouteAvailable(mSelector,
                     MediaRouter.AVAILABILITY_FLAG_IGNORE_DEFAULT_ROUTE));
         }
-    }
-
-    static interface AttachCallback {
-        void onAttachedToWindow();
-        void onDetachedFromWindow();
     }
 
     private final class MediaRouterCallback extends MediaRouter.Callback {
